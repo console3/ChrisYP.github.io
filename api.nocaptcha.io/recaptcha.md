@@ -101,10 +101,11 @@ from pynocaptcha import ReCaptchaUniversalCracker, ReCaptchaEnterpriseCracker
 
 cracker = ReCaptchaUniversalCracker(
     user_token="xxx",
-    sitekey="6LftSMEUAAAAANe9O4IJt4lDNV2naDxJwOu88w5o",
-    referer="https://www.52pojie.cn/member.php?mod=logging&action=login&auth=fcadNvTAUrfVccVR6KRBhCrrtEPA6sKbByl0",
-    size="normal",
-    title='登录 - 吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn',
+    sitekey="6Le6xNgUAAAAAHDXXUgcrCYACaq_K-iUTa-BIm4h",
+    referer="https://visa-fr.tlscontact.com/gb/lon/login.php",
+    size="invisible",
+    action="login_form",
+    title="Login",
     debug=True,
 )
 ret = cracker.crack()
