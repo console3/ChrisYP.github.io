@@ -29,7 +29,9 @@
 * 为什么我携带接口返回的 `cf_clearance` 和 `__cf_bm`，请求后续接口还是无法获取到正确响应，会继续触发 CloudFlare 盾呢？
   * 跟网站风控有关，有的网站风控较强，需要保持代理和 tls 指纹一致（比如 `chatgpt`），也就是你用 ip `xxx.xxx.xxx.xxx` 和 tls 指纹 `xxx` 获取到的 `cf_clearance` 和 `__cf_bm`，只能用于 ip `xxx.xxx.xxx.xxx` 和 tls 指纹 `xxx` 的请求客户端。因此当结果不可用时，请先检查代理与 tls 指纹是否一致，tls 指纹可传 `checktls` 参数为 `true`，接口会返回验证流程使用的 tls 指纹，然后再使用你自己的请求客户端请求 `https://tls.peet.ws/api/clean` 接口，查看该接口返回的 `ja3_hash` 以及 `akamai_hash` 是否与我们的 `cloudflare/universal` 破解接口返回的 `tls` 指纹字段中的一致，如果代理与 tls 指纹均一致，还是不可用，请联系客服。
 
- 
+* 状态码 `403` 但响应中显示的是 `Access Denied` 是什么意思？
+  * 当前使用代理被 CloudFlare 屏蔽了或限定死了使用什么区域的代理才能访问，请更换代理重试。
+
 ### 为什么选择我们
 
 *  通用性: 目前已知网站均能通过验证（包括 `chatgpt`），并且我们会自动帮你过掉所有的验证。
