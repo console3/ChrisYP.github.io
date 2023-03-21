@@ -6,7 +6,10 @@
 ### 有问必答
 
   * 如何区分 v2、v3 ？
-    * 与其他平台不同的是，我们只区分普通版和企业版，`v2`、`v3` 的区别在于 `size` 参数的不同，`v2` `size` 参数为 `normal`，`v3` `size` 参数为 `invisible`，并且 `v3` 需要传 `action` 参数，请打开 `f12` 搜索 `grecaptcha.execute`，找到该函数的入参对象的 `action` 值，填入 `action` 参数即可。（ps：普通版、企业版接口参数完全相同，唯一不同在于请求路由的不同：普通版 `recaptcha/universal`/企业版 `recaptcha/enterprise`）。
+    * 与其他平台不同的是，我们只分普通版和企业版。`v2`、`v3` 的区别:
+      * `v3` 到 `reload` 接口就结束了，`size` 参数一般为 `invisible`（具体请查看网页接口），且需要传 `action` 参数，请打开 `f12` 搜索 `grecaptcha.execute`，找到该函数的入参对象的 `action` 值，填入 `action` 参数即可。
+      * `v2` 通过 `reload` 接口之后还需要请求 `userverify` 接口，`size` 一般为 `normal`（具体请查看网页接口），不需要传 `action` 参数。
+      * 普通版、企业版接口参数完全相同，唯一不同在于请求路由的不同。
 
 ### 为什么选择我们
 
