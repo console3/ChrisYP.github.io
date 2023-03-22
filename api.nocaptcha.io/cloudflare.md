@@ -7,19 +7,19 @@
 
 * CloudFlare 盾是什么？
     * 样式大概有：
-      ![nowsecure](../images/nowsecure.png)
-      ![chatgpt](../images/chatgpt.png)
-      ![freegpt](../images/freegpt.png)
+      ![nowsecure](../images/cloudflare/nowsecure.png)
+      ![chatgpt](../images/cloudflare/chatgpt.png)
+      ![freegpt](../images/cloudflare/freegpt.png)
 
 * CloudFlare 盾流程是怎样的？
     * CloudFlare 盾一共有三层验证，具体触发几层取决于代理的质量以及网站的风控：
         * 第一层验证：一般为 `manaed`、`interactive`、`non-interactive` 类型，如下图所示：
-          ![managed](../images/managed.png)
+          ![managed](../images/cloudflare/managed.png)
           过掉会获取到 `cf_clearance` cookie 凭证，携带该凭证即可进行后续请求。
         * 第二层验证：`chi_api_m`，就是上面图例展示的 `freegpt` 中的点击验证，验证通过必然会获取到 `cf_clearance` cookie
           凭证，同时也会获取到触发页面的 `200` 状态码源码。
         * 第三层验证：过掉第二层验证获取到的响应源码中可能会继续包含一层 `alpha` 无感验证，如下图所示：
-          ![alpha](../images/alpha.png)
+          ![alpha](../images/cloudflare/alpha.png)
           该验证过掉之后会返回一个 `__cf_bm` 的 cookie，携带该 cookie 即可通过后续接口认证。
 
 * CloudFlare 盾怎么才算过了？
