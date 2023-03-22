@@ -6,7 +6,7 @@
 ### 有问必答
 
 * 接口中提交的 href 在哪里?
-    * ![incapsula](../images/incapsula.jpg)
+    * ![incapsula](../images/incapsula/incapsula.png)
 
 ### 为什么选择我们
 
