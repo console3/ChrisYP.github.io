@@ -6,9 +6,16 @@
 |--------------------------------------------------------|------------------------------------------------------------------------|----------|--------|-----|-----------|
 | [recaptcha:universal](api.nocaptcha.io/recaptcha.md)   | `ReCaptcha（v2/v3 通用版）, 直接返回 token`                                     | ✅        | `300`  | ✅   | ✅         |
 | [recaptcha:enterprise](api.nocaptcha.io/recaptcha.md)  | `ReCaptcha（v2/v3 企业版）, 直接返回 token`                                     | ✅        | `500`  | ✅   | ✅         |
+| [recaptcha:steam](api.nocaptcha.io/recaptcha.md)       | `ReCaptcha（steam）, 直接返回 token`                                         | ✅        | `600`  | ✅   | ✅         |
 | [cloudflare:universal](api.nocaptcha.io/cloudflare.md) | `CloudFlare 盾通用版, 返回 cf_clearance、__cf_bm 、正确响应源码 html、验证流程使用的 tls 指纹` | ✅        | `1000` | ✅   | ✅         |
 | [incapsula:universal](api.nocaptcha.io/incapsula.md)   | `Incapsula 盾通用版, 返回 reese84 cookie`                                    | ✅        | `1000` | ✅   | ✅         |
 | [incapsula:universal](api.nocaptcha.io/incapsula.md)   | `Incapsula 盾通用版, 返回 solution 等提交参数`                                    | ✅        | `700`  | ✅   | ✅         |
+
+### 名词说明
+
+* `点数`: 服务消耗的点数, 1 元 = 10000 点
+* `User-Token`: 用户令牌, 调用服务需要传入该参数, 在用户主页可以查看
+* `Developer-ID`: 开发者 ID, 开发者用户使用, 用户主页邀请链接的字符串(如 xxx/register?c=abcdef, 则 `abcdef` 为开发者 ID)
 
 ### 等级说明
 
