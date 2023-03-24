@@ -10,14 +10,18 @@
       * `v3` 到 `reload` 接口就结束了，`size` 参数一般为 `invisible`（具体请查看网页接口），且需要传 `action` 参数，请打开 `f12` 搜索 `grecaptcha.execute`，找到该函数的入参对象的 `action` 值，填入 `action` 参数即可。
       * `v2` 通过 `reload` 接口之后还需要请求 `userverify` 接口，`size` 一般为 `normal`（具体请查看网页接口），不需要传 `action` 参数。
       * 普通版、企业版接口参数完全相同，唯一不同在于请求路由的不同。
+
   * 如何区分 `普通版`、`企业版` ？
     * 普通版：`anchor` 接口路由： `/recaptcha/api2/anchor`
     * 企业版: `anchor` 接口路由： `/recaptcha/enterprise/anchor`
 
+  * 带 `s` 值的企业版（如 `steam`），接口拿到的 token 值，为什么还是不能用？
+    * 与你使用的代理质量有关系，请先尝试直接使用你本机 `ip` 或更换代理，如果还是不能用，请联系客服。
+
 
 ### 为什么选择我们
 
-* 通用性: 目前已知网站均能通过验证，且接口统一 `v2`、`v3` 。
+* 通用性: 目前已知网站均能通过验证（包括其他平台过不去的带 `s` 值的企业版，如 `steam`），且接口统一 `v2`、`v3` 。
 * 极致的速度: 市面上其他接口都是异步的，需要先创建任务，然后获取任务 id 不停的去轮询获取验证结果，有时耗时会达到 1
   分钟之久，这是难以接受的。而我们的接口使用`纯算法`计算参数，`协议提交`，`同步返回`，`v3 invisible `、`v2 nocaptcha`
   类型平均 `1s` 返回，`v2` 其他图片点击类型最快 `2s`，最慢不会超过 `10s` （这也取决于代理的速度）。
@@ -50,25 +54,35 @@
 | `action`          |    `String`    |   `验证码触发页面搜索 grecaptcha.execute(client, {action: action}), 其中的 action 值, v3 才需要`   |  `否` |
 | `domain`          |    `String`    |   `验证域名(默认使用 www.recaptcha.netrecaptcha.google.cn, 另外的选择 recaptcha.google.cn、www.google.com, 请查看网页上具体是使用的哪个域名, 并且需要注意, 如果你是用的是国外 ip, 请传 www.google.com, 否则可以不传)`                         |  `否` |
 | `hl`              |    `String`    |   `验证参数, 具体查看 anchor 接口的 size 值, 默认 zh-CN`    |  `否` |
-| `internet_proxy`  |    `Boolean`   |   `验证流程是否使用国内代理, 默认 true`    |  `否` |
+| `internal_proxy`  |    `Boolean`   |   `验证流程是否使用国内代理, 默认 true`    |  `否` |
+| `ubd`             |    `Boolean`   |   `验证路由是否是特殊的 ubd 类型, 默认 false`    |  `否` |
 
 #### 参数查找步骤
 
 * 搜索 `anchor` 接口，获取 `k`、`size`、`hl` 参数, `k` 值为 `sitekey`，填入对应字段即可，`hl` 若是 `zh-CN` 则可以不填，如下图所示：
   * ![步骤1](../images/recaptcha/arg1.png)
+
 * 还是 `anchor` 接口，切换至 `Headers` 选项，查看请求头的 `referer` 参数，填入 `referer` 字段，如下图所示：
   * ![步骤2](../images/recaptcha/arg2.png)
+
 * 切换至 `console` 控制台，输入 `document.title`，将输出值填入 `title` 字段
   * ![步骤3](../images/recaptcha/arg3.png)
+
 * 验证域名 `domain` 参数可传可不传，但是如果是国外站点，且使用 `www.recaptcha.net` 成功率较低，可以尝试 `internal_proxy` 传 `false`，域名 `domain` 会自动使用 `www.google.com`，网站具体使用的验证域名查找如下所示：
   * ![步骤4](../images/recaptcha/arg4.png)
+
 * 如果按照上述 `v2`、`v3` 区分方式，判断该验证为 `v3`，则还需要查找并填入 `action` 参数，查找方式如下：
+
   * 方式 1：打开 `f12` ，通用版搜索 `.execute(`，企业版搜索 `.enterprise.execute`，查找代码中的 `action` 参数，如下图所示，如果没有搜索到，请使用方式 2。
     * ![步骤5](../images/recaptcha/arg5.png)
+
   * 方式 2：打开 `f12` ，通用版输入 `debug(grecaptcha.execute)`，企业版输入 `debug(grecaptcha.enterprise.execute)`，点击登录等完成验证，等下断点触发，在 `Scope` 中复制 `action` 的值，如下图所示：
     * ![步骤6](../images/recaptcha/arg6.png)
     * ![步骤7](../images/recaptcha/arg7.png)
 
+* 验证路由是否是 `ubd`（目前仅在一个网站的企业版见过这种类型），如果是 `ubd` ，则 `ubd` 参数请填 `true`，否则填 `false` 或不填：
+
+  * ![步骤8](../images/recaptcha/arg8.png)
 
 #### json 示例
 
@@ -80,7 +94,7 @@
   "title": "Login",
   "action": "login",
   "domain": "www.google.com",
-  "internet_proxy": false
+  "internal_proxy": false
 }
 ```
 
