@@ -122,7 +122,7 @@ curl -L 'http://api.nocaptcha.io/api/wanda/incapsula/universal' \
 #### python
 
 ```shell
-pip install pynocaptcha
+pip install -U pynocaptcha -i https://pypi.python.org/simple
 ```
 
 ```python
