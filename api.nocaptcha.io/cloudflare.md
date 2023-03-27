@@ -53,7 +53,7 @@
 
 | 版本               | 接口地址                                                     |
 |------------------|----------------------------------------------------------|
-| `通用版（universal）` | `http://api.nocaptcha.io/api/wanda/cloudfalre/universal` |
+| `通用版（universal）` | `http://api.nocaptcha.io/api/wanda/cloudflare/universal` |
 
 ### Request Headers:
 
