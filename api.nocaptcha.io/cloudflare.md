@@ -68,11 +68,11 @@
 | 参数名          | 类型        | 说明                                                                                                                                                             | 必须  |
 |--------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
 | `href`       | `String`  | `触发 cloudfalre 验证的首页地址`                                                                                                                                        | `是` |
-| `user_agent` | `String`  | `请求流程使用 ua, 必须使用 MacOS Firefox User-Agent, 否则可能破解失败, 默认使用 Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/110.0`                | `否` |
+| `user_agent` | `String`  | `请求流程使用 ua, 必须使用 Firefox User-Agent, 否则可能破解失败, 默认使用 Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/110.0`                | `否` |
 | `html`       | `String`  | `触发 cloudflare 验证的响应源码, 特征: window._cf_chl_opt=.../window["CF$params"]=..., 默认空字符串`                                                                            | `否` |
-| `cookies`    | `String`  | `触发验证必须的 cookies, 默认 {} `                                                                                                                                      | `否` |
-| `randomtls`  | `Boolean` | `是否使用随机 tls 的请求客户端验证(即 chrome 110), 随机 tls 验证更容易, 可能不触发点击验证直接就过了, 但是某些站点强制要求前后 tls 指纹一致的话, 请不要开启该参数, 则破解流程使用的为 chrome 107 指纹, 默认 true`                         | `否` |
-| `checktls`   | `Boolean` | `是否检查前后 tls 指纹是否一致, 默认 false`                                                                                                                                  | `否` |
+| `headers`    | `String`  | `触发 cloudflare 必须的 headers 字段, 默认 {} `                                                                                                                                      | `否` |
+| `cookies`    | `Object`  | `触发 cloudflare 必须的 cookies 字段, 默认 {} `                                                                                                                                      | `否` |
+| `ja3`        | `String`  | `请求客户端使用的 ja3 指纹, 例如: "771,4865-4867-4866-49195-49199-52393-52392-49196-49200-49162-49161-49171-49172-156-157-47-53,0-23-65281-10-11-35-16-5-34-51-43-13-45-28-21,29-23-24-25-256-257,0", 不传则默认使用随机 ja3 指纹, 可通过 https://tls.peet.ws/api/clean 查询你的请求客户端的 tls 指纹, 然后填入返回的 ja3 字段值, 则我们的破解流程将会使用你上传的 ja3 指纹, 从而保持 tls 指纹一致`                                                                                                                                  | `否` |
 | `auto_alpha` | `Boolean` | `是否自动过成功进入首页后继续触发的第二层 alpha 验证, 过掉该验证会成功获取一个 __cf_bm 的 cookie, 默认 true`                                                                                        | `否` |
 | `proxy`      | `String`  | `请求流程使用代理, 某些强制要求特定区域的 ip 访问的网站, 请传代理, 支持 protocol: http/https/socks5, 无验证代理格式: {protocol}://{ip}:{port}, 有验证代理格式: {protocol}://{user}:{password}@{ip}:{port}` | `否` |
 
@@ -84,8 +84,7 @@
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/110.0", 
     "html": "", 
     "cookies": {}, 
-    "randomtls": true, 
-    "checktls": true, 
+    "ja3": "771,4865-4867-4866-49195-49199-52393-52392-49196-49200-49162-49161-49171-49172-156-157-47-53,0-23-65281-10-11-35-16-5-34-51-43-13-45-28-21,29-23-24-25-256-257,0",
     "auto_alpha": true,
     "proxy": null
 }
@@ -100,7 +99,7 @@
 | `id`           | `String`  | `该次请求 id（唯一, 可用作后续记录查询）`                                |
 | `data.cookies` | `Object`  | `验证通过返回的 cf session cookies, 键值对形式`                     |
 | `data.html`    | `Object`  | `过掉 cloudflare 后请求 href 获取的正确响应源码`                      |
-| `data.tls`     | `Object`  | `验证流程使用的 tls 指纹, 某些强制要求 tls 一致的网站, 后续接口请求请使用一致的 tls 指纹` |
+| `data.tls`     | `Object`  | `验证流程使用的 tls 指纹, 某些强制要求 tls 一致的网站, 后续接口请求请使用一致的 tls 指纹, 目前已支持自定义 ja3` |
 | `cost`         | `String`  | `验证耗时（毫秒）`                                              |
 
 ```
