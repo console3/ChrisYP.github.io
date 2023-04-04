@@ -61,7 +61,7 @@
 |----------------|--------------------|-----|
 | `User-Token`   | `用户密钥, 主页获取`       | `是` |
 | `Content-Type` | `application/json` | `是` |
-| `Developer-Id` | `开发者 id`           | `否` |
+| `Developer-Id` | `开发者 ID, 开发者用户使用, 用户主页邀请链接的字符串(如 xxx/register?c=abcdef, 则 abcdef 为开发者 ID)`           | `否` |
 
 ### POST Data（JSON）:
 
