@@ -34,7 +34,7 @@
 |--------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
 | `href`       | `String`  | `触发 incapsula 验证的获取 incapsula js 的地址`                                                                                                                          | `是` |
 | `user_agent` | `String`  | `请求流程使用 ua, 默认使用 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36`                        | `否` |
-| `proxy`      | `String`  | `请求流程使用代理, 某些强制要求特定区域的 ip 访问的网站, 请传代理, 支持 protocol: http/https/socks5, 无验证代理格式: {protocol}://{ip}:{port}, 有验证代理格式: {protocol}://{user}:{password}@{ip}:{port}` | `否` |
+| `internal_proxy` | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                        | `否` |
 | `submit`     | `Boolean` | `是否提交计算参数, 默认 true, false 是不提交验证请求, 直接返回待提交参数, 您可以获取计算参数自己提交, 打 7 折哦~`                                                                                         | `否` |
 
 #### json 示例
