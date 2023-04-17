@@ -48,5 +48,5 @@
 ### 钱包数据查询接口
 
 ```angular2html
-http://test.nocaptcha.io/user/get_user_balance?user_token={User-Token}&nickname={nickname}
+http://api.nocaptcha.io/api/get_user_balance?user_token={User-Token}&nickname={nickname}
 ```
