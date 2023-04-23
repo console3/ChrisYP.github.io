@@ -54,9 +54,8 @@
 | `size`           | `String`  | `验证类型(invisible/normal, 只有这两个选择, 具体查看 anchor 接口的 size 值, 必须对应)`                                                                                                | `是` |
 | `title`          | `String`  | `触发页面的 title (f12 打开控制台, 输入 document.title)`                                                                                                                   | `是` |
 | `action`         | `String`  | `验证码触发页面搜索 grecaptcha.execute(client, {action: action}), 其中的 action 值, v3 才需要`                                                                                 | `否` |
-| `domain`         | `String`  | `验证域名(默认使用 www.recaptcha.netrecaptcha.google.cn, 另外的选择 recaptcha.google.cn、www.google.com, 请查看网页上具体是使用的哪个域名, 并且需要注意, 如果你是用的是国外 ip, 请传 www.google.com, 否则可以不传)` | `否` |
 | `hl`             | `String`  | `验证参数, 具体查看 anchor 接口的 size 值, 默认 zh-CN`                                                                                                                       | `否` |
-| `internal_proxy` | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                        | `否` |
+| `internal`       | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                        | `否` |
 | `ubd`            | `Boolean` | `验证路由是否是特殊的 ubd 类型, 默认 false`                                                                                                                                  | `否` |
 
 #### 参数查找步骤
