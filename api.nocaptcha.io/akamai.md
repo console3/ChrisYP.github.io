@@ -85,11 +85,9 @@ from pynocaptcha import AkamaiV2Cracker
 
 cracker = AkamaiV2Cracker(
     user_token="xxx",
-    sitekey='a9b5fb07-92ff-493f-86fe-352a2803b3df',
-    referer="https://discord.com/channels/253581140072464384/357581480110850049",
-    rqdata="RRZ5RNoOL4uNPvEp0yB+bMPkBe2lUiM7p4u5lMAVUC9UBmzxJqdDDpGMrcDNApg/DDAQNIIlwEn2dLr7dZMg32I2bi523ZRfkAKpKxxg1sqnVW0xR9Y9ZCcwv54EiHeEqQ+iipixAVozAb6LjtwzNm2H9L15iSN8QfVrcp0Z",
+    href="https://www.jetstar.com/",
+	api="https://www.jetstar.com/3Fl6sx/QIvaPL/b/7Hf/iQxyLG8eyP4/acumkkpfYkV7EO/ZyMtejt5PAc/REZU/Jk85Pn4"
     debug=True,
-    # proxy=proxy,
 )
 ret = cracker.crack()
 print(ret)
