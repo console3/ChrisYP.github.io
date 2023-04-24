@@ -33,17 +33,16 @@
 | 参数名          | 类型        | 说明                                                                                                                                                             | 必须  |
 |--------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
 | `href`       | `String`  | `触发 incapsula 验证的获取 incapsula js 的地址`                                                                                                                          | `是` |
-| `user_agent` | `String`  | `请求流程使用 ua, 默认使用 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36`                        | `否` |
-| `internal`   | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                        | `否` |
-| `submit`     | `Boolean` | `是否提交计算参数, 默认 true, false 是不提交验证请求, 直接返回待提交参数, 您可以获取计算参数自己提交, 打 7 折哦~`                                                                                         | `否` |
+| `user_agent` | `String`  | `请求流程使用 ua, 后续请求校验 ua 是否一致, 所以请传你后续请求将使用的 ua`                        | `是` |
+| `script`     | `String`  | `href 地址返回的 js 脚本, 当你只想计算时传改参数, 直接获取 reese84 则不传(ps: 由于该脚本很大, 且返回的 solution 参数也很大, 所以接口耗时比较长(2s 左右))`                                                                    | `否` |
+| `internal`   | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                      | `否` |
+| `submit`     | `Boolean` | `是否提交计算参数, 默认 true, false 是不提交验证请求, 直接返回待提交参数, 您可以获取计算参数自己提交, 打 7 折哦~`                                                                    | `否` |
 
 #### json 示例
 
 ```
 {
   "href": "https://www.priceline.com.au/Cawdor-asse-my-Nightning-we-from-Dealell-Come-Ty",
-  "proxy": null,
-  "submit": true,
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
 }
 ```
@@ -129,8 +128,9 @@ pip install -U pynocaptcha -i https://pypi.python.org/simple
 from pynocaptcha import IncapsulaCracker
 
 cracker = IncapsulaCracker(
-    href="https://www.priceline.com.au/Cawdor-asse-my-Nightning-we-from-Dealell-Come-Ty",
     user_token="xxx",
+    href="https://www.priceline.com.au/Cawdor-asse-my-Nightning-we-from-Dealell-Come-Ty",
+    user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
     debug=True,
     # submit=False,
     # check_useful=False,
