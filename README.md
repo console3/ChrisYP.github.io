@@ -2,16 +2,16 @@
 
 ### 目前支持的接口
 
-| 类型                                                     | 说明                                                                     | 支持同步获取结果 | 消耗点数   | 共享  | 独享（请联系客服） |
-|--------------------------------------------------------|------------------------------------------------------------------------|----------|--------|-----|-----------|
-| [recaptcha:universal](api.nocaptcha.io/recaptcha.md)   | `ReCaptcha（v2/v3 通用版）, 直接返回 token`                                     | ✅        | `300`  | ✅   | ✅         |
-| [recaptcha:enterprise](api.nocaptcha.io/recaptcha.md)  | `ReCaptcha（v2/v3 企业版）, 直接返回 token`                                     | ✅        | `500`  | ✅   | ✅         |
-| [recaptcha:steam](api.nocaptcha.io/recaptcha.md)       | `ReCaptcha（steam）, 直接返回 token`                                         | ✅        | `600`  | ✅   | ✅         |
-| [cloudflare:universal](api.nocaptcha.io/cloudflare.md) | `CloudFlare 盾通用版, 返回 cf_clearance、__cf_bm 、正确响应源码 html、验证流程使用的 tls 指纹` | ✅        | `1000` | ✅   | ✅         |
-| [incapsula:universal](api.nocaptcha.io/incapsula.md)   | `Incapsula 盾通用版, 返回 reese84 cookie`                                    | ✅        | `300` | ✅   | ✅         |
-| [incapsula:universal](api.nocaptcha.io/incapsula.md)   | `Incapsula 盾通用版, 返回 solution 等提交参数`                                    | ✅        | `100`  | ✅   | ✅         |
-| [hcaptcha:universal](api.nocaptcha.io/hcaptcha.md)     | `Hcaptcha 通用版, 直接返回 generated_pass_UUID`                                    | ✅        | `300`  | ✅   | ✅         |
-| [akamai:v2](api.nocaptcha.io/akamai.md)                | `Akamai v2, 直接返回 _abck`                                                 | ✅        | `1000`  | ✅   | ✅         |
+| 类型                                                     | 说明                                                                     | 支持同步获取结果 | 消耗点数   | 共享 | 独享（请联系客服） |
+|--------------------------------------------------------|------------------------------------------------------------------------|----------|--------|----|-----------|
+| [recaptcha:universal](api.nocaptcha.io/recaptcha.md)   | `ReCaptcha（v2/v3 通用版）, 直接返回 token`                                     | ✅        | `300`  | ✅  | ✅         |
+| [recaptcha:enterprise](api.nocaptcha.io/recaptcha.md)  | `ReCaptcha（v2/v3 企业版）, 直接返回 token`                                     | ✅        | `500`  | ✅  | ✅         |
+| [recaptcha:steam](api.nocaptcha.io/recaptcha.md)       | `ReCaptcha（steam）, 直接返回 token`                                         | ✅        | `600`  | ✅  | ✅         |
+| [cloudflare:universal](api.nocaptcha.io/cloudflare.md) | `CloudFlare 盾通用版, 返回 cf_clearance、__cf_bm 、正确响应源码 html、验证流程使用的 tls 指纹` | ✅        | `1000` | ✅  | ✅         |
+| [incapsula:universal](api.nocaptcha.io/incapsula.md)   | `Incapsula 盾通用版, 返回 reese84 cookie`                                    | ✅        | `300`  | ✅  | ✅         |
+| [incapsula:universal](api.nocaptcha.io/incapsula.md)   | `Incapsula 盾通用版, 返回 solution 等提交参数`                                    | ✅        | `100`  | ✅  | ✅         |
+| [hcaptcha:universal](api.nocaptcha.io/hcaptcha.md)     | `Hcaptcha 通用版, 直接返回 generated_pass_UUID`                               | ✅        | `300`  | ✅  | ✅         |
+| [akamai:v2](api.nocaptcha.io/akamai.md)                | `Akamai v2, 直接返回 _abck`                                                | ✅        | `1000` | ✅  | ✅         |
 
 ### 名词说明
 
@@ -44,10 +44,10 @@
 ### 返利使用
 
 * 转余额: `1:1` 转换为余额, 用于服务消费
-* 提现: 满 `50000` 点可提现
+* 提现: 目前支持 `10U` `20U` `50U` `100U` 四个额度的提现, 仅支持 `BSC链 (BEP20)` 地址提现
 
 ### 钱包数据查询接口
 
-```angular2html
+```text
 http://api.nocaptcha.io/api/get_user_balance?user_token={User-Token}&nickname={nickname}
 ```
