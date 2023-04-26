@@ -5,9 +5,10 @@
 
 ### 有问必答
 
-* 接口中提交的 href 在哪里?
+* 接口中提交的 href 在哪里?(有多个 src 的情况下, 选择有 async 关键字的那个链接)
     * ![incapsula](../images/incapsula/incapsula.png)
-
+* 脚本样例(脚本中会包含类似 ob 混淆一样的代码)
+    * ![incapsula](../images/incapsula/incapsula2.png)
 ### 为什么选择我们
 
 * 通用性: 目前已知网站均能通过验证。
