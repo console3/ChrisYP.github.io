@@ -9,6 +9,7 @@
     * ![incapsula](../images/incapsula/incapsula.png)
 * 脚本样例(脚本中会包含类似 ob 混淆一样的代码)
     * ![incapsula](../images/incapsula/incapsula2.png)
+
 ### 为什么选择我们
 
 * 通用性: 目前已知网站均能通过验证。
