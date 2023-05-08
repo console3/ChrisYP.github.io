@@ -24,6 +24,8 @@
 | `href`       | `String`  | `触发 akamai 验证的页面地址`                                                                                                                          | `是` |
 | `api`        | `String`  | `akamai 提交 sensor_data 验证接口地址, 该地址过段时间会换, 建议获取该参数的最新值提交, 不提交该参数的话, 我们会帮你获取, 但是有些网站可能不太精准, 可能会验证失败`       | `否` |
 | `telemetry`  | `Boolean` | `是否 headers 中的 telemetry 参数验证形式（如 https://api.maersk.com/ 接口的 akamai-bm-telemetry）, 默认 false`   | `否` |
+| `_abck`  	   | `String`  | `请求 href 首页返回的 cookie _abck 值, 传了 api 参数必须传该值`   | `否` |
+| `bm_sz`  	   | `String`  | `请求 href 首页返回的 cookie bm_sz 值, 传了 api 参数必须传该值`   | `否` |
 | `user_agent` | `String`  | `请求流程使用 ua, 默认随机` | `否` |
 | `internal`   | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                        | `否` |
 
