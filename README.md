@@ -10,7 +10,7 @@
 | [cloudflare:universal](api.nocaptcha.io/cloudflare.md) | `CloudFlare 盾通用版, 返回 cf_clearance、__cf_bm 、正确响应源码 html、验证流程使用的 tls 指纹` | ✅        | `1000` | ✅  | ✅         |
 | [incapsula:reese84](api.nocaptcha.io/incapsula.md)     | `Incapsula 盾 reese84 通用版, 返回 reese84 cookie`                                    | ✅        | `300`  | ✅  | ✅         |
 | [incapsula:reese84](api.nocaptcha.io/incapsula.md)     | `Incapsula 盾 reese84 通用版, 返回 solution 等提交参数`                                    | ✅        | `210`  | ✅  | ✅         |
-| [incapsula:utmvc](api.nocaptcha.io/incapsula.md)       | `Incapsula 盾 __utmvc 通用版, 返回 __utmvc 参数`                                    | ✅        | `100`  | ✅  | ✅         |
+| [incapsula:utmvc](api.nocaptcha.io/incapsula1.md)       | `Incapsula 盾 __utmvc 通用版, 返回 __utmvc 参数`                                    | ✅        | `100`  | ✅  | ✅         |
 | [hcaptcha:universal](api.nocaptcha.io/hcaptcha.md)     | `Hcaptcha 通用版, 直接返回 generated_pass_UUID`                               | ✅        | `300`  | ✅  | ✅         |
 | [akamai:v2](api.nocaptcha.io/akamai.md)                | `Akamai v2, 直接返回 _abck`                                                | ✅        | `1000` | ✅  | ✅         |
 
