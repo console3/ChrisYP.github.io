@@ -64,7 +64,6 @@
 
 ```
 curl 
-    -H "Host: 60.188.30.158" 
     -H "Accept: */*" 
     -H "User-Token: xxx" 
     -H "Content-Type: application/json" 
