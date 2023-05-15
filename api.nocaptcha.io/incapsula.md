@@ -1,7 +1,7 @@
 ------
-[`返回首页`](../README.md)    [`上一页`](cloudflare.md)       [`下一页`](hcaptcha.md)
+[`返回首页`](../README.md)    [`上一页`](cloudflare.md)       [`下一页`](incapsula1.md)
 
-## Incapsula
+## Incapsula ( reese84 )
 
 ### 有问必答
 
@@ -19,8 +19,8 @@
 ### Request URL（POST）:
 
 | 版本               | 接口地址                                                    |
-|------------------|---------------------------------------------------------|
-| `通用版（universal）` | `http://api.nocaptcha.io/api/wanda/incapsula/universal` |
+|-------------------|---------------------------------------------------------|
+| `reese84（universal）` | `http://api.nocaptcha.io/api/wanda/incapsula/reese84` |
 
 ### Request Headers:
 
@@ -127,9 +127,9 @@ pip install -U pynocaptcha -i https://pypi.python.org/simple
 ```
 
 ```python
-from pynocaptcha import IncapsulaCracker
+from pynocaptcha import IncapsulaReee84Cracker
 
-cracker = IncapsulaCracker(
+cracker = IncapsulaReee84Cracker(
     user_token="xxx",
     href="https://www.priceline.com.au/Cawdor-asse-my-Nightning-we-from-Dealell-Come-Ty",
     user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
