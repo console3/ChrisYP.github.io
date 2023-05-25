@@ -26,7 +26,7 @@
 | `telemetry`  | `Boolean` | `是否 headers 中的 telemetry 参数验证形式（如 https://api.maersk.com/ 接口的 akamai-bm-telemetry）, 默认 false`   | `否` |
 | `cookies`    | `String`  | `请求 href 首页返回的 cookie 值, 传了 api 参数必须传 cookie, 且 cookies 值中必须包含 _abck、bm_sz 两个参数, 详细格式请见示例`   | `否` |
 | `cookies.value`  | `String | Object`  | `cookies 的值, 可以是字符串格式, 也可以是键值对, 必须包含 _abck、bm_sz 两个参数`   | `否` |
-| `cookies.uri`    | `String | Object`  | `cookies 的使用地址, 传 href 即可`   | `否` |
+| `cookies.uri`    | `String`  | `cookies 的使用地址, 传 href 即可`   | `否` |
 | `user_agent` | `String`  | `请求流程使用 ua, 默认随机` | `否` |
 | `internal`   | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                        | `否` |
 
