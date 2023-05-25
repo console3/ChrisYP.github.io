@@ -24,8 +24,9 @@
 | `href`       | `String`  | `触发 akamai 验证的页面地址`                                                                                                                          | `是` |
 | `api`        | `String`  | `akamai 提交 sensor_data 验证接口地址, 该地址过段时间会换, 建议获取该参数的最新值提交, 不提交该参数的话, 我们会帮你获取, 但是有些网站可能不太精准, 可能会验证失败`       | `否` |
 | `telemetry`  | `Boolean` | `是否 headers 中的 telemetry 参数验证形式（如 https://api.maersk.com/ 接口的 akamai-bm-telemetry）, 默认 false`   | `否` |
-| `_abck`  	   | `String`  | `请求 href 首页返回的 cookie _abck 值, 传了 api 参数必须传该值`   | `否` |
-| `bm_sz`  	   | `String`  | `请求 href 首页返回的 cookie bm_sz 值, 传了 api 参数必须传该值`   | `否` |
+| `cookies`    | `String`  | `请求 href 首页返回的 cookie 值, 传了 api 参数必须传 cookie, 且 cookies 值中必须包含 _abck、bm_sz 两个参数, 详细格式请见示例`   | `否` |
+| `cookies.value`  | `String | Object`  | `cookies 的值, 可以是字符串格式, 也可以是键值对, 必须包含 _abck、bm_sz 两个参数`   | `否` |
+| `cookies.uri`    | `String | Object`  | `cookies 的使用地址, 传 href 即可`   | `否` |
 | `user_agent` | `String`  | `请求流程使用 ua, 默认随机` | `否` |
 | `internal`   | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                        | `否` |
 
@@ -33,8 +34,25 @@
 
 ```
 {
+    "href": "https://www.jetstar.com/",
+}
+```
+
+```
+{
 	"href": "https://www.jetstar.com/",
-	"api": "https://www.jetstar.com/3Fl6sx/QIvaPL/b/7Hf/iQxyLG8eyP4/acumkkpfYkV7EO/ZyMtejt5PAc/REZU/Jk85Pn4"
+	"api": "https://www.jetstar.com/3Fl6sx/QIvaPL/b/7Hf/iQxyLG8eyP4/acumkkpfYkV7EO/ZyMtejt5PAc/REZU/Jk85Pn4",
+    "cookies": {
+        "value": "_abck=D719B7C0C6B1EBE8FC8F5C1B804B2265~-1~YAAQJescuEJsVzWIAQAAnwAZQQkN297mPe+Q48Xd0/10jSvgz/y69qQbPEwxUuQZhIhisL+GFAMfvabHtQPRUbiIqzDD6vA9iN9lvjzaAbKaL+aNXF/3EhpYYYUsBa0q92JUxusD8F09nFXy3mfZ8p8GzDk+/ikw4Y8QVQcchjC/s6XYbG+I2RSHl+lDOSvR2biGLFZ1dW2PsFZQ6Fs4M1/ccWfaXg6IRvzjlWaF0vH8GIoljDVRvZxwCeUO71QJORFxeVEEO43BiC3LczJhMomt8pnTbnJcMbMbi1zFcYUKUZjYvB7+kJ1JsMHfVdzbrwTB2I3bePGPgX06RvzCReVCETYpJB7H+XEeJgQQDzKiYZhCONfnae3BQUll~-1~-1~1684722838; bm_sz=751A827227D797408E66A3559D978757~YAAQpVcyuNsPVjCIAQAAMTCrRhNw86NLVNcBypYZvOkbMMnc+ef6EeDWu9UtvPw3OfyfpKLmEFQeDw99mddahdMlOj3VxzPz8eV9mfMSWDLxup33fIKAvsMvnUjvAJV0gpZvTTwdk0atKXCg1DXvs+U+VOvPPJtS76B2t+r0jXrB+cUm2hJL7qF59kbHLBl54yypauoWa1qEu9lgelS5kdwiR93A0c9IRagfLG4VjFydhZBoD6ldWEQjQUflrf00GSoxQpL0QBKRlD7fFNRtMhBmndvu5yoGdixtPXCEKk5BzRl/~4605506~4276528; ak_bmsc=0E5236AFD795DD698B2E15191CEF0FDC~000000000000000000000000000000~YAAQpVcyuNoPVjCIAQAAMTCrRhNkrxzrgkZ1QP7XH0+hyJ2ul+4V0reJDlf1omJylP4/7vc+bxfB8EW1pfuYQWdBmzTBnE84h+7tH1SbFvNNNDul53BJsoOd79t8V0LGQdlXls3FWxITVSwuVlvCQTuJY1jq+uxrTTFFWpuqWQZnWkaLC/p8E7KRycXTaDSh7UW4k6ISRmssUftgDxwjZg43T6IbMyPf9dugLQSg9dKx4p8wyTcNern/fHfx7dAABbnUJkwmP+Y/eR4mfc9MJtIsJ3006DKH7PNoZ5JhtmnN9JTuhwfSEEnCrhs0j/cb2TrsSMo26w4C1xIaUNwZXE77YDci8VIkwEq9NvSTrTZUncSl0rsvoBz0j4QheSI=",
+        "uri": "https://www.jetstar.com/"
+    }
+}
+```
+
+```
+{
+	"href": "https://www.maersk.com.cn/instantPrice/quotes",
+    "telemetry": true,
 }
 ```
 
@@ -42,9 +60,11 @@
 {
 	"href": "https://www.maersk.com.cn/instantPrice/quotes",
     "api": "https://www.maersk.com.cn/1PtuQ/ZG/sx2/mz/xEDfFYdT/OX4SLkcz5kLOt7/LFtobS0ANwE/LxcyFCZ/kRSc",
+    "cookies": {
+        "value": "_abck=D719B7C0C6B1EBE8FC8F5C1B804B2265~-1~YAAQJescuEJsVzWIAQAAnwAZQQkN297mPe+Q48Xd0/10jSvgz/y69qQbPEwxUuQZhIhisL+GFAMfvabHtQPRUbiIqzDD6vA9iN9lvjzaAbKaL+aNXF/3EhpYYYUsBa0q92JUxusD8F09nFXy3mfZ8p8GzDk+/ikw4Y8QVQcchjC/s6XYbG+I2RSHl+lDOSvR2biGLFZ1dW2PsFZQ6Fs4M1/ccWfaXg6IRvzjlWaF0vH8GIoljDVRvZxwCeUO71QJORFxeVEEO43BiC3LczJhMomt8pnTbnJcMbMbi1zFcYUKUZjYvB7+kJ1JsMHfVdzbrwTB2I3bePGPgX06RvzCReVCETYpJB7H+XEeJgQQDzKiYZhCONfnae3BQUll~-1~-1~1684722838; bm_sz=751A827227D797408E66A3559D978757~YAAQpVcyuNsPVjCIAQAAMTCrRhNw86NLVNcBypYZvOkbMMnc+ef6EeDWu9UtvPw3OfyfpKLmEFQeDw99mddahdMlOj3VxzPz8eV9mfMSWDLxup33fIKAvsMvnUjvAJV0gpZvTTwdk0atKXCg1DXvs+U+VOvPPJtS76B2t+r0jXrB+cUm2hJL7qF59kbHLBl54yypauoWa1qEu9lgelS5kdwiR93A0c9IRagfLG4VjFydhZBoD6ldWEQjQUflrf00GSoxQpL0QBKRlD7fFNRtMhBmndvu5yoGdixtPXCEKk5BzRl/~4605506~4276528; ak_bmsc=0E5236AFD795DD698B2E15191CEF0FDC~000000000000000000000000000000~YAAQpVcyuNoPVjCIAQAAMTCrRhNkrxzrgkZ1QP7XH0+hyJ2ul+4V0reJDlf1omJylP4/7vc+bxfB8EW1pfuYQWdBmzTBnE84h+7tH1SbFvNNNDul53BJsoOd79t8V0LGQdlXls3FWxITVSwuVlvCQTuJY1jq+uxrTTFFWpuqWQZnWkaLC/p8E7KRycXTaDSh7UW4k6ISRmssUftgDxwjZg43T6IbMyPf9dugLQSg9dKx4p8wyTcNern/fHfx7dAABbnUJkwmP+Y/eR4mfc9MJtIsJ3006DKH7PNoZ5JhtmnN9JTuhwfSEEnCrhs0j/cb2TrsSMo26w4C1xIaUNwZXE77YDci8VIkwEq9NvSTrTZUncSl0rsvoBz0j4QheSI=",
+        "uri": "https://www.jetstar.com/"
+    },
     "telemetry": true,
-    "_abck": "3AB13157855D0A3E971EBB65DEB0C466~-1~YAAQHIyUG2Gw4PGHAQAATDt9+QnjWorD7Aedmnk//hDV3dv9XAv+946yIlRLpMLuWAQ3nmNt5BOU8+ASKO9tQs9HxP/tc0cc5xeKsI3ApJmShHXnIfv/QvcCFJN+w9+6G0pXc7vETAyIP3M8fh+Qhyt/U7JKRGEbKouAlkBfps1ckTTgIKIkznQcz3Yif4HuMtsiXz/aDY8PXy9xKG6+1KMi2LHWQ43oNA0WrqShqbfDmMXOZJv8e3WqSBbHGHmOABDE8F0zYnSorsoGj+Teu0wXutzvE+Ogf7OfspTNKoIP1MVCgEFLCjsAETQkGHAH0himu8WW18XGCFaV/7SVqlfODrDknoj5DDYA2eZc5fwz8HYzZJIrkwd+w9hKIn3s~-1~-1~-1",
-    "bm_sz": "DB17857CB8A2CCB311B7BAB854EB2D16~YAAQHIyUG2Sw4PGHAQAATDt9+RNAWsp3TjF1OJdY6ckD3OgWDlGHmiHdZaSqLm9awbOMtcdce/9jtZNdBEPeSD17p65Cd77LQtItjV5kvScpT4Vc/lu+JeGS0plWXGiwtWFwVRA4MzgLE/vNnwjl5vS4hY7ZkWEum/5svyRmp5g8x+cbLtx3AE5iZDytH2K0HbCc7jl6Dwgg3fEhid1YJSfZnnUvKbf79QDaPRC6rdBQOLO73aOAks+TSTthAXg4OS0hOGedJZGmihNwkjIg5URiszfaDYVhHbaYGq50o0w9G0TKDMU=~3294000~3486531"
 }
 ```
 
