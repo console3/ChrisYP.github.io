@@ -23,13 +23,13 @@
 |--------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
 | `requests[0].url`           | `String`  | `请求的 url 地址`                                                                                                                          | `是` |
 | `requests[0].method`        | `String`  | `请求方法, get/post`       | `否` |
-| `requests[0].headers`       | `String | Object`  | `请求的请求头, 可以是字符串或对象, 不传默认的请求头为 { 'User-Agent': '随机 ua' } `       | `否` |
-| `requests[0].cookies.value` | `String | Object` | `请求流程使用的 cookies, 可以是字符串或对象, { '1': '2', '3': '4' } / '1=2; 3=4'`   | `否` |
+| `requests[0].headers`       | `String or Object`  | `请求的请求头, 可以是字符串或对象, 不传默认的请求头为 { 'User-Agent': '随机 ua' } `       | `否` |
+| `requests[0].cookies.value` | `String or Object` | `请求流程使用的 cookies, 可以是字符串或对象, { '1': '2', '3': '4' } / '1=2; 3=4'`   | `否` |
 | `requests[0].cookies.uri`   | `String`  | `请求流程的 cookie set 的域名, 使用 url 即可`   | `否` |
 | `requests[0].proxy`         | `String`  | `请求流程使用的代理, 支持 protocol: http/https/socks5, 无验证代理格式: {protocol}://{ip}:{port}, 有验证代理格式: {protocol}://{user}:{password}@{ip}:{port}`   | `否` |
-| `requests[0].data`          | `String | Object` | `post 请求流程的请求体, 可以是字符串或对象, { '1': '2', '3': '4' } / '1=2&3=4'`   | `否` |
-| `requests[0].json`          | `String | Object` | `post 请求流程的请求体, 可以是字符串或对象, { '1': '2', '3': '4' } / '1=2&3=4'`   | `否` |
-| `requests[0].timeout`       | `String | Object`  | `cookies 的值, 可以是字符串格式, 也可以是键值对, 必须包含 _abck、bm_sz 两个参数`   | `否` |
+| `requests[0].data`          | `String or Object` | `post 请求流程的请求体, 可以是字符串或对象, { '1': '2', '3': '4' } / '1=2&3=4'`   | `否` |
+| `requests[0].json`          | `String or Object` | `post 请求流程的请求体, 可以是字符串或对象, { '1': '2', '3': '4' } / '1=2&3=4'`   | `否` |
+| `requests[0].timeout`       | `String or Object`  | `cookies 的值, 可以是字符串格式, 也可以是键值对, 必须包含 _abck、bm_sz 两个参数`   | `否` |
 | `requests[0].http2`         | `Boolean`  | `是否 http2 协议, 默认 false`   | `否` |
 | `requests[0].redirect`      | `Boolean`  | `是否重定向, 默认 true`   | `否` |
 | `requests[0].ja3`           | `String`  | `自定义 ja3 指纹`   | `否` |
@@ -214,14 +214,16 @@ pip install -U pynocaptcha -i https://pypi.python.org/simple
 ```
 
 ```python
-from pynocaptcha import AkamaiV2Cracker
+from pynocaptcha import TlsV1Cracker
 
 
-cracker = AkamaiV2Cracker(
+cracker = TlsV1Cracker(
     user_token="xxx",
-    href="https://www.jetstar.com/",
-	api="https://www.jetstar.com/3Fl6sx/QIvaPL/b/7Hf/iQxyLG8eyP4/acumkkpfYkV7EO/ZyMtejt5PAc/REZU/Jk85Pn4"
-    debug=True,
+    requests=[{
+        "url": "https://www.baidu.com/"
+    }, {
+        "url": "https://www.baidu.com/"
+    }],
 )
 ret = cracker.crack()
 print(ret)
