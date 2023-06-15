@@ -183,7 +183,7 @@
 | `id`           | `String`  | `该次请求 id（唯一, 可用作后续记录查询）`      |
 | `data.status`  | `Number`  | `响应状态码`    |
 | `data.text`    | `String`  | `响应体`    |
-| `data.cookies` | `Object`  | `响应 cookies`    |
+| `data.cookies` | `String`  | `响应 cookies`    |
 | `data.location` | `String`  | `重定向地址`    |
 | `data.tls`     | `String`  | `请求流程使用的 tls 指纹`    |
 | `data.error`   | `String`  | `请求失败的报错原因`    |
