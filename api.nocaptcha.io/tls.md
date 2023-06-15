@@ -26,7 +26,7 @@
 | `headers`       | `String or Object`  | `请求的请求头, 可以是字符串或对象, 不传默认的请求头为 { 'User-Agent': '随机 ua' } `       | `否` |
 | `cookies.value` | `String or Object` | `请求流程使用的 cookies, 可以是字符串或对象, { '1': '2', '3': '4' } / '1=2; 3=4'`   | `否` |
 | `cookies.uri`   | `String`  | `请求流程的 cookie set 的域名, 使用 url 即可`   | `否` |
-| `proxy`         | `String`  | `请求流程使用的代理, 支持 protocol: http/https/socks5, 无验证代理格式: {protocol}://{ip}:{port}, 有验证代理格式: {protocol}://{user}:{password}@{ip}:{port}`   | `否` |
+| `proxy`         | `String`  | `请求流程使用的代理, 支持 protocol: http/https/socks5, 无验证代理格式: {ip}:{port}, 有验证代理格式: {user}:{password}@{ip}:{port}, socsk5 代理需要加上代理协议: {protocol}://{ip}:{port}`   | `否` |
 | `data`          | `String or Object` | `post 请求流程的请求体, 可以是字符串或对象, { '1': '2', '3': '4' } / '1=2&3=4'`   | `否` |
 | `json`          | `String or Object` | `post 请求流程的 json 数据, 示例 { '1': '2', '3': '4' }`   | `否` |
 | `timeout`       | `Number`   | `请求超时时间（秒）, 默认 15 秒`   | `否` |
