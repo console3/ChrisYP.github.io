@@ -102,11 +102,11 @@
 ### CURL command:
 
 ```
-curl 
-    -H "User-Agent: python-requests/2.28.2" -H "Accept: */*" 
-    -H "User-Token: xxx" 
-    -H "Content-Type: application/json" 
-    --data-binary "{\"href\": \"https://www.jetstar.com/\", \"api\": \"https://www.jetstar.com/3Fl6sx/QIvaPL/b/7Hf/iQxyLG8eyP4/acumkkpfYkV7EO/ZyMtejt5PAc/REZU/Jk85Pn4\"}" 
+curl \
+    -H "User-Agent: python-requests/2.28.2" -H "Accept: */*" \
+    -H "User-Token: xxx" \
+    -H "Content-Type: application/json" \
+    --data-binary "{\"href\": \"https://www.jetstar.com/\", \"api\": \"https://www.jetstar.com/3Fl6sx/QIvaPL/b/7Hf/iQxyLG8eyP4/acumkkpfYkV7EO/ZyMtejt5PAc/REZU/Jk85Pn4\"}" \
     --compressed "http://api.nocaptcha.io/api/wanda/akamai/v2"
 ```
 

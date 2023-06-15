@@ -71,13 +71,13 @@
 ### CURL command:
 
 ```
-curl 
- -H "Host: api.nocaptcha.io" 
- -H "User-Agent: python-requests/2.28.2" 
- -H "Accept: */*" 
- -H "User-Token: xxx" 
- -H "Content-Type: application/json" 
- --data-binary "{\"sitekey\": \"f5561ba9-8f1e-40ca-9b5b-a0b3f719ef34\", \"mode\": \"picture\", \"referer\": \"https://discord.com/login\"}" 
+curl \
+ -H "Host: api.nocaptcha.io" \
+ -H "User-Agent: python-requests/2.28.2" \
+ -H "Accept: */*" \
+ -H "User-Token: xxx" \
+ -H "Content-Type: application/json" \
+ --data-binary "{\"sitekey\": \"f5561ba9-8f1e-40ca-9b5b-a0b3f719ef34\", \"mode\": \"picture\", \"referer\": \"https://discord.com/login\"}" \
  --compressed "http://api.nocaptcha.io/api/wanda/hcaptcha/universal"
 ```
 
