@@ -36,7 +36,6 @@
 |--------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
 | `href`       | `String`  | `触发 incapsula 验证的获取 incapsula js 的地址`                                                                                                                           | `是` |
 | `user_agent` | `String`  | `请求流程使用 ua, 后续请求校验 ua 是否一致, 所以请传你后续请求将使用的 ua`                                                                                                      | `是` |
-| `script`     | `String`  | `href 地址返回的 js 脚本`                                                                                                                                                | `否` |
 | `submit`     | `Boolean`  | `是否提交验证流程，默认为true。传入false则返回 solution 等提交参数，点数打7折哦！`                                                                                                                                                | `否` |
 
 #### json 示例
@@ -44,7 +43,8 @@
 ```
 {
   "href": "https://www.priceline.com.au/Cawdor-asse-my-Nightning-we-from-Dealell-Come-Ty",
-  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
+  "submit": true
 }
 ```
 
@@ -114,7 +114,7 @@
 curl -L 'http://api.nocaptcha.io/api/wanda/incapsula/universal' \
  -H 'User-Token: xxx' \
  -H 'Content-Type: application/json' \
- --data-raw '{"href": "https://www.priceline.com.au/Cawdor-asse-my-Nightning-we-from-Dealell-Come-Ty", "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", "submit": true, "proxy": null}'
+ --data-raw '{"href": "https://www.priceline.com.au/Cawdor-asse-my-Nightning-we-from-Dealell-Come-Ty", "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", "submit": true}'
 ```
 
 ### 调用示例
@@ -133,7 +133,7 @@ cracker = IncapsulaReee84Cracker(
     href="https://www.priceline.com.au/Cawdor-asse-my-Nightning-we-from-Dealell-Come-Ty",
     user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
     debug=True,
-    # submit=False,
+    submit=True,
     # check_useful=False,
 )
 ret = cracker.crack()
