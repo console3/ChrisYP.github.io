@@ -33,8 +33,8 @@
 |--------------|-----------|----------------------|-----|
 | `cookies`    | `Object`  | `请求首页返回的 cookies, 全部上传` | `是` |
 | `href`        | `String`  | `返回 utmvc 脚本的url` | `是` |
-| `proxy` | `String`  | `ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果是需要白名单形式联系管理员)` | `是` |
-| `submit`        | `Boolean`  | `是否提交验证, 提交验证只通知验证通过, 后续接口不再需要 ___utmvc 参数, 因此啥也不返回, 默认不提交` | `否` |
+| `proxy` | `String`  | `submit 为 false 的时候必传, ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果是需要白名单形式联系管理员)` | `否` |
+| `submit`        | `Boolean`  | `是否提交验证, true: 由服务无感验证; false: 必须传入ip 同时本地验证需要保持代理一致, 点数打7折` | `否` |
 
 #### json 示例
 
@@ -45,7 +45,18 @@
         "incap_ses_406_2314793": "w399Tycs8xhdpuG+aWeiBWGkYWQAAAAAKCTf+jt4Sq4R0xN0pU9VXA==",
         "visid_incap_2314793": "DVtB0J4PRoG+jHdSiyyjNWKkYWQAAAAAQUIPAAAAAABY5A3D8V2Yp2rCf0Qol0Kd"
     },
-    "proxy": "usr:pwd@ip:port"
+    "proxy": "usr:pwd@ip:port",
+    "submit": false
+}
+
+{
+    "href": "https://premier.hkticketing.com/_Incapsula_Resource?SWJIYLWA=5074a744e2e3d891814e9a2dace20bd4,719d34d31c8e3a6e6fffd425f7e032f3",
+    "cookies": {
+        "incap_ses_406_2314793": "w399Tycs8xhdpuG+aWeiBWGkYWQAAAAAKCTf+jt4Sq4R0xN0pU9VXA==",
+        "visid_incap_2314793": "DVtB0J4PRoG+jHdSiyyjNWKkYWQAAAAAQUIPAAAAAABY5A3D8V2Yp2rCf0Qol0Kd"
+    },
+    "proxy": "",
+    "submit": true
 }
 ```
 
@@ -69,6 +80,14 @@
         "___utmvc": "RcfBxntM86jhyTPW9\/oPyTZXmlRnma\/xzVbBTv\/R+EYCOhO+kToGT3voh01qY+XSbofVvKsiiT3idzZPd+\/D2rC8dghiDx9BghnUQmDnnTl1ItRMO2oSM11H1NOZzkYe7zMTCVt9J1lITjqAf7+6ugxunXAqgbprbsxFO0aTWZvFB7yk7mTDbmym6x54XJQTGFv\/EXDCZRRFdFGyvERlFd+NYnBflIZmGt78FvFx\/z377YrMoBFcvOMa9fitI6Om\/GncCxQp4Clfw5TEHiCUjag07zwzX9GBpFg\/WelYYkDHDiJE0XpBvrhGBFF\/6mEsjm4koZ+zKQRlsmhWVl3ebKDB+6XPEf1bSEPUFIjKTcX09XjgqWoVUKxcJ1M0TFCoISEBw6XomRAPesLIusgdLl76s++cxHfaouRsK6O4hHyDafDYBMIN1fMeK6onWYsl2KK4bklSOV5F9kLK2hYgnrPxONTd2WTqsnt4XDxqUc7FnmvRNeSJ7jdlAK7r3SpaZy2a5O+Dmmsff89kNmDOze3DiYl8sxNs4g9fhaaLEEavfhotUUL+p1Bu\/mHTjW7ZSfnTsjrL4AkeQN2IDL6jZ2giarbl\/QiRn\/JJo+4wppxXeUs\/iq8h+WFOyDRZYqTBKgbsR0V838D4G8pyZvOTomBnlFxaPMXQWapoDPZ5FxB6irCl\/Gp3vjH0QR31jkN7EV4ZzX1\/NG\/Uurgyr9fuSZAAaKh8A818xxshT5JIK30WPx8NzR7S\/BK+std1WK4Vbnxxnt+Ug\/2HImjJPkgqSOxpQCq0m3J48sZs1TsuHUryRpLVu7FPjIX\/Y4K2i1\/Oa6er+oNyyED4ZuBuEKTsIoDE3cQisABkK59OJw3e9nIPPvUA7S4j504DzcS0YyMEvubKfydUzcbuCqBv3bbtJvtCHTbd6RcRqnarOcnOSh51BdW7rBlopVLQNfdg5rI9lvNGBn3B7WmQvkoPi7DpEZA\/\/mgdIcFd3BAbYlyUNSuQG38Gw2BcclsUK4tF3ybYNGTuyHWYmlIgF4nIGfq7uZtYTeZkHEoZepneCKMiAm81fL9ySSU2agC7Uo7gDtzhrldrUI06XINOdRu5ghaeoNxcrJqkuvBlUKmhW37vhmPH\/B3I3\/r4PrgNAJfplRyLQv8fdJBg1HZDl2\/dvTs0Od\/NLQpDt3fTo0eYJ++EGiTReMHXXGGc7IgYN3zVGwTs6toqYRraRKqOGyjKZ1smsMkuZdHl899ZHMrbehaYVu+onsITpxTBjqQiHoV4Cs6PcLC8hs2Fat+3+Rq81pzOBc11A53y+bBDhm5rlGC6kuhWUYQZLGh6Q8dy7DaBuDagCEsq\/qGzyoayKqZBflHT3xotXWxsadCQGRVjY2V3lsk75yJIdegGLlcMCejZRVikY\/9vnwpdo7q6yptfoTmqxqr63WOOVVgRhw+oA1vnyXF85\/cV5R6L6B3EW28thIpeZlEhaqsH0jm3grVxZjuRRGFTQ4ObC5ubR6wmfioRoMLNQMQVZzUYlkmkSS1ixv05OS1cg5mDbC6WTuFl42Wl8a663VuGOtPTY1uSwZ8sOcXXlcGo9W1OQTAIbF\/2VoS+gJyvhiYDHq\/e6s04n7Sia5+lCCXJ0GPWHT0SLRtKHfaOyy9geB82UU9Sb47SIYunQ2S5OzL9X2XdA5823bytz42GKDR+c6dP7dB2xtxV27lciByVCn\/s5pQaJGQJm3X1wnd\/\/mzjxEoSATgm2fP3SJBElLrd3WQ6NED75XKgaw5hrKzG\/Yl\/IhbSFJdYkHK0Y4VRYEvZ0nDZBZtOX3r96JBHn5szz7TD7ngkGCa1RmUBvjHrQMwvCNvu6zwHozlN1nNXcw1ekTj4JEoXPLtYIIaw7amEdbBzdp3fvZJJ\/xwZhowaUpOH4Ml7Y\/slWsJ3B6ZNWvDD9izXritrNVc6yUljs053302cFkbG+qoaCSkol2hWf5LoAq+0i4xU9ZsTuE537w7t7Fv9ZcHwgEBTgrJ2Wc42pqAmw6JUDJdGbSUL11ZhYuHE5iixrlZJ2ZsYdTtaN180fpMDprT0YLOo4tPvYQa2cn8c0eTvmKbuAZlzcxmBJ9kx6a0pH8uA1YbXd5fpfYdy2vcO\/gO5qRJ2FrGvCF+RHD7Ana9OVbnHsFaI22ZqxLIBuSu6P4fIlLxf\/7Ri3qyhDJ40+owEBqajKOCBNDje+iL\/IgnQN1sUB+bFRfqAzAB9ejN\/0FUUwaculCjdiiOPy42y1Ml3nyrlWB89KL5kpFVWyZ6afiJLV2V0R4eJrg65sU3UbaWS0i4AChHLYInyXw0Ll4EnOAJo8dZ3hKdteYzhSx5CXRFXtbn9\/YeNjX1m7cbAkojc4RkxT\/ICULCwzo8Oshz8LHNigszgp40X71nvFiyxLN+ZGMSkGuz29XWrZN\/bfMN4cbzHFnmZaJmvWAtfzGyj5dw1B3WKBJHbEVy6f33cbMCbqEeHwCRibtPGvvHTDaP37pUO0Ya50TjHscaRbcdOgbBC24r65MOXeWQoKqARnuwN0fLkv9Vqpd2s8\/1\/8L6f1Sdk9FEcMrFqGAq\/xGmXpiGUStNdmWPuRADSo8XHWl\/OQdGhZk6TejmSccDrMwkG5Vm5jp1q7XpcbqDvj9natEYI3N+6h\/71eF+FAeZcfTef8yxkaWdlc3Q9MTgyMjU1LHM9NjE5MGE4OTM4M2EyN2Q5OWFhOWI5ZTY0OWM3ZTdmOGM2MDgzNjdiMmE3NjU4YzZjYThhZGE1NmE4YjY3NzdhYTczOTk5YzgwNzQ5ZjZmNmY="
     }
 }
+
+{
+    "status": 1,
+    "msg": "验证成功",
+    "id": "61b4bb7f-abf9-4875-ae58-38916e1ecbff",
+    "cost": "36.42ms",
+    "data": {}
+}
 ```
 
 ### CURL command
@@ -78,7 +97,13 @@ curl \
 -H "Accept: */*" \
 -H "User-Token: xxx" \
 -H "Content-Type: application/json" \
---data-binary "{\"href\": \"https://premier.hkticketing.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3\", \"script\": \"\", \"cookies\": {\"reese84\": \"3:H+v1GwkNwrZu46o3Nseiyw==:4RlC9xZQ23lzNVVqK1LOYJe7l63LmqQ3clkc+sZI3DcPMqqwp2ALS0jmoUvCSqGICMNNdNG/8IBPMm0ypqg9nSpRrAR7tmkptkPc23bLNvqe4rXSmOVduyVetjdH7r3F/+Z5ydoKI3RI7i9BwFldpF3qDeIm42wxwnZNh+5y+lAHqy5lrYapc9tlApN0njxs6VLWwevPdP/2OPMw9QDp3HtkYzqkPIDKYMUko22X8oYWJYi5MmKF/b73z6y4a+i5NlAL8Dq+5Q2kXVX3BMmvGbkYxGmI75U0gE56A2shI1jJZcMMxk2mKrJmHVrSmd/k4KGqSL0/ZWXo7C3UWNFdBIHUmC/V/50kmiexjfHbeBI7WGrqvys58JBbe+pOGCaPkq3hqnXlvMPZPQTxXpopetJnVCwUadFGbUSpO41aM6CTjWBM+/PHg1EmFW68N2eZPkyCRfB9xM0+xS9SQQ0ejrmjeImMYKDKvDM1BXvCMcmVzvLXzzqmRVCOa1KAsSaJ:eA0TfngSIjMo8BmFFxQSqWenttAtZe1eFmu/D65FzTc=\", \"incap_ses_401_2314793\": \"G762Rv0O7jVlFUfP+aOQBSgAkGQAAAAAP829tNJuOV/4aBkDqwuYCA==\", \"visid_incap_2314793\": \"ZQaJm87VQvey37JRu3PniygAkGQAAAAAQUIPAAAAAACBXuPmlVtqbEgl8mDySriV\"}, \"proxy\": \"usr:pwd@ip:port\"}" --compressed "http://api.nocaptcha.io/api/wanda/incapsula/utmvc"
+--data-binary "{\"href\": \"https://premier.hkticketing.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3\", \"script\": \"\", \"cookies\": {\"reese84\": \"3:H+v1GwkNwrZu46o3Nseiyw==:4RlC9xZQ23lzNVVqK1LOYJe7l63LmqQ3clkc+sZI3DcPMqqwp2ALS0jmoUvCSqGICMNNdNG/8IBPMm0ypqg9nSpRrAR7tmkptkPc23bLNvqe4rXSmOVduyVetjdH7r3F/+Z5ydoKI3RI7i9BwFldpF3qDeIm42wxwnZNh+5y+lAHqy5lrYapc9tlApN0njxs6VLWwevPdP/2OPMw9QDp3HtkYzqkPIDKYMUko22X8oYWJYi5MmKF/b73z6y4a+i5NlAL8Dq+5Q2kXVX3BMmvGbkYxGmI75U0gE56A2shI1jJZcMMxk2mKrJmHVrSmd/k4KGqSL0/ZWXo7C3UWNFdBIHUmC/V/50kmiexjfHbeBI7WGrqvys58JBbe+pOGCaPkq3hqnXlvMPZPQTxXpopetJnVCwUadFGbUSpO41aM6CTjWBM+/PHg1EmFW68N2eZPkyCRfB9xM0+xS9SQQ0ejrmjeImMYKDKvDM1BXvCMcmVzvLXzzqmRVCOa1KAsSaJ:eA0TfngSIjMo8BmFFxQSqWenttAtZe1eFmu/D65FzTc=\", \"incap_ses_401_2314793\": \"G762Rv0O7jVlFUfP+aOQBSgAkGQAAAAAP829tNJuOV/4aBkDqwuYCA==\", \"visid_incap_2314793\": \"ZQaJm87VQvey37JRu3PniygAkGQAAAAAQUIPAAAAAACBXuPmlVtqbEgl8mDySriV\"}, \"proxy\": \"usr:pwd@ip:port\", \"submit\": false}" --compressed "http://api.nocaptcha.io/api/wanda/incapsula/utmvc"
+
+curl \
+-H "Accept: */*" \
+-H "User-Token: xxx" \
+-H "Content-Type: application/json" \
+--data-binary "{\"href\": \"https://premier.hkticketing.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3\", \"script\": \"\", \"cookies\": {\"reese84\": \"3:H+v1GwkNwrZu46o3Nseiyw==:4RlC9xZQ23lzNVVqK1LOYJe7l63LmqQ3clkc+sZI3DcPMqqwp2ALS0jmoUvCSqGICMNNdNG/8IBPMm0ypqg9nSpRrAR7tmkptkPc23bLNvqe4rXSmOVduyVetjdH7r3F/+Z5ydoKI3RI7i9BwFldpF3qDeIm42wxwnZNh+5y+lAHqy5lrYapc9tlApN0njxs6VLWwevPdP/2OPMw9QDp3HtkYzqkPIDKYMUko22X8oYWJYi5MmKF/b73z6y4a+i5NlAL8Dq+5Q2kXVX3BMmvGbkYxGmI75U0gE56A2shI1jJZcMMxk2mKrJmHVrSmd/k4KGqSL0/ZWXo7C3UWNFdBIHUmC/V/50kmiexjfHbeBI7WGrqvys58JBbe+pOGCaPkq3hqnXlvMPZPQTxXpopetJnVCwUadFGbUSpO41aM6CTjWBM+/PHg1EmFW68N2eZPkyCRfB9xM0+xS9SQQ0ejrmjeImMYKDKvDM1BXvCMcmVzvLXzzqmRVCOa1KAsSaJ:eA0TfngSIjMo8BmFFxQSqWenttAtZe1eFmu/D65FzTc=\", \"incap_ses_401_2314793\": \"G762Rv0O7jVlFUfP+aOQBSgAkGQAAAAAP829tNJuOV/4aBkDqwuYCA==\", \"visid_incap_2314793\": \"ZQaJm87VQvey37JRu3PniygAkGQAAAAAQUIPAAAAAACBXuPmlVtqbEgl8mDySriV\"}, \"proxy\": \"\", \"submit\": true}" --compressed "http://api.nocaptcha.io/api/wanda/incapsula/utmvc"
 ```
 
 ### 调用示例
@@ -95,9 +120,19 @@ from pynocaptcha import IncapsulaUtmvcCracker
 cracker = IncapsulaUtmvcCracker(
     user_token="xxx",
     href="https://premier.hkticketing.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3",
-    script="",
     cookies={ 'incap_ses_406_2314793': 'w399Tycs8xhdpuG+aWeiBWGkYWQAAAAAKCTf+jt4Sq4R0xN0pU9VXA==', 'visid_incap_2314793': 'DVtB0J4PRoG+jHdSiyyjNWKkYWQAAAAAQUIPAAAAAABY5A3D8V2Yp2rCf0Qol0Kd' },
-    proxy="usr:pwd@ip:port"
+    proxy="usr:pwd@ip:port",
+    submit=False
+)
+ret = cracker.crack()
+print(ret)
+
+cracker = IncapsulaUtmvcCracker(
+    user_token="xxx",
+    href="https://premier.hkticketing.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3",
+    cookies={ 'incap_ses_406_2314793': 'w399Tycs8xhdpuG+aWeiBWGkYWQAAAAAKCTf+jt4Sq4R0xN0pU9VXA==', 'visid_incap_2314793': 'DVtB0J4PRoG+jHdSiyyjNWKkYWQAAAAAQUIPAAAAAABY5A3D8V2Yp2rCf0Qol0Kd' },
+    proxy="",
+    submit=True
 )
 ret = cracker.crack()
 print(ret)
