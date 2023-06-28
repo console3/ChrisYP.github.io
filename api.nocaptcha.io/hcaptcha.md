@@ -28,7 +28,7 @@
 | `sitekey`    | `String`  | `hcaptcha 对接 key`                                                                                                                          | `是` |
 | `referer`    | `String`  | `触发 hcaptcha 验证的页面地址`                                                                                         | `是` |
 | `rqdata`     | `String`  | `验证码配置接口有返回 captcha_rqdata、captcha_rqtoken 的请携带该值(如 discord 加频道), 注意该模式必须传你请求流程使用的 ua, 否则会被风控！！！`                                                                                         | `否` |
-| `user_agent` | `String`  | `请求流程使用 ua, 默认使用 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36`                        | `否` |
+| `device`     | `String`  | `请求流程使用的浏览器类型, 可选 chrome/firefox, 默认 chrome`                        | `否` |
 | `mode`       | `String`  | `验证模式, 默认 picture 图片验证, 可选 question 题库验证`                                                                                         | `否` |
 | `internal`   | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                        | `否` |
 
@@ -38,7 +38,7 @@
 {
   "sitekey": "a9b5fb07-92ff-493f-86fe-352a2803b3df",
   "referer": "https://discord.com/channels/253581140072464384/357581480110850049",
-  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36",
+  "device": "firefox",
   "rqdata": "RRZ5RNoOL4uNPvEp0yB+bMPkBe2lUiM7p4u5lMAVUC9UBmzxJqdDDpGMrcDNApg/DDAQNIIlwEn2dLr7dZMg32I2bi523ZRfkAKpKxxg1sqnVW0xR9Y9ZCcwv54EiHeEqQ+iipixAVozAb6LjtwzNm2H9L15iSN8QfVrcp0Z",
   "mode": "picture"
 }
@@ -54,6 +54,7 @@
 | `msg`          | `String`  | `调用结果中文说明`                    |
 | `id`           | `String`  | `该次请求 id（唯一, 可用作后续记录查询）`      |
 | `data.generated_pass_UUID` | `String`  | `验证通过返回的 uuid 凭证, 可用于后续验证接口`    |
+| `data.key` | `String`      | `验证通过返回的 key, 可用于后续验证接口`    |
 | `cost`         | `String`  | `验证耗时（毫秒）`                    |
 
 ```
