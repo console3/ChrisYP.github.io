@@ -34,6 +34,7 @@
 | `cookies`    | `Object`  | `请求首页返回的 cookies, 全部上传` | `是` |
 | `href`        | `String`  | `返回 utmvc 脚本的url` | `是` |
 | `proxy` | `String`  | `ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果是需要白名单形式联系管理员)` | `是` |
+| `submit`        | `Boolean`  | `是否提交验证, 提交验证只通知验证通过, 后续接口不再需要 ___utmvc 参数, 因此啥也不返回, 默认不提交` | `否` |
 
 #### json 示例
 
