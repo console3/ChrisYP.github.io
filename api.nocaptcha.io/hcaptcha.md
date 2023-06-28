@@ -27,7 +27,7 @@
 |--------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
 | `sitekey`    | `String`  | `hcaptcha 对接 key`                                                                                                                          | `是` |
 | `referer`    | `String`  | `触发 hcaptcha 验证的页面地址`                                                                                         | `是` |
-| `rqdata`     | `String`  | `验证码配置接口有返回 captcha_rqdata、captcha_rqtoken 的请携带该值(如 discord 加频道), 注意该模式必须传你请求流程使用的 ua, 否则会被风控！！！`                                                                                         | `否` |
+| `rqdata`     | `String`  | `验证码配置接口有返回 captcha_rqdata、captcha_rqtoken 的请携带该值(如 discord 加频道)`                                                                                         | `否` |
 | `device`     | `String`  | `请求流程使用的浏览器类型, 可选 chrome/firefox, 默认 chrome`                        | `否` |
 | `mode`       | `String`  | `验证模式, 默认 picture 图片验证, 可选 question 题库验证`                                                                                         | `否` |
 | `internal`   | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                        | `否` |
