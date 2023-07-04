@@ -28,8 +28,10 @@
 | `sitekey`    | `String`  | `hcaptcha 对接 key`                                                                                                                          | `是` |
 | `referer`    | `String`  | `触发 hcaptcha 验证的页面地址`                                                                                         | `是` |
 | `rqdata`     | `String`  | `验证码配置接口有返回 captcha_rqdata、captcha_rqtoken 的请携带该值(如 discord 加频道)`                                                                                         | `否` |
-| `device`     | `String`  | `请求流程使用的浏览器类型, 可选 chrome/firefox, 默认 chrome`                        | `否` |
-| `mode`       | `String`  | `验证模式, 默认 picture 图片验证, 可选 question 题库验证`                                                                                         | `否` |
+| `domain`     | `String`  | `hcaptcha 的验证接口域名（即 getcaptcha/checkcaptcha 等接口的域名）, 某些网站验证域名不一致, 默认 hcaptcha.com`                | `否` |
+| `user_agent` | `String`  | `请求流程使用 ua, 某些网站需要全程保持 ua 一致, 请传 Chrome(Windows/MacIntel) 默认使用以上两种类型随机版本号的 ua`                | `否` |
+| `proxy`      | `String`  | `某些网站需要全程保持代理一致, 请传 ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果是需要白名单形式联系管理员)` | `是` |
+| `only_sense` | `Boolean` | `是否希望仅无感验证, 该值为 true 时仅进行无感验证, 无感验证不通过返回验证失败不继续进行图片验证, 默认否`                                                                                                                                        | `否` |
 | `internal`   | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                        | `否` |
 
 #### json 示例
@@ -38,9 +40,37 @@
 {
   "sitekey": "a9b5fb07-92ff-493f-86fe-352a2803b3df",
   "referer": "https://discord.com/channels/253581140072464384/357581480110850049",
-  "device": "firefox",
   "rqdata": "RRZ5RNoOL4uNPvEp0yB+bMPkBe2lUiM7p4u5lMAVUC9UBmzxJqdDDpGMrcDNApg/DDAQNIIlwEn2dLr7dZMg32I2bi523ZRfkAKpKxxg1sqnVW0xR9Y9ZCcwv54EiHeEqQ+iipixAVozAb6LjtwzNm2H9L15iSN8QfVrcp0Z",
-  "mode": "picture"
+}
+```
+
+```
+{
+  "sitekey": "c7faac4c-1cd7-4b1b-b2d4-42ba98d09c7a",
+  "referer": "https://b.stripecdn.com/stripethirdparty-srv/assets/v13.1/HCaptcha.html?id=ab2764cd-d392-4fd0-81b4-9de6c4144c31&origin=https%3A%2F%2Fjs.stripe.com",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+  "only_sense": true,
+  "proxy": "ip:port 或 usr:pwd@ip:port 或 socks5://ip:port"
+}
+```
+
+```
+{
+  "sitekey": "c7faac4c-1cd7-4b1b-b2d4-42ba98d09c7a",
+  "referer": "https://b.stripecdn.com/stripethirdparty-srv/assets/v13.1/HCaptcha.html?id=ab2764cd-d392-4fd0-81b4-9de6c4144c31&origin=https%3A%2F%2Fjs.stripe.com",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+  "only_sense": true,
+  "proxy": "ip:port 或 usr:pwd@ip:port 或 socks5://ip:port"
+}
+```
+
+```
+{
+  "sitekey": "c7faac4c-1cd7-4b1b-b2d4-42ba98d09c7a",
+  "referer": "https://b.stripecdn.com/stripethirdparty-srv/assets/v13.1/HCaptcha.html?id=ab2764cd-d392-4fd0-81b4-9de6c4144c31&origin=https%3A%2F%2Fjs.stripe.com",
+  "domain": "hcaptcha-endpoint.ecosec.on.epicgames.com",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+  "rqdata": "RRZ5RNoOL4uNPvEp0yB+bMPkBe2lUiM7p4u5lMAVUC9UBmzxJqdDDpGMrcDNApg/DDAQNIIlwEn2dLr7dZMg32I2bi523ZRfkAKpKxxg1sqnVW0xR9Y9ZCcwv54EiHeEqQ+iipixAVozAb6LjtwzNm2H9L15iSN8QfVrcp0Z",
 }
 ```
 
@@ -53,8 +83,8 @@
 | `status`       | `Integer` | `调用是否成功, 1 成功, 0 失败, 请使用该值判断` |
 | `msg`          | `String`  | `调用结果中文说明`                    |
 | `id`           | `String`  | `该次请求 id（唯一, 可用作后续记录查询）`      |
-| `data.generated_pass_UUID` | `String`  | `验证通过返回的 uuid 凭证, 可用于后续验证接口`    |
-| `data.key` | `String`      | `验证通过返回的 key, 可用于后续验证接口`    |
+| `data.generated_pass_UUID` | `String`  | `验证通过返回的 uuid(P1_xxx/F1_xxx) 凭证, 可用于后续验证接口`    |
+| `data.ekey` | `String`      | `验证通过返回的 key(E0_xxx), 可用于后续验证接口`    |
 | `cost`         | `String`  | `验证耗时（毫秒）`                    |
 
 ```
@@ -78,7 +108,7 @@ curl \
  -H "Accept: */*" \
  -H "User-Token: xxx" \
  -H "Content-Type: application/json" \
- --data-binary "{\"sitekey\": \"f5561ba9-8f1e-40ca-9b5b-a0b3f719ef34\", \"mode\": \"picture\", \"referer\": \"https://discord.com/login\"}" \
+ --data-binary "{\"sitekey\": \"f5561ba9-8f1e-40ca-9b5b-a0b3f719ef34\", \"referer\": \"https://discord.com/login\"}" \
  --compressed "http://api.nocaptcha.io/api/wanda/hcaptcha/universal"
 ```
 
