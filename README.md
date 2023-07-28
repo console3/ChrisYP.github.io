@@ -12,6 +12,7 @@
 | [hcaptcha:universal](api.nocaptcha.io/hcaptcha.md)     | `Hcaptcha 通用版, 直接返回 generated_pass_UUID`                               | ✅        | `300`  | ✅  | ✅         |
 | [akamai:v2](api.nocaptcha.io/akamai.md)                | `Akamai v2, 直接返回 _abck`                                                | ✅        | `1000` | ✅  | ✅         |
 | [tls:v1](api.nocaptcha.io/tls.md)                      | `tls 转发接口, 针对校验 ja3、http2 等指纹（akamai/cloudflare）的接口`                   | ✅        | `100` | ✅  | ✅         |
+|||||||
 | [cloudflare:universal](api.nocaptcha.io/cloudflare.md) | `CloudFlare 暂停服务` | ✅        | `1000` | ❌  | ❌         |
 
 
