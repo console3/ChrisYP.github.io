@@ -7,7 +7,7 @@
 | [recaptcha:universal](api.nocaptcha.io/recaptcha.md)   | `ReCaptcha（v2/v3 通用版）, 直接返回 token`                                     | ✅        | `300`  | ✅  | ✅         |
 | [recaptcha:enterprise](api.nocaptcha.io/recaptcha.md)  | `ReCaptcha（v2/v3 企业版）, 直接返回 token`                                     | ✅        | `500`  | ✅  | ✅         |
 | [recaptcha:steam](api.nocaptcha.io/recaptcha.md)       | `ReCaptcha（steam）, 直接返回 token`                                         | ✅        | `600`  | ✅  | ✅         |
-| [incapsula:reese84](api.nocaptcha.io/incapsula.md)     | `Incapsula 盾 reese84 通用版, 返回 reese84 cookie 或 solution 参数`             | ✅        | `300`  | ✅  | ✅         |
+| [incapsula:reese84](api.nocaptcha.io/incapsula.md)     | `Incapsula 盾 reese84 通用版, 返回 solution 参数`             | ✅        | `210`  | ✅  | ✅         |
 | [incapsula:utmvc](api.nocaptcha.io/incapsula1.md)      | `Incapsula 盾 __utmvc 通用版, 服务器直接无感验证 或 __utmvc cookie`                  | ✅        | `150`  | ✅  | ✅         |
 | [hcaptcha:universal](api.nocaptcha.io/hcaptcha.md)     | `Hcaptcha 通用版, 直接返回 generated_pass_UUID`                               | ✅        | `300`  | ✅  | ✅         |
 | [akamai:v2](api.nocaptcha.io/akamai.md)                | `Akamai v2, 直接返回 _abck`                                                | ✅        | `1000` | ✅  | ✅         |
