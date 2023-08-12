@@ -65,7 +65,7 @@ pip install -U pynocaptcha -i https://pypi.python.org/simple
 ```
 
 ```python
-from pynocaptcha import TlsV1Cracker
+from pynocaptcha import DiscordCracker
 
 
 cracker = DiscordCracker(
