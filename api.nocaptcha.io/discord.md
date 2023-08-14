@@ -2,6 +2,17 @@
 [`返回首页`](../README.md)    [`上一页`](tls.md)
 
 ## Discord
+### 有问必答
+
+* guild_id 和 guild_name 怎么选
+    * 如果是邀请链接, 使用 guild_name. 主动搜索加群, 使用 guild_id.
+* guild_name 样例
+    * 如邀请链接为 https://discord.gg/fuxxx , 则 guild_name 为 fuxxx
+* guild_id 样例
+    * 搜索群组中返回的 id 字段 或 服务器地址 https://discord.com/channels/926691xxx/xxx, 则 guild_id 为 926691xxx
+* 一些返回的情况
+    * 401 token 过期(账号未登录)
+    * 其他情况根据返回的 message 判断
 
 ### Request URL（POST）:
 
