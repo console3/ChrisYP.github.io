@@ -12,6 +12,7 @@
     * 搜索群组中返回的 id 字段 或 服务器地址 https://discord.com/channels/926691xxx/xxx, 则 guild_id 为 926691xxx
 * 一些返回的情况
     * 401 token 过期(账号未登录)
+    * 未知服务器 1、参数填错 2、可能非公开的服务器,使用 guild_name 参数加群
     * 其他情况根据返回的 message 判断
 
 ### Request URL（POST）:
@@ -42,14 +43,14 @@
 ```
 {
     "authorization": "MTExNzI1NDQ3NzA2NjU0MzE5NQ.xxxxxx",
-    "guild_id": '645607528297922560',
+    "guild_id": '6456075xxx',
 }
 ```
 
 ```
 {
     "authorization": "MTExNzI1NDQ3NzA2NjU0MzE5NQ.xxxxxx",
-    "guild_name": 'fusionist',
+    "guild_name": 'fuxxx',
 }
 ```
 
@@ -88,7 +89,8 @@ from pynocaptcha import DiscordCracker
 cracker = DiscordCracker(
     user_token="xxx",
     authorization="MTExNzI1NDQ3NzA2NjU0MzE5NQ.GZoD5U.xxx",
-    guild_id='645607528297922560',
+    # guild_id='6456075xxx',
+    guild_name='fuxxx',
     debug=True
 )
 ret = cracker.crack()
