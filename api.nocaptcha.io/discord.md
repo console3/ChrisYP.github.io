@@ -7,7 +7,7 @@
 
 | 版本               | 接口地址                                                    |
 |------------------|---------------------------------------------------------|
-| `group（加群）` | `http://api.nocaptcha.io/api/wanda/discord/group` |
+| `guild（加群）` | `http://api.nocaptcha.io/api/wanda/discord/guild` |
 
 ### Request Headers:
 
@@ -22,7 +22,8 @@
 | 参数名          | 类型        | 说明                                                                                                                                                             | 必须  |
 |--------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
 | `authorization`           | `String`  | `账号登录凭证`                                                                                                                          | `是` |
-| `group_id`        | `String`  | `加群的 id`       | `是` |
+| `guild_id`        | `String`  | `加群的 id（id 和群名二选一都可以）`       | `否` |
+| `guild_name`        | `String`  | `群名（id 和群名二选一都可以）`       | `否` |
 | `proxy`         | `String`  | `请求流程使用的代理, 支持 protocol: http/https/socks5, 无验证代理格式: {ip}:{port}, 有验证代理格式: {user}:{password}@{ip}:{port}, socsk5 代理需要加上代理协议: {protocol}://{ip}:{port}`   | `否` |
 
 #### json 示例
@@ -30,7 +31,14 @@
 ```
 {
     "authorization": "MTExNzI1NDQ3NzA2NjU0MzE5NQ.xxxxxx",
-    "group_id": '645607528297922560',
+    "guild_id": '645607528297922560',
+}
+```
+
+```
+{
+    "authorization": "MTExNzI1NDQ3NzA2NjU0MzE5NQ.xxxxxx",
+    "guild_name": 'fusionist',
 }
 ```
 
@@ -69,7 +77,7 @@ from pynocaptcha import DiscordCracker
 cracker = DiscordCracker(
     user_token="xxx",
     authorization="MTExNzI1NDQ3NzA2NjU0MzE5NQ.GZoD5U.xxx",
-    group_id='645607528297922560',
+    guild_id='645607528297922560',
     debug=True
 )
 ret = cracker.crack()
