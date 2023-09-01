@@ -44,6 +44,6 @@
 ### Wallet Data Query API
 
 ```text
-http://api.nocaptcha.io/get_user_balance?user_token={User-Token}&nickname={nickname}
+http://api.nocaptcha.io/api/get_user_balance?user_token={User-Token}&nickname={nickname}
 ```
 

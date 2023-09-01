@@ -46,5 +46,5 @@
 ### 钱包数据查询接口
 
 ```text
-http://api.nocaptcha.io/zh-CN/api/get_user_balance?user_token={User-Token}&nickname={nickname}
+http://api.nocaptcha.io/api/get_user_balance?user_token={User-Token}&nickname={nickname}
 ```
