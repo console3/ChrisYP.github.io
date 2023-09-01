@@ -1,5 +1,5 @@
 ------
-[`Back to homepage`](english_version.md)  [`Previous page`](tls_english.md) [`中文文档`](discord.md)
+[`Back to homepage`](./en.md)  [`Previous page`](tls.md) [`中文文档`](../zh-CN/discord.md)
 
 ## Discord
 ### Frequently Asked Questions

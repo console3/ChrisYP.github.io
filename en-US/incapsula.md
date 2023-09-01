@@ -1,14 +1,14 @@
 ------
-[`Back to homepage`](english_version.md)    [`Previous page`](cloudflare_english.md)       [`Next page`](incapsula1_english.md)   [`中文文档`](incapsula.md)
+[`Back to homepage`](/en-US/en.md)    [`Previous page`](cloudflare.md)       [`Next page`](incapsula_utmvc.md)   [`中文文档`](../zh-CN/incapsula.md)
 
 ## Incapsula ( reese84 )
 
 ### FAQs
 
 * Where is the submitted `href` in the interface? (In cases with multiple `src`, choose the link with the `async` keyword)
-    * ![incapsula](../images/incapsula/incapsula.png)
+    * ![incapsula](/images/incapsula/incapsula.png)
 * Example of href response (The response will include code similar to `ob` obfuscation)
-    * ![incapsula](../images/incapsula/incapsula2.png)
+    * ![incapsula](/images/incapsula/incapsula2.png)
 
 ### Why Choose Us
 

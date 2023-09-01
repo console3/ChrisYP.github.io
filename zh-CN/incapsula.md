@@ -1,14 +1,14 @@
 ------
-[`返回首页`](../README.md)    [`上一页`](cloudflare.md)       [`下一页`](incapsula1.md)   [`English Version`](incapsula_english.md)
+[`返回首页`](../README.md)    [`上一页`](cloudflare.md)       [`下一页`](incapsula_utmvc.md)   [`English Version`](../en-US/incapsula.md)
 
 ## Incapsula ( reese84 )
 
 ### 有问必答
 
 * 接口中提交的 href 在哪里?(有多个 src 的情况下, 选择有 async 关键字的那个链接)
-    * ![incapsula](../images/incapsula/incapsula.png)
+    * ![incapsula](/images/incapsula/incapsula.png)
 * href 返回样例(响应中会包含类似 ob 混淆一样的代码)
-    * ![incapsula](../images/incapsula/incapsula2.png)
+    * ![incapsula](/images/incapsula/incapsula2.png)
 
 ### 为什么选择我们
 

@@ -1,5 +1,5 @@
 ------
-[`返回首页`](../README.md)    [`下一页`](cloudflare.md)   [`English Version`](recaptcha_english.md)
+[`返回首页`](../README.md)    [`下一页`](cloudflare.md)   [`English Version`](../en-US/recaptcha.md)
 
 ## ReCaptcha
 
@@ -62,32 +62,32 @@
 #### 参数查找步骤
 
 * 搜索 `anchor` 接口，获取 `k`、`size`、`hl` 参数, `k` 值为 `sitekey`，填入对应字段即可，`hl` 若是 `zh-CN` 则可以不填，如下图所示：
-    * ![步骤1](../images/recaptcha/arg1.png)
+    * ![步骤1](/images/recaptcha/arg1.png)
 
 * 还是 `anchor` 接口，切换至 `Headers` 选项，查看请求头的 `referer` 参数，填入 `referer` 字段，如下图所示：
-    * ![步骤2](../images/recaptcha/arg2.png)
+    * ![步骤2](/images/recaptcha/arg2.png)
 
 * 切换至 `console` 控制台，输入 `document.title`，将输出值填入 `title` 字段
-    * ![步骤3](../images/recaptcha/arg3.png)
+    * ![步骤3](/images/recaptcha/arg3.png)
 
 * 验证域名 `domain` 参数可传可不传，但是如果是国外站点，且使用 `www.recaptcha.net` 成功率较低，可以尝试 `internal_proxy`
   传 `false`，域名 `domain` 会自动使用 `www.google.com`，网站具体使用的验证域名查找如下所示：
-    * ![步骤4](../images/recaptcha/arg4.png)
+    * ![步骤4](/images/recaptcha/arg4.png)
 
 * 如果按照上述 `v2`、`v3` 区分方式，判断该验证为 `v3`，则还需要查找并填入 `action` 参数，查找方式如下：
 
     * 方式 1：打开 `f12` ，通用版搜索 `.execute(`，企业版搜索 `.enterprise.execute`，查找代码中的 `action`
       参数，如下图所示，如果没有搜索到，请使用方式 2。
-        * ![步骤5](../images/recaptcha/arg5.png)
+        * ![步骤5](/images/recaptcha/arg5.png)
 
     * 方式 2：打开 `f12` ，通用版输入 `debug(grecaptcha.execute)`，企业版输入 `debug(grecaptcha.enterprise.execute)`
       ，点击登录等完成验证，等下断点触发，在 `Scope` 中复制 `action` 的值，如下图所示：
-        * ![步骤6](../images/recaptcha/arg6.png)
-        * ![步骤7](../images/recaptcha/arg7.png)
+        * ![步骤6](/images/recaptcha/arg6.png)
+        * ![步骤7](/images/recaptcha/arg7.png)
 
 * 验证路由是否是 `ubd`（目前仅在一个网站的企业版见过这种类型），如果是 `ubd` ，则 `ubd` 参数请填 `true`，否则填 `false` 或不填：
 
-    * ![步骤8](../images/recaptcha/arg8.png)
+    * ![步骤8](/images/recaptcha/arg8.png)
 
 #### json 示例
 

@@ -1,5 +1,5 @@
 ------
-[`Back to homepage`](english_version.md)    [`Next Page`](cloudflare_english.md)    [`中文文档`](recaptcha_app.md)
+[`Back to homepage`](en.md)    [`Next Page`](cloudflare.md)    [`中文文档`](../zh-CN/recaptcha_app.md)
 
 ## ReCaptcha
 

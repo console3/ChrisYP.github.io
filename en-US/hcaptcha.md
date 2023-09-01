@@ -1,6 +1,6 @@
 ------
 
-[`Back to homepage`](english_version.md)    [`Previous page`](incapsula_english.md)      [`Next page`](akamai_english.md)    [`中文文档`](akamai.md)
+[`Back to homepage`](en.md)    [`Previous page`](incapsula.md)      [`Next page`](akamai.md)    [`中文文档`](../zh-CN/akamai.md)
 
 ## Hcaptcha
 

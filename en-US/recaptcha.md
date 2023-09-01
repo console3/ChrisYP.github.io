@@ -1,4 +1,4 @@
-[`Back to homepage`](english_version.md) [`Next Page`](cloudflare_english.md) [`中文文档`](recaptcha.md)
+[`Back to homepage`](en.md) [`Next Page`](cloudflare.md) [`中文文档`](../zh-CN/recaptcha.md)
 
 ## ReCaptcha
 
@@ -57,13 +57,13 @@
 #### Parameter Lookup Steps
 
 - Search for the `anchor` interface and obtain the `k`, `size`, and `hl` parameters. The `k` value is the `sitekey`. Fill in the corresponding field accordingly. If `hl` is `zh-CN`, you can leave it blank, as shown in the picture below:
-  * ![步骤1](../images/recaptcha/arg1.png)
+  * ![步骤1](/images/recaptcha/arg1.png)
 
 
 
 - Switch to the `console`, type in `document.title`, and fill the output value into the title field.
 
-  * ![步骤3](../images/recaptcha/arg3.png)
+  * ![步骤3](/images/recaptcha/arg3.png)
 
     
 
@@ -72,16 +72,16 @@
 - If, according to the aforementioned `v2`/`v3` differentiation method, you determine that the verification is `v3`, you will also need to find and fill in the `action` parameter. The method to find it is as follows:
 
   - Method 1: Press `F12`, search for `.execute(` in the standard version or `.enterprise.execute(` for the enterprise version. Look for the `action` parameter in the code, as shown in the picture below. If you can't find it, please use Method 2.
-    * ![步骤5](../images/recaptcha/arg5.png)
+    * ![步骤5](/images/recaptcha/arg5.png)
 
   - Method 2: Press `F12`, enter `debug(grecaptcha.execute)` for the standard version or `debug(grecaptcha.enterprise.execute)` for the enterprise version. Click on login or complete the verification, and wait for the breakpoint to trigger. Copy the value of `action` from the `Scope`, as shown in the picture below:
-    * ![步骤6](../images/recaptcha/arg6.png)
-    * ![步骤7](../images/recaptcha/arg7.png)
+    * ![步骤6](/images/recaptcha/arg6.png)
+    * ![步骤7](/images/recaptcha/arg7.png)
 
 
 
 - Check if the verification route is of the `ubd` type (currently only seen in the `enterprise version` of one website). If it is `ubd`, please fill in the `ubd` parameter as `true`. Otherwise, fill in `false` or leave it blank:
-  * ![步骤8](../images/recaptcha/arg8.png)
+  * ![步骤8](/images/recaptcha/arg8.png)
 
 #### JSON Example
 

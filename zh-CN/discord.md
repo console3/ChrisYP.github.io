@@ -1,5 +1,5 @@
 ------
-[`返回首页`](../README.md)    [`上一页`](tls.md) [`English Version`](discord_english.md)
+[`返回首页`](../README.md)    [`上一页`](tls.md) [`English Version`](../en-US/discord.md)
 
 ## Discord
 ### 有问必答

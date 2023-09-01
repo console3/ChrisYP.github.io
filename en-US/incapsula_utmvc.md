@@ -1,6 +1,6 @@
 Here's the translation:
 
-[`Back to homepage`](english_version.md)    [`Previous Page`](incapsula_english.md)       [`Next Page`](hcaptcha_english.md)  [`中文文档`](incapsula1.md)
+[`Back to homepage`](en.md)    [`Previous Page`](incapsula.md)       [`Next Page`](hcaptcha.md)  [`中文文档`](../zh-CN/incapsula_utmvc.md)
 
 ## Incapsula ( __utmvc )
 
@@ -9,9 +9,9 @@ Here's the translation:
 * Interface (utmvc needs consistent proxy, contact the administrator if there are whitelist issues)
     * 1. Provide href and proxy, the service will compute utmvc after request 
 * How to find the utmvc script (see the picture below, URL containing the keyword SWJIYLWA)
-    * ![incapsula](../images/incapsula/incapsula3.png)
+    * ![incapsula](/images/incapsula/incapsula3.png)
 * utmvc script response sample
-    * ![incapsula](../images/incapsula/incapsula4.png)
+    * ![incapsula](/images/incapsula/incapsula4.png)
 
 ### Request URL (POST):
 
