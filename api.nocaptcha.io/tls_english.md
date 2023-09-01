@@ -1,40 +1,39 @@
-------
-[`返回首页`](../README.md)    [`上一页`](hcaptcha.md)      [`下一页`](discord.md) [`English Version`](tls_english.md)
+[`Back to homepage`](english_version.md) [`Previous Page`](hcaptcha_english.md) [`Next Page`](discord_english.md) [`中文文档`](tls.md)
 
 ## Tls Client
 
-### Request URL（POST）:
+### Request URL (POST):
 
-| 版本               | 接口地址                                                    |
-|------------------|---------------------------------------------------------|
-| `v2（universal）` | `http://api.nocaptcha.io/api/wanda/tls/v1` |
+| Version          | API Address                                |
+| ---------------- | ------------------------------------------ |
+| `v2 (universal)` | `http://api.nocaptcha.io/api/wanda/tls/v1` |
 
 ### Request Headers:
 
-| 参数名            | 说明                 | 必须  |
-|----------------|--------------------|-----|
-| `User-Token`   | `用户密钥, 主页获取`       | `是` |
-| `Content-Type` | `application/json` | `是` |
-| `Developer-Id` | `开发者 ID, 开发者用户使用, 用户主页邀请链接的字符串(如 xxx/register?c=abcdef, 则 abcdef 为开发者 ID)`           | `否` |
+| Parameter      | Description                                                  | Required |
+| -------------- | ------------------------------------------------------------ | -------- |
+| `User-Token`   | `User key, obtain from homepage`                             | `Yes`    |
+| `Content-Type` | `application/json`                                           | `Yes`    |
+| `Developer-Id` | `Developer ID, used by developer users, string from user homepage invite link (e.g., if link is xxx/register?c=abcdef, then abcdef is the developer ID)` | `No`     |
 
-### POST Data（JSON）:
+### POST Data (JSON):
 
-| 参数名          | 类型        | 说明                                                                                                                                                             | 必须  |
-|--------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
-| `url`           | `String`  | `请求的 url 地址`                                                                                                                          | `是` |
-| `method`        | `String`  | `请求方法, get/post`       | `否` |
-| `headers`       | `String or Object`  | `请求的请求头, 可以是字符串或对象, 不传默认的请求头为 { 'User-Agent': '随机 ua' } `       | `否` |
-| `cookies.value` | `String or Object` | `请求流程使用的 cookies, 可以是字符串或对象, { '1': '2', '3': '4' } / '1=2; 3=4'`   | `否` |
-| `cookies.uri`   | `String`  | `请求流程的 cookie set 的域名, 使用 url 即可`   | `否` |
-| `proxy`         | `String`  | `请求流程使用的代理, 支持 protocol: http/https/socks5, 无验证代理格式: {ip}:{port}, 有验证代理格式: {user}:{password}@{ip}:{port}, socsk5 代理需要加上代理协议: {protocol}://{ip}:{port}`   | `否` |
-| `data`          | `String or Object` | `post 请求流程的请求体, 可以是字符串或对象, { '1': '2', '3': '4' } / '1=2&3=4'`   | `否` |
-| `json`          | `String or Object` | `post 请求流程的 json 数据, 示例 { '1': '2', '3': '4' }`   | `否` |
-| `timeout`       | `Number`   | `请求超时时间（秒）, 默认 15 秒`   | `否` |
-| `http2`         | `Boolean`  | `是否 http2 协议, 默认 false`   | `否` |
-| `redirect`      | `Boolean`  | `是否重定向, 默认 true`   | `否` |
-| `ja3`           | `String`   | `自定义 ja3 指纹, 不传表现为最新 chrome 的随机指纹`   | `否` |
+| Parameter       | Type               | Description                                                  | Required |
+| --------------- | ------------------ | ------------------------------------------------------------ | -------- |
+| `url`           | `String`           | `Request URL address`                                        | `Yes`    |
+| `method`        | `String`           | `Request method, get/post`                                   | `No`     |
+| `headers`       | `String or Object` | `Request headers, can be string or object, default headers are {'User-Agent': 'random ua'}` | `No`     |
+| `cookies.value` | `String or Object` | `Cookies used in the request process, can be string or object, e.g., {'1': '2', '3': '4'} or '1=2; 3=4'` | `No`     |
+| `cookies.uri`   | `String`           | `Domain where cookies are set during the request process, use URL` | `No`     |
+| `proxy`         | `String`           | `Proxy used in the request process. Supported protocols: http/https/socks5. Format for no-auth proxy: {ip}:{port}. Auth proxy format: {user}:{password}@{ip}:{port}. For socks5 proxy, include the protocol: {protocol}://{ip}:{port}` | `No`     |
+| `data`          | `String or Object` | `Body for post request, can be string or object, e.g., {'1': '2', '3': '4'} or '1=2&3=4'` | `No`     |
+| `json`          | `String or Object` | `Json data for post request, example {'1': '2', '3': '4'}`   | `No`     |
+| `timeout`       | `Number`           | `Request timeout (in seconds), default is 15 seconds`        | `No`     |
+| `http2`         | `Boolean`          | `Whether to use http2 protocol, default is false`            | `No`     |
+| `redirect`      | `Boolean`          | `Whether to follow redirects, default is true`               | `No`     |
+| `ja3`           | `String`           | `Custom ja3 fingerprint. If not provided, it defaults to the latest random Chrome fingerprint` | `No`     |
 
-#### json 示例
+#### JSON Example
 
 ```
 {
@@ -92,20 +91,20 @@
 }
 ```
 
-### Response Data（JSON）:
+### Response Data (JSON):
 
-| 参数名            | 类型        | 说明                            |
-|----------------|-----------|-------------------------------|
-| `status`       | `Integer` | `调用是否成功, 1 成功, 0 失败, 请使用该值判断` |
-| `msg`          | `String`  | `调用结果中文说明`                    |
-| `id`           | `String`  | `该次请求 id（唯一, 可用作后续记录查询）`      |
-| `data.status`  | `Number`  | `响应状态码`    |
-| `data.text`    | `String`  | `响应体`    |
-| `data.cookies` | `String`  | `响应 cookies`    |
-| `data.location` | `String`  | `重定向地址`    |
-| `data.tls`     | `String`  | `请求流程使用的 tls 指纹`    |
-| `data.error`   | `String`  | `请求失败的报错原因`    |
-| `cost`         | `String`  | `验证耗时（毫秒）`                    |
+| Parameter       | Type      | Description                                                  |
+| --------------- | --------- | ------------------------------------------------------------ |
+| `status`        | `Integer` | `Call success status, 1 for success, 0 for failure, use this value to determine` |
+| `msg`           | `String`  | `Chinese description of call result`                         |
+| `id`            | `String`  | `Unique ID for this request (can be used for subsequent record queries)` |
+| `data.status`   | `Number`  | `Response status code`                                       |
+| `data.text`     | `String`  | `Response body`                                              |
+| `data.cookies`  | `String`  | `Response cookies`                                           |
+| `data.location` | `String`  | `Redirect URL`                                               |
+| `data.tls`      | `String`  | `TLS fingerprint used in the request process`                |
+| `data.error`    | `String`  | `Error reason if the request fails`                          |
+| `cost`          | `String`  | `Validation time (in milliseconds)`                          |
 
 ```
 {
@@ -129,7 +128,7 @@
 }
 ```
 
-### 调用示例
+### Call Example
 
 #### python
 
@@ -139,7 +138,6 @@ pip install -U pynocaptcha -i https://pypi.python.org/simple
 
 ```python
 from pynocaptcha import TlsV1Cracker
-
 
 cracker = TlsV1Cracker(
     user_token="xxx",
