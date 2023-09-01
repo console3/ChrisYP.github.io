@@ -43,7 +43,32 @@
 
 ### Wallet Data Query API
 
+
 ```text
 http://api.nocaptcha.io/api/get_user_balance?user_token={User-Token}&nickname={nickname}
 ```
 
+| Parameter Name       | Type     | Description                  | Required |
+| ------------ | -------- | --------------------- | ---- |
+| `User-Token` | `String` | `User token xxxx-xxx...` | `Yes` |
+| `nickname`   | `String` | `Username for login. abc@xxx.com` | `Yes` |
+
+`http://api.nocaptcha.io/api/get_user_balance?user_token=40201fad-6666-3333-9999-b9f658666666&nickname=admin@nocaptcha.io`
+
+### Response Data（JSON）:
+
+```
+{
+    "code": 200,
+    "msg": "success",
+    "data": {
+        "money_data": {
+            "balance": "9112475",
+            "profit": "3471240",
+            "used_profit": "0",
+            "consume": "887524",
+            "today_consume": "0"
+        }
+    }
+}
+```

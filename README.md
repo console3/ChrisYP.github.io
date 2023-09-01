@@ -1,16 +1,18 @@
 ## Overview
+
 **👉[For English](/en-US/en.md)👈**
+
 ### 目前支持的接口
 
-|                          类型                          | 说明                                                         | 支持同步获取结果 | 消耗点数 | 传入代理优惠 | 运行状态 | 独享（请联系客服） |
-| :----------------------------------------------------: | :----------------------------------------------------------- | :--------------: | :------: | :----------: | :------: | :----------------: |
+|                     类型                     | 说明                                                         | 支持同步获取结果 | 消耗点数 | 传入代理优惠 | 运行状态 | 独享（请联系客服） |
+| :------------------------------------------: | :----------------------------------------------------------- | :--------------: | :------: | :----------: | :------: | :----------------: |
 |  [recaptcha:universal](/zh-CN/recaptcha.md)  | `ReCaptcha（v2/v3 通用版）, 直接返回 token`                  |        ✅         |  `300`   |    `150`     |    ✅     |         ✅          |
 | [recaptcha:enterprise](/zh-CN/recaptcha.md)  | `ReCaptcha（v2/v3 企业版）, 直接返回 token`                  |        ✅         |  `500`   |    `250`     |    ✅     |         ✅          |
 |    [recaptcha:steam](/zh-CN/recaptcha.md)    | `ReCaptcha（steam）, 直接返回 token`                         |        ✅         |  `600`   |    `300`     |    ✅     |         ✅          |
 |   [recaptcha:app](/zh-CN/recaptcha_app.md)   | `ReCaptcha（app 版本）, 直接返回 token`                      |        ✅         |  `500`   |    `250`     |    ✅     |         ✅          |
 |   [hcaptcha:universal](/zh-CN/hcaptcha.md)   | `Hcaptcha 通用版, 直接返回 generated_pass_UUID`              |        ✅         |  `300`   |    `150`     |    ✅     |         ✅          |
 |   [incapsula:reese84](/zh-CN/incapsula.md)   | `Incapsula 盾 reese84 通用版, 返回 solution 参数`            |        ✅         |  `210`   |      ❌       |    ✅     |         ✅          |
-|   [incapsula:utmvc](/zh-CN/incapsula_utmvc.md)    | `Incapsula 盾 __utmvc 通用版, 服务器直接无感验证 或 __utmvc cookie` |        ✅         |  `150`   |      ❌       |    ✅     |         ✅          |
+| [incapsula:utmvc](/zh-CN/incapsula_utmvc.md) | `Incapsula 盾 __utmvc 通用版, 服务器直接无感验证 或 __utmvc cookie` |        ✅         |  `150`   |      ❌       |    ✅     |         ✅          |
 |        [akamai:v2](/zh-CN/akamai.md)         | `Akamai v2, 直接返回 _abck`                                  |        ✅         |  `1000`  |      ❌       |    ✅     |         ✅          |
 |           [tls:v1](/zh-CN/tls.md)            | `tls 转发接口, 针对校验 ja3、http2 等指纹（akamai/cloudflare）的接口` |        ✅         |  `100`   |      ❌       |    ✅     |         ✅          |
 |      [discord:guild](/zh-CN/discord.md)      | `discord 加群接口`                                           |        ✅         |  `500`   |      ❌       |    ✅     |         ✅          |
@@ -48,3 +50,29 @@
 ```text
 http://api.nocaptcha.io/api/get_user_balance?user_token={User-Token}&nickname={nickname}
 ```
+
+| 参数名       | 类型     | 说明                  | 必须 |
+| ------------ | -------- | --------------------- | ---- |
+| `User-Token` | `String` | `用户令牌xxxx-xxx...` | `是` |
+| `nickname`   | `String` | `登录邮箱abc@xxx.com` | `是` |
+
+`http://api.nocaptcha.io/api/get_user_balance?user_token=40201fad-6666-3333-9999-b9f658666666&nickname=admin@nocaptcha.io`
+
+### Response Data（JSON）:
+
+```
+{
+    "code": 200,
+    "msg": "success",
+    "data": {
+        "money_data": {
+            "balance": "9112475",
+            "profit": "3471240",
+            "used_profit": "0",
+            "consume": "887524",
+            "today_consume": "0"
+        }
+    }
+}
+```
+
