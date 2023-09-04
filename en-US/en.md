@@ -1,19 +1,21 @@
 ## Overview
-**👉[中文文档](/README.md)👈**
+
+**👉[中文文档](/)👈**
+
 ### Currently Supported APIs
 
-|                          Type                          | Description                                                  | Synchronous Result Retrieval | Points Deduction | Discount for Input Proxy | Running Status | Exclusive (Contact Support) |
-| :----------------------------------------------------: | :----------------------------------------------------------- | :--------------------------: | :--------------: | :----------------------: | :------------: | :-------------------------: |
-|  [recaptcha:universal](recaptcha.md)  | `ReCaptcha (v2/v3 Universal), Direct token return`           |              ✅               |      `300`       |          `150`           |       ✅        |              ✅              |
-| [recaptcha:enterprise](recaptcha.md)  | `ReCaptcha (v2/v3 Enterprise), Direct token return`          |              ✅               |      `500`       |          `250`           |       ✅        |              ✅              |
-|    [recaptcha:steam](recaptcha.md)    | `ReCaptcha (Steam), Direct token return`                     |              ✅               |      `600`       |          `300`           |       ✅        |              ✅              |
-|   [recaptcha:app](recaptcha_app.md)   | `ReCaptcha (App Version), Direct token return`               |              ✅               |      `500`       |          `250`           |       ✅        |              ✅              |
-|   [hcaptcha:universal](hcaptcha.md)   | `Hcaptcha Universal, Direct return of generated_pass_UUID`   |              ✅               |      `300`       |          `150`           |       ✅        |              ✅              |
+|                 Type                  |                         Description                          | Synchronous Result Retrieval | Points Deduction | Discount for Input Proxy | Running Status | Exclusive (Contact Support) |
+| :-----------------------------------: | :----------------------------------------------------------: | :--------------------------: | :--------------: | :----------------------: | :------------: | :-------------------------: |
+|  [recaptcha:universal](recaptcha.md)  |      `ReCaptcha (v2/v3 Universal), Direct token return`      |              ✅               |      `300`       |          `150`           |       ✅        |              ✅              |
+| [recaptcha:enterprise](recaptcha.md)  |     `ReCaptcha (v2/v3 Enterprise), Direct token return`      |              ✅               |      `500`       |          `250`           |       ✅        |              ✅              |
+|    [recaptcha:steam](recaptcha.md)    |           `ReCaptcha (Steam), Direct token return`           |              ✅               |      `600`       |          `300`           |       ✅        |              ✅              |
+|   [recaptcha:app](recaptcha_app.md)   |        `ReCaptcha (App Version), Direct token return`        |              ✅               |      `500`       |          `250`           |       ✅        |              ✅              |
+|   [hcaptcha:universal](hcaptcha.md)   |  `Hcaptcha Universal, Direct return of generated_pass_UUID`  |              ✅               |      `300`       |          `150`           |       ✅        |              ✅              |
 |   [incapsula:reese84](incapsula.md)   | `Incapsula Shield reese84 Universal, Returns solution parameter` |              ✅               |      `210`       |            ❌             |       ✅        |              ✅              |
-|   [incapsula:utmvc](incapsula_utmvc.md)    | `Incapsula Shield __utmvc Universal, Direct server seamless verification or __utmvc cookie` |              ✅               |      `150`       |            ❌             |       ✅        |              ✅              |
-|        [akamai:v2](akamai.md)         | `Akamai v2, Direct return of _abck`                          |              ✅               |      `1000`      |            ❌             |       ✅        |              ✅              |
+| [incapsula:utmvc](incapsula_utmvc.md) | `Incapsula Shield __utmvc Universal, Direct server seamless verification or __utmvc cookie` |              ✅               |      `150`       |            ❌             |       ✅        |              ✅              |
+|        [akamai:v2](akamai.md)         |             `Akamai v2, Direct return of _abck`              |              ✅               |      `1000`      |            ❌             |       ✅        |              ✅              |
 |           [tls:v1](tls.md)            | `tls forwarding interface, targeting ja3, http2 fingerprint verification interfaces (such as akamai/cloudflare)` |              ✅               |      `100`       |            ❌             |       ✅        |              ✅              |
-|      [discord:guild](discord.md)      | `discord group joining interface`                            |              ✅               |      `500`       |            ❌             |       ✅        |              ✅              |
+|      [discord:guild](discord.md)      |              `discord group joining interface`               |              ✅               |      `500`       |            ❌             |       ✅        |              ✅              |
 | [cloudflare:universal](cloudflare.md) | `CloudFlare Shield Universal, returns cf_clearance, __cf_bm, correct source code html, tls fingerprint used in verification process` |              ✅               |      `1000`      |            ❌             |       ❌        |              ❌              |
 
 ### Definitions
@@ -48,10 +50,10 @@
 http://api.nocaptcha.io/api/get_user_balance?user_token={User-Token}&nickname={nickname}
 ```
 
-| Parameter Name       | Type     | Description                  | Required |
-| ------------ | -------- | --------------------- | ---- |
-| `User-Token` | `String` | `User token xxxx-xxx...` | `Yes` |
-| `nickname`   | `String` | `Username for login. abc@xxx.com` | `Yes` |
+| Parameter Name | Type     | Description                       | Required |
+| -------------- | -------- | --------------------------------- | -------- |
+| `User-Token`   | `String` | `User token xxxx-xxx...`          | `Yes`    |
+| `nickname`     | `String` | `Username for login. abc@xxx.com` | `Yes`    |
 
 `http://api.nocaptcha.io/api/get_user_balance?user_token=40201fad-6666-3333-9999-b9f658666666&nickname=admin@nocaptcha.io`
 
@@ -72,3 +74,4 @@ http://api.nocaptcha.io/api/get_user_balance?user_token={User-Token}&nickname={n
     }
 }
 ```
+
