@@ -55,7 +55,9 @@
 |      `s`       | `String`  | `Steam project's 's' value. It's generally not required to be filled in.  Currently, only the Steam project needs it to be filled in.` |   `No`   |
 
 #### Parameter Lookup Steps
+1. ### Method 1 [`【🔥Highly Recommended🔥】 Get All Parameters Using the Plugin`](plugin.md)
 
+2. ### Method 2, Get Parameters Inside the Developer Tools.
 - Search for the `anchor` interface and obtain the `k`, `size`, and `hl` parameters. The `k` value is the `sitekey`. Fill in the corresponding field accordingly. If `hl` is `zh-CN`, you can leave it blank, as shown in the picture below:
   * ![步骤1](/images/recaptcha/arg1.png)
 

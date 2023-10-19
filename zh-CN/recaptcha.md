@@ -61,10 +61,14 @@
 
 #### 参数查找步骤
 
+1. ### 方式1 [`【🔥强烈推荐🔥】使用插件获取全部参数`](plugin.md) 
+
+2. ### 方式2，在开发者工具内获取参数。
+
 * 搜索 `anchor` 接口，获取 `k`、`size`、`hl` 参数, `k` 值为 `sitekey`，填入对应字段即可，`hl` 若是 `zh-CN` 则可以不填，如下图所示：
   * ![步骤1](/images/recaptcha/arg1.png)
 
-*  `referer` 参数，✅请直接复制浏览器上显示的完整地址即可✅
+* `referer` 参数，✅请直接复制浏览器上显示的完整地址即可✅
 
 * 切换至 `console` 控制台，输入 `document.title`，将输出值填入 `title` 字段
   * ![步骤3](/images/recaptcha/arg3.png)
@@ -182,4 +186,3 @@ cracker = ReCaptchaSteamCracker(
 ret = cracker.crack()
 print(ret)
 ```
-
