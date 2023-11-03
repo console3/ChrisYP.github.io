@@ -16,7 +16,7 @@
 
   ![Figure](/images/fill-params/2.png)
 
-- Click the `NoCaptcha Solver` extension, `right-click` anywhere on the extension interface, and click `Inspect`.
+- Click `Manage extensions` or enter `chrome://extensions/` into the extension page and click `Service Worker`.
 
   ![Figure](/images/fill-params/4.png)
 

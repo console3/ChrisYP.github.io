@@ -16,7 +16,7 @@
 
   ![图](/images/fill-params/2.png)
 
-- 点击`NoCaptcha Solver`扩展，`右键`点击扩展界面中的任意位置，并且点击`检查`。
+- 点击`管理扩展程序`或者浏览器输入`chrome://extensions/`进入扩展程序页面, 点击`Service Worker`
 
   ![图](/images/fill-params/4.png)
 
