@@ -29,13 +29,12 @@ Here's the translation:
 
 ### POST Data (JSON):
 
-| Parameter Name | Type       | Description                                                                                             | Required |
-|----------------|------------|---------------------------------------------------------------------------------------------------------|----------|
-| `cookies`      | `Object`   | `Cookies returned from the homepage, upload all`                                                        | `Yes`    |
-| `href`         | `String`   | `URL that returns the utmvc script`                                                                     | `Yes`    |
-| `user_agent`   | `String`   | `utmvc process requires consistent ua, so please provide the ua you will use`                           | `Yes`    |
-| `proxy`        | `String`   | `Required when submit is false, in the format ip:port or usr:pwd@ip:port or socks5://ip:port (contact administrator if whitelist is needed)` | `No`     |
-| `submit`       | `Boolean`  | `Whether to submit for validation, true: seamless validation by the service; false: must provide IP and ensure local validation is consistent with the proxy, points discounted by 30%` | `No`     |
+| Parameter Name | Type       | Description                                                                                                                                                                             | Required |
+|----------------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| `cookies`      | `Object`   | `Cookies returned from the homepage, upload all`                                                                                                                                        | `Yes`    |
+| `href`         | `String`   | `URL that returns the utmvc script`                                                                                                                                                     | `Yes`    |
+| `user_agent`   | `String`   | `utmvc process requires consistent ua, so please provide the ua you will use`                                                                                                           | `Yes`    |
+| `script`       | `String`   | `the response of request href`                                                                                                                                                          | `Yes`    |
 
 #### json example
 
@@ -71,20 +70,10 @@ from pynocaptcha import IncapsulaUtmvcCracker
 cracker = IncapsulaUtmvcCracker(
     user_token="xxx",
     href="https://premier.hkticketing.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3",
+    script="the response of request href",
     cookies={ 'incap_ses_406_2314793': 'w399Tycs8xhdpuG+aWeiBWGkYWQAAAAAKCTf+jt4Sq4R0xN0pU9VXA==', 'visid_incap_2314793': 'DVtB0J4PRoG+jHdSiyyjNWKkYWQAAAAAQUIPAAAAAABY5A3D8V2Yp2rCf0Qol0Kd' },
     proxy="usr:pwd@ip:port",
     submit=False,
-    user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
-)
-ret = cracker.crack()
-print(ret)
-
-cracker = IncapsulaUtmvcCracker(
-    user_token="xxx",
-    href="https://premier.hkticketing.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3",
-    cookies={ 'incap_ses_406_2314793': 'w399Tycs8xhdpuG+aWeiBWGkYWQAAAAAKCTf+jt4Sq4R0xN0pU9VXA==', 'visid_incap_2314793': 'DVtB0J4PRoG+jHdSiyyjNWKkYWQAAAAAQUIPAAAAAABY5A3D8V2Yp2rCf0Qol0Kd' },
-    proxy="",
-    submit=True,
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
 )
 ret = cracker.crack()
