@@ -36,6 +36,8 @@
 |----------------|------------|-------------|----------|
 | `href`         | `String`   | `The address to get incapsula js when triggering incapsula verification` | `Yes` |
 | `user_agent`   | `String`   | `User agent used for the request process. Subsequent request checks for UA consistency, so please pass the UA you will use for subsequent requests.` | `Yes` |
+| `cookies` | `Object`  | `Use when a message is displayed indicating that cookies containing rbzid and rbzsessionid are required`                                                                                                      | `No` |
+
 
 #### json example:
 
