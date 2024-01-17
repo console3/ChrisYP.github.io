@@ -9,7 +9,8 @@
 ![rbzid](/images/incapsula/rbzid.png)
 
 ### 结果使用
-* 保持 ua 一致, 请求接口带上 rbzid cookies 即可
+* 保持 ua 一致, 使用返回的 verify_url, headers GET 拿到返回 cookies, 后续保持 ua 一直带上 cookies 即可
+* 返回的请求头固定为 x-zebra-zebra, 如果你想随机 x-zebra- + random(5) 即可
 
 ### Request URL（POST）:
 
@@ -50,7 +51,7 @@
 | `status`       | `Integer` | `调用是否成功, 1 成功, 0 失败, 请使用该值判断` |
 | `msg`          | `String`  | `调用结果中文说明`                    |
 | `id`           | `String`  | `该次请求 id（唯一, 可用作后续记录查询）`      |
-| `data` | `Object`  | `包含 rbzid、rbzsessionid 的 cookies`    |
+| `data` | `Object`  | `包含 verify_url 和 headers 用于后续验证`    |
 | `cost`         | `String`  | `验证耗时（毫秒）`                    |
 
 ```
@@ -60,8 +61,8 @@
     "id": "61b4bb7f-abf9-4875-ae58-38916e1ecbff",
     "cost": "36.42ms",
     "data": {
-        "rbzid": 'IaNAmXAZ1GLhNvoq9CE1nywzT1SsSkL7AeoLh1ranTTKX9QeS8J+NqUFfvEvxLW1+T1InZgYjC1L2PSc9liRYrPBM7UxImV+dEhNo6pk7oYTFOdVPQHEcy9qGCZx6t2AP7Z6L8/7rjK+6v3MlPf8wLvC5LZZ2Y9tNpK5PU0D1hFjd2yHb1ybtLMoSdlg/bo+2miH4nPxzmzvveptpK+HMUDfPq5me1mvaAB7qaRNgUQ=',
-        "rbzsessionid": '57fb3fe24387fab463641aaeb10e30b7'
+        'x-zebra-zebra': 'ZDM4ZjBlMjcyOGE1MjhmY2E3ZTFjNjNlODRiN2EyN2RlMzA5ZWM4MTskKGhhc2gpO194Y2FsYyhhcmd1bWVudHMuY2FsbGUpOzA7JChoYXNoKTtfeGNhbGMoYXJndW1lbnRzLmNhbGxlKTstNTkyNTkyNTg3MjA7JChoYXNoKTtfeGNhbGMoYXJndW1lbnRzLmNhbGxlKTtkaXNhYmxlZDskKGhhc2gpO194Y2FsYyhhcmd1bWVudHMuY2FsbGUpOzEyMzEyMw==', 
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     }
 }
 ```
