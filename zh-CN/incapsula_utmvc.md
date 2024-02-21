@@ -6,7 +6,7 @@
 
 ### 有问必答
 
-* 接口(utmvc 需要保持代理一致, 如果有白名单问题联系管理员)
+* 接口(utmvc 需要保持代理一致, 有问题联系管理员)
     * 1、传入 href 和 proxy, 服务请求后计算 utmvc 
 * utmvc 脚本怎么找(如下图,包含 SWJIYLWA 关键字的 url)
     * ![incapsula](/images/incapsula/incapsula3.png)

@@ -6,7 +6,7 @@ Here's the translation:
 
 ### Frequently Asked Questions
 
-* Interface (utmvc needs consistent proxy, contact the administrator if there are whitelist issues)
+* Interface (utmvc needs consistent proxy, contact the administrator if there any issues)
     * 1. Provide href and proxy, the service will compute utmvc after request 
 * How to find the utmvc script (see the picture below, URL containing the keyword SWJIYLWA)
     * ![incapsula](/images/incapsula/incapsula3.png)

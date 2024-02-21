@@ -30,7 +30,7 @@
 | `rqdata`     | `String`  | `验证码配置接口有返回 captcha_rqdata、captcha_rqtoken 的请携带该值(如 discord 加频道)`                                                                                         | `否` |
 | `domain`     | `String`  | `hcaptcha 的验证接口域名（即 getcaptcha/checkcaptcha 等接口的域名）, 某些网站验证域名不一致, 默认 hcaptcha.com`                | `否` |
 | `user_agent` | `String`  | `请求流程使用 ua, 某些网站需要全程保持 ua 一致, 请传 Chrome(Windows/MacIntel) 默认使用以上两种类型随机版本号的 ua`                | `否` |
-| `proxy`      | `String`  | `某些网站需要全程保持代理一致, 请传 ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果是需要白名单形式联系管理员)` | `是` |
+| `proxy`      | `String`  | `某些网站需要全程保持代理一致, 请传 ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果有问题联系管理员)` | `是` |
 | `only_sense` | `Boolean` | `是否希望仅无感验证, 该值为 true 时仅进行无感验证, 无感验证不通过返回验证失败不继续进行图片验证, 默认否`                                                                                                                                        | `否` |
 | `internal`   | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                        | `否` |
 
