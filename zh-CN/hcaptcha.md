@@ -7,6 +7,11 @@
 
   由于 `hcaptcha` 强校验验证时间，从触发验证到提交验证必须要 `8s` 以上才能通过，所以破解流程中 `sleep` 了 `8s`，导致验证时间过长，请理解
 
+### referer 参数说明
+  🚨🚨🚨触发页面地址，✅请复制浏览器上显示的完整地址✅，不要改动，更不要去开发者工具❌里去找。
+  或者找到下图的包, host 参数的值, referer 填写为 http://{host} 如下图所示, 例如: http://democaptcha.com
+    ![hcaptcha](/images/hcaptcha/img.png)
+
 ### Request URL（POST）:
 
 | 版本               | 接口地址                                                    |
@@ -26,12 +31,11 @@
 | 参数名          | 类型        | 说明                                                                                                                                                             | 必须  |
 |--------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
 | `sitekey`    | `String`  | `hcaptcha 对接 key`                                                                                                                          | `是` |
-| `referer`    | `String`  | `🚨🚨🚨触发页面地址，✅请复制浏览器上显示的完整地址✅，不要改动，更不要去开发者工具❌里去找。`                                                                                         | `是` |
+| `referer`    | `String`  | `见上文参数说明`                                                                                         | `是` |
 | `rqdata`     | `String`  | `验证码配置接口有返回 captcha_rqdata、captcha_rqtoken 的请携带该值(如 discord 加频道)`                                                                                         | `否` |
 | `domain`     | `String`  | `hcaptcha 的验证接口域名（即 getcaptcha/checkcaptcha 等接口的域名）, 某些网站验证域名不一致, 默认 hcaptcha.com`                | `否` |
 | `user_agent` | `String`  | `请求流程使用 ua, 某些网站需要全程保持 ua 一致, 请传 Chrome(Windows/MacIntel) 默认使用以上两种类型随机版本号的 ua`                | `否` |
-| `proxy`      | `String`  | `某些网站需要全程保持代理一致, 请传 ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果有问题联系管理员)` | `是` |
-| `only_sense` | `Boolean` | `是否希望仅无感验证, 该值为 true 时仅进行无感验证, 无感验证不通过返回验证失败不继续进行图片验证, 默认否`                                                                                                                                        | `否` |
+| `proxy`      | `String`  | `如需要请传 ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果有问题联系管理员)` | `是` |
 | `internal`   | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                        | `否` |
 
 #### json 示例
@@ -49,7 +53,6 @@
   "sitekey": "c7faac4c-1cd7-4b1b-b2d4-42ba98d09c7a",
   "referer": "https://b.stripecdn.com/stripethirdparty-srv/assets/v13.1/HCaptcha.html?id=ab2764cd-d392-4fd0-81b4-9de6c4144c31&origin=https%3A%2F%2Fjs.stripe.com",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
-  "only_sense": true,
   "proxy": "ip:port 或 usr:pwd@ip:port 或 socks5://ip:port"
 }
 ```
@@ -59,7 +62,6 @@
   "sitekey": "c7faac4c-1cd7-4b1b-b2d4-42ba98d09c7a",
   "referer": "https://b.stripecdn.com/stripethirdparty-srv/assets/v13.1/HCaptcha.html?id=ab2764cd-d392-4fd0-81b4-9de6c4144c31&origin=https%3A%2F%2Fjs.stripe.com",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
-  "only_sense": true,
   "proxy": "ip:port 或 usr:pwd@ip:port 或 socks5://ip:port"
 }
 ```

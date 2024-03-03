@@ -7,7 +7,7 @@
 ### 类型说明
 
 * 类型一: cookies (普通模式: `cf_clearance`、`__cf_bm`)
-
+* 当未出现跳转页面, 但是存在 `cf_clearance` 时, 可设置参数 alpha=true 通过无感验证(也可咨询管理员)
 ![cookies样例](/images/cloudflare/cookies.png)
 
 * 类型二: 验证码式 (turnstile: `cf_turnstile-response`)
@@ -49,6 +49,7 @@
 | `proxy`    | `String`  | `需要保持代理一致 格式请传 ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果有问题联系管理员)` | `是` |
 | `sitekey`       | `String`  | `turnstile 类型需要传入`                                         | `否` |
 | `user_agent` | `String` | `自定义请求头, 如果返回提示不支持自定义则不要传`                            | `否` |
+| `alpha` | `Boolean` | `是否为无感 cookies`                            | `否` |
 
 ### 参数示例
 
@@ -57,7 +58,8 @@
 ```json
 {
     "href": "https://nowsecure.nl/",
-    "proxy": "usr:pwd@ip:port"
+    "proxy": "usr:pwd@ip:port",
+    "alpha": True/False  # 是否为无感 cookies
 }
 
 ```

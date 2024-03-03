@@ -7,11 +7,11 @@
 ### 类型说明
 
 * 类型一: cookies (普通模式: `cf_clearance`、`__cf_bm`)
-
+* 当未出现跳转页面, 但是存在 `cf_clearance` 时, 可设置参数 alpha=true 通过无感验证(也可咨询管理员)
 ![cookies样例](/images/cloudflare/cookies.png)
 
 * 类型二: 验证码式 (turnstile: `cf_turnstile-response`)
-    * ps: 一般嵌入在登录框中, 验证参数为 `captcha_api_key` 等键名（只是举例不一定是这个）, 参数值为 `0.` 开头的。
+* ps: 一般嵌入在登录框中, 验证参数为 `captcha_api_key` 等键名（只是举例不一定是这个）, 参数值为 `0.` 开头的。
 
 ![验证码式样例](/images/cloudflare/captcha.png)
 
@@ -49,6 +49,7 @@
 | `proxy`    | `String`  | `需要保持代理一致 格式请传 ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果有问题联系管理员)` | `是` |
 | `sitekey`       | `String`  | `turnstile 类型需要传入`                                         | `否` |
 | `user_agent` | `String` | `自定义请求头, 如果返回提示不支持自定义则不要传`                            | `否` |
+| `alpha` | `Boolean` | `是否为无感 cookies`                            | `否` |
 
 ### 参数示例
 
@@ -57,7 +58,8 @@
 ```json
 {
     "href": "https://nowsecure.nl/",
-    "proxy": "usr:pwd@ip:port"
+    "proxy": "usr:pwd@ip:port",
+    "alpha": True/False  # 是否为无感 cookies
 }
 
 ```
@@ -65,9 +67,9 @@
 #### turnstile 类型
 ```json
 {
-    "href": "https://visa.vfsglobal.com/chn/zh/deu/login",
-    "proxy": "usr:pwd@ip:port",
-    "sitekey": "0x4AAAAAAACYaM3U_Dz-4DN1"
+"href": "https://visa.vfsglobal.com/chn/zh/deu/login",
+"proxy": "usr:pwd@ip:port",
+"sitekey": "0x4AAAAAAACYaM3U_Dz-4DN1"
 }
 ```
 
@@ -86,14 +88,14 @@
 
 ```
 {
-    "cost": "3380.01ms",
-    "data": {
-        "token": "xxx",
-        "cookies": "xxx=xxx;"
-    },
-    "id": "bc174976-81b2-418e-a6e3-9f7c0bbd41ae",
-    "msg": "验证成功",
-    "status": 1
+"cost": "3380.01ms",
+"data": {
+"token": "xxx",
+"cookies": "xxx=xxx;"
+},
+"id": "bc174976-81b2-418e-a6e3-9f7c0bbd41ae",
+"msg": "验证成功",
+"status": 1
 }
 ```
 
@@ -109,11 +111,11 @@ pip install -U pynocaptcha -i https://pypi.python.org/simple
 from pynocaptcha import CloudFlareCracker
 
 cracker = CloudFlareCracker(
-    user_token="xxx,
-    sitekey="0x4AAAAAAACYaM3U_Dz-4DN1",
-    href="https://visa.vfsglobal.com/chn/zh/deu/login",
-    proxy="usr:pwd@ip:port",
-    debug=True,
+user_token="xxx,
+sitekey="0x4AAAAAAACYaM3U_Dz-4DN1",
+href="https://visa.vfsglobal.com/chn/zh/deu/login",
+proxy="usr:pwd@ip:port",
+debug=True,
 )
 ret = cracker.crack()
 print(ret)
