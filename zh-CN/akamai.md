@@ -1,5 +1,5 @@
 ------
-[`返回首页`](../README.md)    [`上一页`](hcaptcha.md)	[`English Version`](../en-US/akamai.md)
+[`返回首页`](../README.md)    [`上一页`](hcaptcha.md)  [`下一页`](aws.md)	[`English Version`](../en-US/akamai.md)
 
 ## Akamai
 

@@ -18,6 +18,7 @@
 |           [tls:v1](/zh-CN/tls.md)            | `tls 转发接口, 针对校验 ja3、http2 等指纹（akamai/cloudflare）的接口`  |    ✅     | `100`  |    ❌     |  ✅   |      ✅       |
 |      [discord:guild](/zh-CN/discord.md)      |                    `discord 加群接口`                     |    ✅     | `500`  |    ❌     |  ✅   |      ✅       |
 | [cloudflare:universal](/zh-CN/cloudflare.md) |        `CloudFlare 盾通用版, 返回 cookies 或验证码提交参数`         |    ✅     | `1000` |    ❌     |  ✅   |      ✅       |
+|        [aws:universal](/zh-CN/aws.md)        |             `Aws Waf 盾, 返回 aws-waf-token`             |    ✅     | `300`  |    ❌     |  ✅   |      ✅       |
 
 ### 名词说明
 
