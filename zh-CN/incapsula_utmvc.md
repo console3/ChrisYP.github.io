@@ -72,16 +72,6 @@
 }
 ```
 
-### CURL command
-
-```
-curl \
--H "Accept: */*" \
--H "User-Token: xxx" \
--H "Content-Type: application/json" \
---data-binary "{\"href\": \"https://premier.hkticketing.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3\", \"script\": \"\", \"cookies\": {\"reese84\": \"3:H+v1GwkNwrZu46o3Nseiyw==:4RlC9xZQ23lzNVVqK1LOYJe7l63LmqQ3clkc+sZI3DcPMqqwp2ALS0jmoUvCSqGICMNNdNG/8IBPMm0ypqg9nSpRrAR7tmkptkPc23bLNvqe4rXSmOVduyVetjdH7r3F/+Z5ydoKI3RI7i9BwFldpF3qDeIm42wxwnZNh+5y+lAHqy5lrYapc9tlApN0njxs6VLWwevPdP/2OPMw9QDp3HtkYzqkPIDKYMUko22X8oYWJYi5MmKF/b73z6y4a+i5NlAL8Dq+5Q2kXVX3BMmvGbkYxGmI75U0gE56A2shI1jJZcMMxk2mKrJmHVrSmd/k4KGqSL0/ZWXo7C3UWNFdBIHUmC/V/50kmiexjfHbeBI7WGrqvys58JBbe+pOGCaPkq3hqnXlvMPZPQTxXpopetJnVCwUadFGbUSpO41aM6CTjWBM+/PHg1EmFW68N2eZPkyCRfB9xM0+xS9SQQ0ejrmjeImMYKDKvDM1BXvCMcmVzvLXzzqmRVCOa1KAsSaJ:eA0TfngSIjMo8BmFFxQSqWenttAtZe1eFmu/D65FzTc=\", \"incap_ses_401_2314793\": \"G762Rv0O7jVlFUfP+aOQBSgAkGQAAAAAP829tNJuOV/4aBkDqwuYCA==\", \"visid_incap_2314793\": \"ZQaJm87VQvey37JRu3PniygAkGQAAAAAQUIPAAAAAACBXuPmlVtqbEgl8mDySriV\"}, \"proxy\": \"usr:pwd@ip:port\", \"submit\": false, \"user_agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36\"}" --compressed "http://api.nocaptcha.io/api/wanda/incapsula/utmvc"
-```
-
 ### 调用示例
 
 #### python
@@ -99,7 +89,6 @@ cracker = IncapsulaUtmvcCracker(
     script="href 请求结果",
     cookies={ 'incap_ses_406_2314793': 'w399Tycs8xhdpuG+aWeiBWGkYWQAAAAAKCTf+jt4Sq4R0xN0pU9VXA==', 'visid_incap_2314793': 'DVtB0J4PRoG+jHdSiyyjNWKkYWQAAAAAQUIPAAAAAABY5A3D8V2Yp2rCf0Qol0Kd' },
     proxy="usr:pwd@ip:port",
-    submit=False,
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
 )
 ret = cracker.crack()

@@ -18,7 +18,7 @@
 |           [tls:v1](tls.md)            |           `tls forwarding interface, targeting ja3, http2 fingerprint verification interfaces (such as akamai/cloudflare)`           |              ✅               |      `100`       |            ❌             |       ✅        |                  ✅                  |
 |      [discord:guild](discord.md)      |                                                  `discord group joining interface`                                                   |              ✅               |      `500`       |            ❌             |       ✅        |                  ✅                  |
 | [cloudflare:universal](cloudflare.md) | `CloudFlare Shield Universal, returns cf_clearance, __cf_bm, correct source code html, tls fingerprint used in verification process` |              ✅               |      `1000`      |            ❌             |       ✅        |                  ❌                  |
-|        [aws:universal](aws.md)        |                                                  `Aws Waf 盾, return aws-waf-token`                                                   |    ✅     |      `500`       |    ❌     |  ✅   |      ✅       |
+|        [aws:universal](aws.md)        |                                     `Aws Waf 盾, return aws-waf-token(only_sense cost 150 poing)`                                     |    ✅     |      `500`       |    ✅     |  ✅   |      ✅       |
 
 ### Definitions
 

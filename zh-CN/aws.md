@@ -4,12 +4,16 @@
 
 ## Aws Waf
 
+### 价格说明
+* 仅无感模式仅消耗 150 点, 需要传入 challenge_url, only_sense
+* 传入代理半价折扣(无感模式不适用)
+
 ### 说明
 * aws waf 验证, 通常不需要 ua/proxy 一致
 * 当看到 cookies 中有 aws-waf-token 时, 代表存在 aws waf 验证, 通常以下两种情况
     * 1. 状态码 405 出现验证码
     ![验证码样例](/images/aws/img.png)
-    * 2. 无感验证, 但是 html 中有 challeng.js, cookies 中有 aws-waf-token
+    * 2. 无感验证, 但是 html 中有 challeng.js, cookies 中有 aws-waf-token(此时传入 challenge_url, only_sense 享折扣)
     ![无感验证样例](/images/aws/img2.png)
 
 
@@ -33,6 +37,8 @@
 |--------------|-----------|-----------------------------|-----|
 | `href`       | `String`  | `触发 aws waf 验证的页面地址`    | `是` |
 | `user_agent` | `String`  | `自定义 user_agent`       | `否` |
+| `challenge_url` | `String`  | `无感验证时传入, 享折扣`       | `否` |
+| `only_sense` | `Boolean`  | `无感验证时传入, 享折扣`       | `否` |
 
 #### json 示例
 
@@ -73,6 +79,19 @@
 
 ```shell
 pip install -U pynocaptcha -i https://pypi.python.org/simple
+```
+
+```python
+from pynocaptcha import AwsUniversalCracker
+
+
+crack = AwsUniversalCracker(
+    user_token="xxx,
+    href="https://www.cityline.com/Events.html",
+    only_sense=True,
+    challenge_url="https://9175c2fd4189.edge.sdk.awswaf.com/9175c2fd4189/6e83bc7a594c/challenge.js",
+    debug=True
+)
 ```
 
 ```python

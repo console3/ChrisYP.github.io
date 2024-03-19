@@ -85,14 +85,6 @@
 }
 ```
 
-### CURL command:
-
-```
-curl -L 'http://api.nocaptcha.io/api/wanda/incapsula/universal' \
- -H 'User-Token: xxx' \
- -H 'Content-Type: application/json' \
- --data-raw '{"href": "https://www.priceline.com.au/Cawdor-asse-my-Nightning-we-from-Dealell-Come-Ty", "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", "submit": true}'
-```
 
 ### Example Call
 
@@ -109,8 +101,7 @@ cracker = IncapsulaReee84Cracker(
     user_token="xxx",
     href="https://www.priceline.com.au/Cawdor-asse-my-Nightning-we-from-Dealell-Come-Ty",
     user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
-    debug=True,
-    submit=True,
+    debug=True
 )
 ret = cracker.crack()
 print(ret)
