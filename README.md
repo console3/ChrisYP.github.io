@@ -6,9 +6,9 @@
 
 |                      类型                      |                          说明                           | 支持同步获取结果 |  消耗点数  | 传入代理IP优惠 | 运行状态 | 独享/包月（请联系客服） |
 |:--------------------------------------------:|:-----------------------------------------------------:|:--------:|:------:|:--------:|:----:|:------------:|
-|  [recaptcha:universal](/zh-CN/recaptcha.md)  |          `ReCaptcha（v2/v3 通用版）, 直接返回 token`           |    ✅     | `300`  |  `150`   |  ✅   |      ✅       |
-| [recaptcha:enterprise](/zh-CN/recaptcha.md)  |          `ReCaptcha（v2/v3 企业版）, 直接返回 token`           |    ✅     | `500`  |  `250`   |  ✅   |      ✅       |
-|    [recaptcha:steam](/zh-CN/recaptcha.md)    |            `ReCaptcha（steam）, 直接返回 token`             |    ✅     | `600`  |  `300`   |  ✅   |      ✅       |
+|  [recaptcha:universal](/zh-CN/recaptcha.md)  |          `ReCaptcha（v2/v3 通用版）, 直接返回 token`           |    ✅     | `300`  |  `150`   |  ✅   |      ❌       |
+| [recaptcha:enterprise](/zh-CN/recaptcha.md)  |          `ReCaptcha（v2/v3 企业版）, 直接返回 token`           |    ✅     | `500`  |  `250`   |  ✅   |      ❌       |
+|    [recaptcha:steam](/zh-CN/recaptcha.md)    |            `ReCaptcha（steam）, 直接返回 token`             |    ✅     | `600`  |  `300`   |  ✅   |      ❌       |
 |   [recaptcha:app](/zh-CN/recaptcha_app.md)   |            `ReCaptcha（app 版本）, 直接返回 token`            |    ✅     | `500`  |  `250`   |  ❌   |      ❌       |
 |   [hcaptcha:universal](/zh-CN/hcaptcha.md)   |       `Hcaptcha 通用版, 直接返回 generated_pass_UUID`        |    ✅     | `300`  |  `150`   |  ✅   |      ❌       |
 |   [incapsula:reese84](/zh-CN/incapsula.md)   |       `Incapsula 盾 reese84 通用版, 返回 solution 参数`       |    ✅     | `210`  |    ❌     |  ✅   |      ✅       |
@@ -16,7 +16,7 @@
 | [incapsula:rbzid](/zh-CN/incapsula_rbzid.md) |            `Incapsula 盾 rbzid 通用版, 返回验证参数`            |    ✅     | `100`  |    ❌     |  ✅   |      ✅       |
 |        [akamai:v2](/zh-CN/akamai.md)         |                `Akamai v2, 直接返回 _abck`                |    ✅     | `1000` |    ❌     |  ✅   |      ✅       |
 |           [tls:v1](/zh-CN/tls.md)            | `tls 转发接口, 针对校验 ja3、http2 等指纹（akamai/cloudflare）的接口`  |    ✅     | `100`  |    ❌     |  ✅   |      ✅       |
-|      [discord:guild](/zh-CN/discord.md)      |                    `discord 加群接口`                     |    ✅     | `500`  |    ❌     |  ✅   |      ✅       |
+|      [discord:guild](/zh-CN/discord.md)      |                    `discord 加群接口`                     |    ✅     | `500`  |    ❌     |  ✅   |      ❌       |
 | [cloudflare:universal](/zh-CN/cloudflare.md) |        `CloudFlare 盾通用版, 返回 cookies 或验证码提交参数`         |    ✅     | `1000` |    ❌     |  ✅   |      ✅       |
 |        [aws:universal](/zh-CN/aws.md)        |       `Aws Waf 盾, 返回 aws-waf-token(仅无感 150 点)`        |    ✅     | `500`  |    ✅     |  ✅   |      ✅       |
 
