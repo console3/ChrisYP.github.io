@@ -114,7 +114,7 @@
 }
 ```
 
-* `重定向`: 还有的会重定向到只有 `perimeterx` 验证的页面, 如 `www.walmart.com`, 重定向后的地址为 `/blocked?url=Lw==&uuid=40f6c510-eb71-11ee-9952-619a9b96c881&vid=418e19e7-eb71-11ee-8541-88227401c984&g=b`, 此时 `uuid` 参数取该重定向链接中的（如何 `html` 中没有 `window._pxUuid = *`）
+* `重定向`: 还有的会重定向到只有 `perimeterx` 验证的页面, 如 `www.walmart.com`, 重定向后的地址为 `/blocked?url=Lw==&uuid=40f6c510-eb71-11ee-9952-619a9b96c881&vid=418e19e7-eb71-11ee-8541-88227401c984&g=b`, 此时 `uuid` 参数取该重定向链接中的（如果 `html` 中没有 `window._pxUuid = *`）
 
 #### json 示例
 
