@@ -1,5 +1,5 @@
 ------
-[`返回首页`](../README.md)    [`上一页`](incapsula_rzbid.md)  [`下一页`](tls.md)	[`English Version`](../en-US/akamai.md)
+[`返回首页`](../README.md)    [`上一页`](incapsula_rbzid.md)  [`下一页`](tls.md)	[`English Version`](../en-US/akamai.md)
 
 ## Akamai
 
