@@ -76,7 +76,7 @@
 {
     "href": "https://nowsecure.nl/",
     "proxy": "usr:pwd@ip:port",
-    "alpha": True/False  # 是否为无感 cookies
+    "alpha": true, // 是否为无感 cookies
 }
 
 ```
@@ -84,9 +84,20 @@
 #### turnstile 类型
 ```json
 {
-"href": "https://visa.vfsglobal.com/chn/zh/deu/login",
-"proxy": "usr:pwd@ip:port",
-"sitekey": "0x4AAAAAAACYaM3U_Dz-4DN1"
+    "href": "https://visa.vfsglobal.com/chn/zh/deu/login",
+    "proxy": "usr:pwd@ip:port",
+    "sitekey": "0x4AAAAAAACYaM3U_Dz-4DN1"
+}
+```
+
+#### turnstile action 类型
+```json
+{
+    "href": "https://app.ogcom.xyz/signup?step=first",
+    "proxy": "usr:pwd@ip:port",
+    "sitekey": "0x4AAAAAAASTIy9n6lEJjrIE",
+    "action": "verification_code",
+    "explicit": true,
 }
 ```
 
