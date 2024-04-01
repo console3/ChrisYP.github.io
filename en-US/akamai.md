@@ -1,5 +1,5 @@
 ------
-[`Back to homepage`](en.md)    [`Previous page`](hcaptcha.md)	[`中文文档`](../zh-CN/akamai.md)
+[`Back to homepage`](en.md) 	[`中文文档`](../zh-CN/akamai.md)
 
 ## Akamai
 

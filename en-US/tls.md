@@ -1,4 +1,4 @@
-[`Back to homepage`](en.md) [`Previous Page`](hcaptcha.md) [`Next Page`](discord.md) [`中文文档`](../zh-CN/tls.md)
+[`Back to homepage`](en.md)  [`中文文档`](../zh-CN/tls.md)
 
 ## Tls Client
 

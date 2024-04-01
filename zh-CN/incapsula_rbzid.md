@@ -1,6 +1,6 @@
 ------
 
-[`返回首页`](../README.md)    [`上一页`](incapsula_utmvc.md)       [`下一页`](hcaptcha.md)   [`English Version`](../en-US/incapsula_utmvc.md)
+[`返回首页`](../README.md)    [`上一页`](incapsula_utmvc.md)     [`下一页`](akamai.md) 
 
 ## Incapsula ( rbzid )
 

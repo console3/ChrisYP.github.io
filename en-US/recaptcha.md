@@ -1,4 +1,4 @@
-[`Back to homepage`](en.md) [`Next Page`](cloudflare.md) [`中文文档`](../zh-CN/recaptcha.md)
+[`Back to homepage`](en.md) [`中文文档`](../zh-CN/recaptcha.md)
 
 ## ReCaptcha
 

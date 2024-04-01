@@ -5,8 +5,7 @@
 ## PerimeterX
 
 ### 价格说明
-* 无感模式消耗 `500` 点, 需要传入 `tag`、`href`、`proxy`
-* 按压模式消耗 `1000` 点, 需要传入 `tag`、`href`、`captcha`、`proxy`
+* 按压模式消耗 `1000` 点, 需要传入 `tag`、`href`、`captcha`
 
 ### 说明
 * 当看到 `cookies` 中有 `_px2`、`_px3` 时, 代表存在 `perimeterx` 验证, 有以下两种情况
@@ -38,6 +37,7 @@
 | `tag`        | `String`  | `版本号, */api/v2/colletor 或者 */assets/js/bundle 中的 tag 参数`    | `是` |
 | `href`    | `String`  | `触发 perimeterx 验证的页面地址`    | `是` |
 | `captcha`    | `Object`  | `验证码参数, 按压验证码必传, 详细说明见下`    | `否` |
+| `proxy`    | `String`  | `无需保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `否` |
 | `user_agent` | `String`  | `自定义 user_agent`       | `否` |
 | `cookies` | `String`  | `按压验证码模式下, 当前页面的 cookies`       | `否` |
 | `fast` | `Boolean`  | `是否快速验证, 需要高分时请传 false, 默认 true`       | `否` |

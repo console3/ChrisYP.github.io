@@ -1,5 +1,5 @@
 ------
-[`返回首页`](../README.md)    [`上一页`](incapsula.md)      [`下一页`](akamai.md)  [`English Version`](../en-US/hcaptcha.md)
+[`返回首页`](../README.md)    [`上一页`](recaptcha.md)      [`下一页`](incapsula.md)  [`English Version`](../en-US/hcaptcha.md)
 
 ## Hcaptcha
 

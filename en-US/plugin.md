@@ -1,4 +1,4 @@
-[`Return to Home`](en.md)  [`中文文档`](../zh-CN/akamai.md)
+[`Return to Home`](en.md)  [`中文文档`](../zh-CN/plugin.md)
 
 ## ReCaptcha & hCaptcha
 

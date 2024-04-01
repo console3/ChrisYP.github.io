@@ -1,6 +1,6 @@
 ------
 
-[`返回首页`](../README.md)    [`上一页`](recaptcha_app.md)      [`下一页`](incapsula.md) [`English Version`](../en-US/cloudflare.md)
+[`返回首页`](../README.md)    [`上一页`](discord.md)      [`下一页`](aws.md)
 
 ## CloudFlare
 
@@ -50,7 +50,7 @@
 | 参数名        | 类型        | 说明                                                                             | 必须  |
 |------------|-----------|--------------------------------------------------------------------------------|-----|
 | `href`  | `String`  | `触发验证的地址`                                           | `是` |
-| `proxy`    | `String`  | `需要保持代理一致 格式请传 ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果有问题联系管理员)` | `是` |
+| `proxy`    | `String`  | `需要保持代理一致 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
 | `sitekey`       | `String`  | `turnstile 类型需要传入`                                         | `否` |
 | `user_agent` | `String` | `自定义请求头, 如果返回提示不支持自定义则不要传`                            | `否` |
 | `alpha` | `Boolean` | `是否为无感 cookies`                            | `否` |

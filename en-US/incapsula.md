@@ -1,5 +1,5 @@
 ------
-[`Back to homepage`](/en-US/en.md)    [`Previous page`](cloudflare.md)       [`Next page`](incapsula_utmvc.md)   [`中文文档`](../zh-CN/incapsula.md)
+[`Back to homepage`](/en-US/en.md)   [`中文文档`](../zh-CN/incapsula.md)
 
 ## Incapsula ( reese84 )
 
