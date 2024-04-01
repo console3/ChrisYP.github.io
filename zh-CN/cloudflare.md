@@ -28,8 +28,9 @@
 
 ### 结果说明
 
-* cloudflare 需要保持 ip、ua 一致
-* cloudflare 校验 tls 指纹, 请自行使用 tls 请求库或使用 tls 转发服务
+* cloudflare cookies模式 需要保持 ip、ua 一致
+* cloudflare cookies模式 校验 tls 指纹, 请自行使用 tls 请求库或使用 tls 转发服务
+* cloudflare turnstile模式 结果通常可直接使用
 
 ### Request URL（POST）:
 
