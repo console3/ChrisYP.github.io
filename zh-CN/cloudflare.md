@@ -52,8 +52,20 @@
 | `href`  | `String`  | `触发验证的地址`                                           | `是` |
 | `proxy`    | `String`  | `需要保持代理一致 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
 | `sitekey`       | `String`  | `turnstile 类型需要传入`                                         | `否` |
+| `explicit`       | `Bool`  | `turnstile 类型需要传入, f12 查看 https://challenges.cloudflare.com/turnstile/v0/api.js?onload=cf__reactTurnstileOnLoad&render=explicit 的 js 连接中是否有 render=explicit 参数, 如有则填 true, 没有不填即可, 默认 false`                                         | `否` |
+| `action`       | `String`   | `turnstile 类型中传入, 具体解释看下`                                         | `否` |
 | `user_agent` | `String` | `自定义请求头, 如果返回提示不支持自定义则不要传`                            | `否` |
 | `alpha` | `Boolean` | `是否为无感 cookies`                            | `否` |
+
+#### action 查找
+
+当验证类型为 `turnstile`, 并在目标网站的 `*turnstile/v0/api.js` 链接中发现有 `render=explicit` 参数, 那么传入 `explicit=true`, `action` 查找步骤如下:
+
+* 打开 f12 搜索 `window.turnstile.render`
+![render](/images/cloudflare/render.png)
+
+* 在该处下断点, 并清除 cookie 缓存刷新页面, 在此处断下来, 查看 `action` 的值填入即可
+![action](/images/cloudflare/action.png)
 
 ### 参数示例
 
