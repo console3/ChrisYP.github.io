@@ -15,7 +15,8 @@
     ![验证码样例](/images/aws/img.png)
     * 2. 无感验证, 但是 html 中有 challenge.js, cookies 中有 aws-waf-token(此时传入 challenge_url(重定向后地址中有 .token 的链接), only_sense 享折扣)
     ![无感验证样例](/images/aws/img2.png)
-
+    * 3. 不是直接请求首页后触发, 而且点击按钮后出现验证码, 且参数中有 api_key, 此时需要传入 challenge_url(地址中有 .token 的链接), api_key
+    ![验证码样例2](/images/aws/img3.png)
 
 ### Request URL（POST）:
 
@@ -39,6 +40,7 @@
 | `user_agent` | `String`  | `自定义 user_agent`       | `否` |
 | `challenge_url` | `String`  | `无感验证时传入(重定向后地址中有 .token 的链接), 享折扣`       | `否` |
 | `only_sense` | `Boolean`  | `无感验证时传入, 享折扣`       | `否` |
+| `api_key` | `String`  | `见上述情况3时, 需要传入`       | `否` |
 
 #### json 示例
 
