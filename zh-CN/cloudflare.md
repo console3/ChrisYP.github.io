@@ -14,7 +14,7 @@
 * 当未出现跳转页面, 但是存在 `cf_clearance` 时, 可设置参数 alpha=true 通过无感验证(也可咨询管理员)
 ![cookies样例](/images/cloudflare/cookies.png)
 
-* 类型二: 验证码式 (turnstile: `cf_turnstile-response`)
+* 类型二: 验证码式 (turnstile: `cf_turnstile-response`)(此类型消耗 300 点)
 * ps: 一般嵌入在登录框中, 验证参数为 `captcha_api_key` 等键名（只是举例不一定是这个）, 参数值为 `0.` 开头的。
 
 ![验证码式样例](/images/cloudflare/captcha.png)
@@ -52,7 +52,7 @@
 |------------|-----------|--------------------------------------------------------------------------------|-----|
 | `href`  | `String`  | `触发验证的地址`                                           | `是` |
 | `proxy`    | `String`  | `需要保持代理一致 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
-| `sitekey`       | `String`  | `turnstile 类型需要传入`                                         | `否` |
+| `sitekey`       | `String`  | `turnstile 类型需要传入(价格为 300 点)`                                         | `否` |
 | `explicit`       | `Bool`  | `turnstile 类型需要传入, f12 查看 https://challenges.cloudflare.com/turnstile/v0/api.js?onload=cf__reactTurnstileOnLoad&render=explicit 的 js 连接中是否有 render=explicit 参数, 如有则填 true, 没有不填即可, 默认 false`                                         | `否` |
 | `action`       | `String`   | `turnstile 类型中传入, 具体解释看下`                                         | `否` |
 | `user_agent` | `String` | `自定义请求头, 如果返回提示不支持自定义则不要传`                            | `否` |
