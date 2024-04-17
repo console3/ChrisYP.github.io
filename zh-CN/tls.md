@@ -7,7 +7,7 @@
 
 | 版本               | 接口地址                                                    |
 |------------------|---------------------------------------------------------|
-| `v2（universal）` | `http://api.nocaptcha.io/api/wanda/tls/v1` |
+| `v1（universal）` | `http://api.nocaptcha.io/api/wanda/tls/v1` |
 
 ### Request Headers:
 

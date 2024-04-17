@@ -5,8 +5,8 @@
 ### Request URL (POST):
 
 | Version          | API Address                                |
-| ---------------- | ------------------------------------------ |
-| `v2 (universal)` | `http://api.nocaptcha.io/api/wanda/tls/v1` |
+|------------------| ------------------------------------------ |
+| `v1 (universal)` | `http://api.nocaptcha.io/api/wanda/tls/v1` |
 
 ### Request Headers:
 
