@@ -34,7 +34,7 @@
 | `href`    | `String`  | `触发 kasada 验证的页面地址`    | `是` |
 | `script_url`    | `String`  | `p.js 结尾的脚本地址`    | `否` |
 | `proxy`    | `String`  | `无需保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `否` |
-| `user_agent` | `String`  | `自定义 user_agent`       | `否` |
+| `user_agent` | `String`  | `自定义 user_agent, 请保持跟后续验证请求接口的 ua 一致`       | `否` |
 | `cookies` | `String`  | `按压验证码模式下, 当前页面的 cookies`       | `否` |
 | `timeout` | `Integer`  | `验证超时时间`       | `否` |
 
