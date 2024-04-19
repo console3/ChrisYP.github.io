@@ -10,7 +10,7 @@
 
 ### 说明
 * 当看到请求头中有 `x-kpsdk-ct`、`x-kpsdk-cd` 时, 代表存在 `kasada` 验证
-* x-kpsdk-ct 请保持 user_agent 一致
+* x-kpsdk-ct 请保持 user_agent 一致, 结果可多次使用
 * x-kpsdk-cd 仅可使用一次
 
 
@@ -35,7 +35,7 @@
 |--------------|-----------|-----------------------------|-----|
 | `href`    | `String`  | `触发 kasada 验证的页面地址`    | `是` |
 | `script_url`    | `String`  | `p.js 结尾的脚本地址`    | `是` |
-| `proxy`    | `String`  | `无需保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `否` |
+| `proxy`    | `String`  | `无需保持代理一致, 请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
 | `user_agent` | `String`  | `自定义 user_agent, 请保持跟后续验证请求接口的 ua 一致`       | `否` |
 | `timeout` | `Integer`  | `验证超时时间`       | `否` |
 
