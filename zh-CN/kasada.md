@@ -49,7 +49,7 @@
 
 ```
 {
-    "href": "https://xxxxxx/beta-lt-jacket-7301",
+    "href": "https://xxxxxx/",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
     "script_url": "https://mcprod.xxxx/149e9513-01fa-4fb0-aad4-566afd725d1b/2d206a39-8ed7-437e-a3be-862e0f06eea3/p.js",
     "proxy": "user:pass@ip:port",
@@ -60,7 +60,7 @@
 
 ```
 {
-    "href": "https://xxxxxx/beta-lt-jacket-7301"
+    "href": "https://xxxxxx/"
 }
 ```
 
@@ -124,7 +124,7 @@ from pynocaptcha import KasadaCtCracker, KasadaCdCracker
 
 cracker = KasadaCtCracker(
     user_token="xxx",
-    href="https://xxxxxx/beta-lt-jacket-7301",
+    href="https://xxxxxx/",
     script_url="https://mcprod.xxxxx/149e9513-01fa-4fb0-aad4-566afd725d1b/2d206a39-8ed7-437e-a3be-862e0f06eea3/p.js",
     user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
     proxy="user:pass@ip:port",
@@ -136,7 +136,7 @@ print(ret)
 
 cracker = KasadaCdCracker(
     user_token="xxx",
-    href="https://xxxxxx/beta-lt-jacket-7301",
+    href="https://xxxxxx/",
     debug=True,
 )
 ret = cracker.crack()
