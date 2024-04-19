@@ -40,7 +40,7 @@
 | `proxy`    | `String`  | `无需保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `否` |
 | `user_agent` | `String`  | `自定义 user_agent`       | `否` |
 | `cookies` | `String`  | `按压验证码模式下, 当前页面的 cookies`       | `否` |
-| `fast` | `Boolean`  | `是否快速验证, 需要高分时请传 false, 默认 true`       | `否` |
+| `actions` | `Integer`  | `随机行为次数, 越大耗时越久, 风控高的站点可以设置大一点, 默认 1`       | `否` |
 | `timeout` | `Integer`  | `验证超时时间`       | `否` |
 
 ##### captcha 参数说明
