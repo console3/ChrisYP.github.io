@@ -22,6 +22,7 @@
 | [perimeterx:universal](/zh-CN/perimeterx.md) |             `Perimeterx 盾通用版, 返回 _px2、_px3`             |    ✅     |   `1000`   |    ❌     |  ✅   |      ✅       |
 |        [kasada:ct](/zh-CN/kasada.md)         |                `Kasada 盾, 返回 x-kpsdk-ct`                |    ✅     |   `1000`   |    ❌     |  ✅   |      ✅       |
 |        [kasada:cd](/zh-CN/kasada.md)         |                `Kasada 盾, 返回 x-kpsdk-cd`                |    ✅     |    `50`     |    ❌     |  ✅   |      ✅       |
+|        [datadome:universal](/zh-CN/kasada.md)         |                `Datadome 盾, 返回 datadome cookie`                |    ✅     |    `1000`     |    ❌     |  ✅   |      ✅       |
 
 ### 名词说明
 
