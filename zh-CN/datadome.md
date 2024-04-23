@@ -69,7 +69,7 @@ pip install -U pynocaptcha -i https://pypi.python.org/simple
 ```
 
 ```python
-from pynocaptcha import DatadomeUniversalCracker
+from pynocaptcha import DatadomeCracker
 
 
 cracker = DatadomeCracker(
