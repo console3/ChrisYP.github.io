@@ -2,7 +2,7 @@
 
 [`返回首页`](../README.md)    [`上一页`](kasada.md)
 
-## PerimeterX
+## Datadome
 
 ### 说明
 * 当看到 `cookies` 中有 `datadome`, 代表存在 `datadome` 验证, 有以下两种情况
