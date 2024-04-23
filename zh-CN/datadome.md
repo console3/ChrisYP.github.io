@@ -72,7 +72,7 @@ pip install -U pynocaptcha -i https://pypi.python.org/simple
 from pynocaptcha import DatadomeUniversalCracker
 
 
-cracker = DatadomeUniversalCracker(
+cracker = DatadomeCracker(
     user_token="xxx",
     href="https://rendezvousparis.hermes.com/client/register",
     proxy="user:pass@ip:port",
