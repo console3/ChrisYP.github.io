@@ -36,85 +36,12 @@
 |--------------|-----------|-----------------------------|-----|
 | `tag`        | `String`  | `版本号, */api/v2/colletor 或者 */assets/js/bundle 中的 tag 参数`    | `是` |
 | `href`    | `String`  | `触发 perimeterx 验证的页面地址`    | `是` |
-| `captcha`    | `Object`  | `验证码参数, 按压验证码必传, 详细说明见下`    | `否` |
+| `captcha`    | `Object`  | `验证码参数, xhr 接口返回的按压验证码必传`    | `否` |
 | `proxy`    | `String`  | `无需保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
 | `user_agent` | `String`  | `自定义 user_agent`       | `否` |
 | `cookies` | `String`  | `按压验证码模式下, 当前页面的 cookies`       | `否` |
 | `actions` | `Integer`  | `随机行为次数, 越大耗时越久, 风控高的站点可以设置大一点, 默认 1`       | `否` |
 | `timeout` | `Integer`  | `验证超时时间`       | `否` |
-
-##### captcha 参数说明
-
-| 参数名          | 类型        | 说明                                                                                                                                                             | 必须  |
-|--------------|-----------|-----------------------------|-----|
-| `appId`      | `String`  | `用户 id`    | `是` |
-| `hostUrl`       | `String`  | `用户自定义路由, 接口返回啥就填啥`    | `是` |
-| `jsClientSrc`       | `String`  | `加载脚本地址, 一般为 init.js 结尾, 接口返回啥或者 f12 中是啥就填啥`    | `是` |
-| `blockScript` | `String`  | `验证码脚本地址, 一般为 captcha.js, 接口返回啥或者 f12 中是啥就填啥`       | `是` |
-| `uuid` | `String`  | `当前验证码的 session id`       | `是` |
-| `altBlockScript` | `String`  | `当 blockScript 不可用时的替代脚本`       | `否` |
-| `firstPartyEnabled` | `Boolean`  | `接口返回啥就填啥, 不返回就不填`       | `否` |
-| `customLogo` | `String`  | `接口返回啥就填啥, 不返回就不填`       | `否` |
-| `vid` | `String`  | `接口返回啥就填啥, 不返回就不填`       | `否` |
-
-`captcha` 参数根据触发按压验证码接口返回的数据格式而定, 有两种格式:
-
-* `json`: 如果触发接口直接返回 `json` 数据格式, 则不需要再自己构造 `captcha` 参数, 直接将返回的 `json` 数据传递成 `captcha` 参数即可
-
-```
-{
-    "appId": "PXaOtQIWNf",
-    "jsClientSrc": "/aOtQIWNf/init.js",
-    "firstPartyEnabled": true,
-    "uuid": "013b4cad-ece3-11ee-a877-09542f9a30cf",
-    "hostUrl": "/aOtQIWNf/xhr",
-    "blockScript": "/aOtQIWNf/captcha/captcha.js?a=c&u=013b4cad-ece3-11ee-a877-09542f9a30cf&v=&m=0",
-    "altBlockScript": "https://captcha.px-cloud.net/PXaOtQIWNf/captcha.js?a=c&"u=013b4cad-ece3-11ee-a877-09542f9a30cf&v=&m=0",
-    "customLogo": "https://chegg-mobile-promotions.cheggcdn.com/px/Chegg-logo-79X22.png"
-}
-```
-
-* `html`: 如果触发接口直接返回 `html` 数据格式, 则需要自己构造 `captcha` 参数, 找到 `window._pxAppId =` 的地方, 自行匹配出相关数据字段, 比如下方这段 `html`:
-
-```
-<script>
-    window._pxAppId = 'PXu6b0qd2S';
-    window._pxUuid = '013b4cad-ece3-11ee-a877-09542f9a30cf';
-    window._pxJsClientSrc = '/px/' + window._pxAppId + '/init.js';
-    window._pxFirstPartyEnabled = true;
-    window._pxHostUrl = '/px/' + window._pxAppId + '/xhr';
-    window._pxreCaptchaTheme = 'light';
-    window._PXETnJ2Y5H = {
-        challenge: {
-            view: {
-                    textFont: "BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif"
-            }
-        }
-    };
-
-    var hc = getUrlParam('g', 'b');
-    var alt = hc
-    if (alt=='a') {
-        document.getElementById('message').innerHTML = '<p>Check the box to confirm that you’re human. Thank You!</p>';
-    }
-    var captchajs = "/px/" + window._pxAppId + "/captcha/captcha.js?a=c&m=0&g=" + hc
-</script>
-```
-
-构造出的 `captcha` 参数为: 
-
-```
-{
-    "appId": "PXu6b0qd2S",
-    "jsClientSrc": "/px/PXu6b0qd2S/init.js",
-    "firstPartyEnabled": true,
-    "uuid": "013b4cad-ece3-11ee-a877-09542f9a30cf",
-    "hostUrl": "/px/PXu6b0qd2S/xhr",
-    "blockScript": "/px/PXu6b0qd2S/captcha/captcha.js?a=c&m=0&g=b",
-}
-```
-
-* `重定向`: 还有的会重定向到只有 `perimeterx` 验证的页面, 如 `www.walmart.com`, 重定向后的地址为 `/blocked?url=Lw==&uuid=40f6c510-eb71-11ee-9952-619a9b96c881&vid=418e19e7-eb71-11ee-8541-88227401c984&g=b`, 此时 `uuid` 参数取该重定向链接中的（如果 `html` 中没有 `window._pxUuid = *`）
 
 #### json 示例
 
@@ -122,15 +49,27 @@
 {
     "tag": "v8.6.6",
     "href": "https://www.walmart.com/",
+    "proxy": "user:pass@ip:port",
+}
+```
+
+`captcha`: 如果触发接口直接返回 `json` 数据格式, 直接将返回的 `json` 数据传递成 `captcha` 参数即可, 如下图所示:
+
+![xhr 按压验证码](/images/perimeterx/4.png)
+
+```
+{
+    "tag": "v7.6.2",
+    "href": "https://www.chegg.com/auth?action=login&redirect=https%3A%2F%2Fwww.chegg.com%2Ftextbooks%2Fstudent-solutions-manual-chapters-1-11-for-stewart-s-single-variable-calculus-8th-edition-9781305271814-1305271815%3Ftrackid%3D74b04883b359%26strackid%3Db48a54386409%26searchid%3Db06489ae-fb76-4dc5-8d8e-dae3ce250966",
     "captcha": {
-        "redirectUrl": "/blocked?url=Lw==&uuid=40f6c510-eb71-11ee-9952-619a9b96c881&vid=418e19e7-eb71-11ee-8541-88227401c984&g=b",
-        "appId": "PXu6b0qd2S",
-        "jsClientSrc": "/px/PXu6b0qd2S/init.js",
-        "firstPartyEnabled": true,
-        "vid": "418e19e7-eb71-11ee-8541-88227401c984",
-        "uuid": "40f6c510-eb71-11ee-9952-619a9b96c881",
-        "hostUrl": "/px/PXu6b0qd2S/xhr",
-        "blockScript": "/px/PXu6b0qd2S/captcha/captcha.js?a=c&m=0&u=40f6c510-eb71-11ee-9952-619a9b96c881&v=418e19e7-eb71-11ee-8541-88227401c984&g=b",
+        "appId": "PXaOtQIWNf",
+        "jsClientSrc": "/aOtQIWNf/init.js", 
+        "firstPartyEnabled": true, 
+        "uuid": "bd2deef7-0b95-11ef-8c49-cb4c98cbe205", 
+        "hostUrl": "/aOtQIWNf/xhr", 
+        "blockScript": "/aOtQIWNf/captcha/captcha.js?a=c&u=bd2deef7-0b95-11ef-8c49-cb4c98cbe205&v=&m=0", 
+        "altBlockScript": "https://captcha.px-cloud.net/PXaOtQIWNf/captcha.js?a=c&u=bd2deef7-0b95-11ef-8c49-cb4c98cbe205&v=&m=0", 
+        "customLogo": "https://chegg-mobile-promotions.cheggcdn.com/px/Chegg-logo-79X22.png"
     },
     "proxy": "user:pass@ip:port",
 }
