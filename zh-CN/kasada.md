@@ -44,6 +44,7 @@
 | 参数名          | 类型        | 说明                                                                                                                                                             | 必须  |
 |--------------|-----------|-----------------------------|-----|
 | `href`    | `String`  | `触发 kasada 验证的页面地址`    | `是` |
+| `x-kpsdk-st`    | `Integer`  | `ct 接口返回的`    | `否` |
 
 #### x-kpsdk-ct json 示例
 
@@ -60,7 +61,8 @@
 
 ```
 {
-    "href": "https://xxxxxx/"
+    "href": "https://xxxxxx/",
+    "x-kpsdk-st": 1716775584627
 }
 ```
 
@@ -93,7 +95,9 @@
   "id": "639e056b-49bd-4895-94ab-68d59e00873e",
   "cost": "4635.12ms",
   "data": {
-    "x-kpsdk-ct": "08SRrE8nO8gzaljqtU7sVJ4XX47uE4w6H8K9hX3P4eWnPA7lMBs0zU174OroVEsrbR8svcpGnY7g0j5nMojZVZWwzHyA2KxFxUDXW9SeuXGWMuaOXk3BZfry9GAyYK5oTMnE0JDQnXmaj5ilhfVD1Tbeq1XI2qS8fjugDL4"
+    "x-kpsdk-st": 1716775584627,
+    "x-kpsdk-cd": '{"workTime":1716775584627,"id":"e7910834208cfc67a3340ff934bdb5b1","answers":[9,9],"duration":39,"d":1886,"st":1716775584814,"rst":1716775586700}', 
+    "x-kpsdk-ct": "0aTWZlyuZj8xdBYhR3kCblUF4ljSLJNyk8LWEbjERVaayHo5DUU5VTEh7NWYldd5brUpu0KHOR38y2H6ObgzziQA28FKq4i5DX14UVmY93efP2ejJNYybda4Tmqc6v2EscnP4K3tEAxP1a7uUtPEXMuTYutYLhSrDxOEzJa"
   }
 }
 ```
