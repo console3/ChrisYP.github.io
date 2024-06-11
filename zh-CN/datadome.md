@@ -1,6 +1,6 @@
 ------
 
-[`返回首页`](../README.md)    [`上一页`](kasada.md)
+[`返回首页`](../README.md)    [`上一页`](kasada.md)    [`下一页`](shape.md)
 
 ## Datadome
 
@@ -33,7 +33,7 @@
 | `href`    | `String`  | `触发 datadome 验证的页面地址`    | `是` |
 | `proxy`    | `String`  | `无需保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
 | `user_agent` | `String`  | `自定义 user_agent, 必须保持 user-agent 一致`       | `否` |
-| `cookies` | `String`  | `按压验证码模式下, 当前页面的 cookies`       | `否` |
+| `cookies` | `String`  | `当前页面的 cookies`       | `否` |
 | `timeout` | `Integer`  | `验证超时时间`       | `否` |
 
 ### Response Data（JSON）:
