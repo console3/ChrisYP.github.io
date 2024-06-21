@@ -5,10 +5,29 @@
 ## Datadome
 
 ### 说明
-* 当看到 `cookies` 中有 `datadome`, 代表存在 `datadome` 验证, 有以下两种情况
+* 当看到 `cookies` 中有 `datadome`, 代表存在 `datadome` 验证, 有以下三种情况
     * `无感模式`: 
+      * 如果进入目标页面, 没有直接出现 `datadome` 的滑块验证码或者设备验证模式, 打开 f12 查看是否有 `/js/` 结尾并且接口响应如下类似:
+      ```
+      {
+        "status": 200,
+        "cookie": "datadome=66wPBABk21P4x28BLuVse__8_z141EPJEjbgi1HBvNGBcHmX91OT1Z9Z63G4x_suPlRPQ_tgwljYmI5mWxpmkMJ3pKrcnAVKHZs2ymS_2O4nM5wEblvP~~nK3orSol0W; Max-Age=31536000; Domain=.soundcloud.com; Path=/; Secure; SameSite=Lax"
+      }
+      ```
+      则是 `无感` 验证类型, 必须要传 `js_url` (该 `/js/` 结尾的 url)
+      * 如果首页是 `无感模式`, 则后续的关键数据接口（如 `登录`、`查询`等）中携带有 `datadome` cookie, 并且会返回以下类似响应:
+      ```
+      {
+        "url": "https://geo.captcha-delivery.com/captcha/?initialCid=AHrlqAAAAAMAqpOrr0GfIWgAudQ9Vg==&cid=w9vlJ4Xaf117hm82ORPnno7AnVvPPCoZ2gCDLj~Nch09ENObNXSzDWFekvMpp8ScynMSrB3~jsXcFtU9Y8mhOUscfnu1k_a~4_GMyGRE29_Gy~skFDqfX8tQJv1Va5Fv&referer=http%3A%2F%2Fapi-auth.soundcloud.com%2Fweb-auth%2Fidentifier%3Fq%3Desbiya1%2540gmail.com%26client_id%3D1q3v4x1lu3DpcWb4fAz0urivByipMEMK&hash=7FC6D561817844F25B65CDD97F28A1&t=fe&s=48134&e=faa8c1fb03676ac05d3bbe1d876a2d60168a7a2bab3adb5366483fc829465498"
+      }
+      ```
+      则过掉该验证码需要传 `href` (当前浏览器页面的地址), `captcha_url`(响应中的 url `https://geo.captcha-delivery.com/captcha/?initialCid=AHrlqAAAAAMAqpOrr0GfIWgAudQ9Vg==&cid=w9vlJ4Xaf117hm82ORPnno7AnVvPPCoZ2gCDLj~Nch09ENObNXSzDWFekvMpp8ScynMSrB3~jsXcFtU9Y8mhOUscfnu1k_a~4_GMyGRE29_Gy~skFDqfX8tQJv1Va5Fv&referer=http%3A%2F%2Fapi-auth.soundcloud.com%2Fweb-auth%2Fidentifier%3Fq%3Desbiya1%2540gmail.com%26client_id%3D1q3v4x1lu3DpcWb4fAz0urivByipMEMK&hash=7FC6D561817844F25B65CDD97F28A1&t=fe&s=48134&e=faa8c1fb03676ac05d3bbe1d876a2d60168a7a2bab3adb5366483fc829465498` )
+    ![无感验证码样例](/images/datadome/js.png)
+    * `设备验证模式`: 
+      * 如果进入目标页面直接跳转至下面这样验证的页面或者是过掉滑块验证之后又跳转到这个验证了, 则是 `interstitial` 设备验证模式, 请传参数 `interstitial: true`
     ![无感验证码样例](/images/datadome/interstitial.png)
     * `滑块验证码`:
+      * 如果进入目标页面直接跳转至下面这样验证的页面, 则是 `captcha` 滑块验证码模式
     ![滑块验证码样例](/images/datadome/captcha.png)
 
 
@@ -32,6 +51,8 @@
 |--------------|-----------|-----------------------------|-----|
 | `href`    | `String`  | `触发 datadome 验证的页面地址`    | `是` |
 | `proxy`    | `String`  | `无需保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
+| `js_url`    | `String`  | `js 模式下需要传该参数, /js/ 结尾的返回 datadome cookie 的接口, 如: https://dwt.soundcloud.com/js/`    | `否` |
+| `captcha_url`    | `String`  | `post(xhr) 接口触发的 "url": "/captcha?initCid=xxx"`    | `否` |
 | `interstitial`    | `Boolean`  | `是否会触发 interstitial 设备验证模式, 默认 false`    | `否` |
 | `user_agent` | `String`  | `自定义 user_agent, 必须保持 user-agent 一致`       | `否` |
 | `cookies` | `String`  | `当前页面的 cookies`       | `否` |
@@ -75,7 +96,8 @@ from pynocaptcha import DatadomeCracker
 
 cracker = DatadomeCracker(
     user_token="xxx",
-    href="https://rendezvousparis.hermes.com/client/register",
+    href="https://soundcloud.com/",
+    js_url='https://dwt.soundcloud.com/js/',
     proxy="user:pass@ip:port",
     debug=True,
 )
