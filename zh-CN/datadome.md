@@ -23,7 +23,8 @@
       ```
       则过掉该验证码需要传 `href` (当前浏览器页面的地址), `captcha_url`(响应中的 url `https://geo.captcha-delivery.com/captcha/?initialCid=AHrlqAAAAAMAqpOrr0GfIWgAudQ9Vg==&cid=w9vlJ4Xaf117hm82ORPnno7AnVvPPCoZ2gCDLj~Nch09ENObNXSzDWFekvMpp8ScynMSrB3~jsXcFtU9Y8mhOUscfnu1k_a~4_GMyGRE29_Gy~skFDqfX8tQJv1Va5Fv&referer=http%3A%2F%2Fapi-auth.soundcloud.com%2Fweb-auth%2Fidentifier%3Fq%3Desbiya1%2540gmail.com%26client_id%3D1q3v4x1lu3DpcWb4fAz0urivByipMEMK&hash=7FC6D561817844F25B65CDD97F28A1&t=fe&s=48134&e=faa8c1fb03676ac05d3bbe1d876a2d60168a7a2bab3adb5366483fc829465498` )
       以及上面所说的 `无感` 模式返回的 `did` 参数必须携带
-      也就是使用无感模式返回的 `datadome` cookie 访问你的目标数据接口又继续返回了滑块验证码或者设备验证码模式的话, 则需要携带 `href`、`captcha_url`、`did`
+      还有 `cookies: {"datadome": '无感模式返回的 datadome'}`
+      也就是使用无感模式返回的 `datadome` cookie 访问你的目标数据接口又继续返回了滑块验证码或者设备验证码模式的话, 则需要携带 `href`、`captcha_url`、`did`、`cookies`
     ![无感验证码样例](/images/datadome/js.png)
     * `设备验证模式`: 
       * 如果进入目标页面直接跳转至下面这样验证的页面或者是过掉滑块验证之后又跳转到这个验证了, 则是 `interstitial` 设备验证模式, 请传参数 `interstitial: true`
