@@ -102,8 +102,6 @@
 | `data.text`     | `String`  | `Response body`                                              |
 | `data.cookies`  | `String`  | `Response cookies`                                           |
 | `data.location` | `String`  | `Redirect URL`                                               |
-| `data.tls`      | `String`  | `TLS fingerprint used in the request process`                |
-| `data.error`    | `String`  | `Error reason if the request fails`                          |
 | `cost`          | `String`  | `Validation time (in milliseconds)`                          |
 
 ```

@@ -103,8 +103,6 @@
 | `data.text`    | `String`  | `响应体`    |
 | `data.cookies` | `String`  | `响应 cookies`    |
 | `data.location` | `String`  | `重定向地址`    |
-| `data.tls`     | `String`  | `请求流程使用的 tls 指纹`    |
-| `data.error`   | `String`  | `请求失败的报错原因`    |
 | `cost`         | `String`  | `验证耗时（毫秒）`                    |
 
 ```
