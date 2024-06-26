@@ -45,7 +45,7 @@
 | 参数名          | 类型        | 说明                                                                                                                                                             | 必须  |
 |--------------|-----------|-----------------------------|-----|
 | `href`    | `String`  | `触发 kasada 验证的页面地址`    | `是` |
-| `x-kpsdk-st`    | `Integer`  | `ct 接口返回的`    | `否` |
+| `st`    | `Integer`  | `ct 接口返回的 x-kpsdk-st`    | `是` |
 
 #### x-kpsdk-ct json 示例
 
@@ -64,7 +64,7 @@
 ```
 {
     "href": "https://xxxxxx/",
-    "x-kpsdk-st": 1716775584627
+    "st": 1716775584627
 }
 ```
 
@@ -166,6 +166,7 @@ print(ret)
 cracker = KasadaCdCracker(
     user_token="xxx",
     href="https://xxxxxx/",
+    st=1716775584627,
     debug=True,
 )
 ret = cracker.crack()
