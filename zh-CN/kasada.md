@@ -12,6 +12,7 @@
 * 当看到请求头中有 `x-kpsdk-ct`、`x-kpsdk-cd` 时, 代表存在 `kasada` 验证
 * x-kpsdk-ct 请保持 user_agent 一致, 结果可多次使用
 * x-kpsdk-cd 仅可使用一次
+* 支持 `纯计算模式`, 纯计算请自己请求 `ips_url` 接口, 获取响应内容 `ips_script` 和响应头 `ips_headers` 上传, 纯计算模式不用传代理
 
 
 ### Request URL（POST）:
@@ -35,8 +36,12 @@
 |--------------|-----------|-----------------------------|-----|
 | `href`    | `String`  | `触发 kasada 验证的页面地址`    | `是` |
 | `ips_url`    | `String`  | `ips.js 结尾的脚本地址`    | `是` |
+| `ips_script`    | `String`  | `ips.js 结尾的请求响应内容`    | `否` |
+| `ips_headers`    | `String`  | `ips.js 结尾的请求响应头`    | `否` |
 | `submit`    | `Boolean`  | `是否提交 tl 请求, 直接返回 x-kpsdk-ct`    | `否` |
-| `proxy`    | `String`  | `保持代理一致, 请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
+| `proxy`    | `String`  | `保持代理一致, 请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `否` |
+| `country`    | `String`  | `业务流程使用的代理所属地区国家 code, 如美国（us）、英国（uk）, 详情可咨询管理`    | `否` |
+| `ip`    | `String`  | `业务流程使用的代理流程的 ip 地址（例: 56.214.78.94）, 详情可咨询管理`    | `否` |
 | `user_agent` | `String`  | `自定义 user_agent, 请保持跟后续验证请求接口的 ua 一致`       | `否` |
 | `timeout` | `Integer`  | `验证超时时间`       | `否` |
 

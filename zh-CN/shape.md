@@ -31,6 +31,7 @@
 | `script_content`    | `String`  | `加载 shape vmp 脚本内容`    | `是` |
 | `vmp_url`    | `String`  | `shape vmp 脚本的 url`    | `是` |
 | `pkey`    | `String`  | `shape 加密参数名, x-xxxx-a 中的 xxxx, 如星巴克的 Dq7hy5l1-a 传  dq7hy5l1 即可`    | `是` |
+| `proxy`    | `String`  | `若不传 vmp_content, 请传代理, 保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
 | `request`    | `Object`  | `需要 shape 签名的接口内容`    | `是` |
 | `request.url`    | `String`  | `需要 shape 签名的接口地址`    | `是` |
 | `request.method`    | `String`  | `需要 shape 签名的接口请求类型, 支持 GET/POST, 默认 POST `    | `否` |
@@ -39,7 +40,7 @@
 | `request.json`    | `Object`  | `需要 shape 签名的 post 接口请求 json 体`    | `否` |
 | `vmp_content`    | `String`  | `shape vmp 脚本内容`    | `否` |
 | `country`    | `String`  | `业务流程使用的代理所属地区国家 code, 如美国（us）、英国（uk）, 详情可咨询管理`    | `否` |
-| `proxy`    | `String`  | `若不传 vmp_content, 请传代理, 保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `否` |
+| `ip`    | `String`  | `业务流程使用的代理流程的 ip 地址（例: 56.214.78.94）, 详情可咨询管理`    | `否` |
 | `user_agent` | `String`  | `自定义 user_agent, 必须保持 user-agent 一致, 请传最新版 windows ua`       | `否` |
 | `fast` | `Boolean`  | `是否加速计算, 默认 false （网站风控低可使用该模式）`       | `否` |
 | `submit` | `Boolean`  | `是否直接提交 request 返回响应, 默认 false`       | `否` |

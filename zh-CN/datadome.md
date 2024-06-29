@@ -55,9 +55,11 @@
 | `href`    | `String`  | `触发 datadome 验证的页面地址`    | `是` |
 | `proxy`    | `String`  | `无需保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
 | `js_url`    | `String`  | `js 模式下需要传该参数, /js/ 结尾的返回 datadome cookie 的接口, 如: https://dwt.soundcloud.com/js/`    | `否` |
+| `js_key`    | `String`  | `js 模式下需要传该参数, f12 搜索 ddjskey 值, 如: E6EAF460AA2A8322D66B42C85B62F9`    | `否` |
 | `captcha_url`    | `String`  | `post(xhr) 接口触发的 "url": "/captcha?initCid=xxx"`    | `否` |
 | `interstitial`    | `Boolean`  | `是否会触发 interstitial 设备验证模式, 默认 false`    | `否` |
 | `user_agent` | `String`  | `自定义 user_agent, 必须保持 user-agent 一致`       | `否` |
+| `did` | `String`  | `js 模式返回的指纹 id（存在 extra 属性中）, 后续 xhr 接口出现的滑块验证码请传该参数`       | `否` |
 | `cookies` | `String`  | `当前页面的 cookies`       | `否` |
 | `timeout` | `Integer`  | `验证超时时间`       | `否` |
 
