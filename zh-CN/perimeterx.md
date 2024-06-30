@@ -5,16 +5,19 @@
 ## PerimeterX
 
 ### 价格说明
-* 按压模式消耗 `1000` 点, 需要传入 `tag`、`href`、`captcha`
+* 按压模式消耗 `1000` 点, 需要传入 `app_id`、`href`、`captcha`
 
 ### 说明
-* 当看到 `cookies` 中有 `_px2`、`_px3` 时, 代表存在 `perimeterx` 验证, 有以下两种情况
-    * `无感模式`: `*/api/v2/colletor`
+* 当看到 `cookies` 中有 `_px2`、`_px3` 时, 代表存在 `perimeterx` 验证, 有以下三种情况
+    * `仅无感模式（*/api/v2/colletor）`: 打开目标页面, 没有出现任何验证, f12 中不停发送 `*/api/v2/colletor` 接口, 该模式必须传 `app_id`、`href`、`sense`(`true`)、`proxy`
     ![验证接口](/images/perimeterx/1.png)
-    * `按压验证码`: `*/assets/js/bundle`
+    * `首页无感＋按压模式（*/assets/js/bundle）`: 打开目标页面, 直接出现按压验证码, 该模式必须传 `app_id`、`href`、`proxy` 接口
+    ![验证接口](/images/perimeterx/1.png)
+    * `xhr 按压验证模式（*/assets/js/bundle）`: 打开目标页面, 未直接出现按压验证码, 在点击登录、注册或者搜索等关键接口出现按压验证码, 该模式必须传 `app_id`、`href`、`captcha`、`proxy`
     ![验证接口](/images/perimeterx/3.png)
     ![按压验证码样例](/images/perimeterx/2.png)
 
+ps: 无感模式跟首页按压模式通常取决于你的代理质量, 如果你直接使用`无感模式`, 可能拿到的 `_px2`、`_px3` cookie 还是会继续触发 `首页按压验证模式`, 若继续出现 `首页按压模式`, 则说明你的代理不能直接使用 `无感模式`, 请转而使用 `首页按压模式`
 
 ### Request URL（POST）:
 
@@ -34,8 +37,9 @@
 
 | 参数名          | 类型        | 说明                                                                                                                                                             | 必须  |
 |--------------|-----------|-----------------------------|-----|
-| `tag`        | `String`  | `版本号, */api/v2/colletor 或者 */assets/js/bundle 中的 tag 参数`    | `是` |
+| `app_id`        | `String`  | `版本号, */api/v2/colletor 或者 */assets/js/bundle 中的 appId 参数(PX开头的)`    | `是` |
 | `href`    | `String`  | `触发 perimeterx 验证的页面地址`    | `是` |
+| `sense`    | `Boolean`  | `是否仅无感验证, 默认 false`    | `否` |
 | `captcha`    | `Object`  | `验证码参数, xhr 接口返回的按压验证码必传`    | `否` |
 | `proxy`    | `String`  | `无需保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
 | `did` | `String`  | `无感模式返回的指纹 id（存在 extra 属性中）, 后续 xhr 接口出现的按压验证码请传该参数`       | `否` |
@@ -48,13 +52,26 @@
 
 #### json 示例
 
+##### 仅无感模式
 ```
 {
-    "tag": "v8.6.6",
+    "app_id": "PXu6b0qd2S",
+    "href": "https://www.walmart.com/",
+    "sense": true,
+    "proxy": "user:pass@ip:port",
+}
+```
+
+##### 无感＋按压模式（打开目标页面直接弹按压验证码）
+```
+{
+    "app_id": "PXu6b0qd2S",
     "href": "https://www.walmart.com/",
     "proxy": "user:pass@ip:port",
 }
 ```
+
+##### xhr 接口返回的纯按压验证码
 
 `captcha`: 如果触发接口直接返回 `json` 数据格式, 直接将返回的 `json` 数据传递成 `captcha` 参数即可, 如下图所示:
 
@@ -62,7 +79,7 @@
 
 ```
 {
-    "tag": "v7.6.2",
+    "app_id": "PXaOtQIWNf",
     "href": "https://www.chegg.com/auth?action=login&redirect=https%3A%2F%2Fwww.chegg.com%2Ftextbooks%2Fstudent-solutions-manual-chapters-1-11-for-stewart-s-single-variable-calculus-8th-edition-9781305271814-1305271815%3Ftrackid%3D74b04883b359%26strackid%3Db48a54386409%26searchid%3Db06489ae-fb76-4dc5-8d8e-dae3ce250966",
     "captcha": {
         "appId": "PXaOtQIWNf",
@@ -74,6 +91,7 @@
         "altBlockScript": "https://captcha.px-cloud.net/PXaOtQIWNf/captcha.js?a=c&u=bd2deef7-0b95-11ef-8c49-cb4c98cbe205&v=&m=0", 
         "customLogo": "https://chegg-mobile-promotions.cheggcdn.com/px/Chegg-logo-79X22.png"
     },
+    "did": "无感模式返回的 did",
     "proxy": "user:pass@ip:port",
 }
 ```
@@ -123,7 +141,7 @@ from pynocaptcha import PerimeterxUniversalCracker
 
 cracker = PerimeterxUniversalCracker(
     user_token="xxx",
-    tag="v8.6.6",
+    app_id="PXu6b0qd2S",
     href="https://www.walmart.com/",
     captcha={
         "redirectUrl": "/blocked?url=Lw==&uuid=40f6c510-eb71-11ee-9952-619a9b96c881&vid=418e19e7-eb71-11ee-8541-88227401c984&g=b",
