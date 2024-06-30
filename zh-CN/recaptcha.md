@@ -53,7 +53,7 @@
 | `size`     | `String`  | `验证类型(invisible/normal, 只有这两个选择, 具体查看 anchor 接口的 size 值, 必须对应)`                | `是` |
 | `title`    | `String`  | `触发页面的 title (f12 打开控制台, 输入 document.title)`                                   | `是` |
 | `action`   | `String`  | `验证码触发页面搜索 grecaptcha.execute(client, {action: action}), 其中的 action 值, v3 才需要` | `否` |
-| `proxy`    | `String`  | `传入代理可打折, 格式请传 ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果有问题联系管理员)`      | `是` |
+| `proxy`    | `String`  | `传入代理可打折, 格式请传 ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果有问题联系管理员)`      | `否` |
 | `hl`       | `String`  | `验证参数, 具体查看 anchor 接口的 hl 值, 默认 zh-CN`                                         | `否` |
 | `internal` | `Boolean` | `验证流程是否使用国内代理, 默认 true(建议优先尝试 false 使用国外代理, 体验更流畅)`                            | `否` |
 | `ubd`      | `Boolean` | `验证路由是否是特殊的 ubd 类型, 默认 false`                                                  | `否` |
