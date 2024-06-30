@@ -9,15 +9,17 @@
 
 ### 说明
 * 当看到 `cookies` 中有 `_px2`、`_px3` 时, 代表存在 `perimeterx` 验证, 有以下三种情况
-    * `仅无感模式（*/api/v2/colletor）`: 打开目标页面, 没有出现任何验证, f12 中不停发送 `*/api/v2/colletor` 接口, 该模式必须传 `app_id`、`href`、`sense`(`true`)、`proxy`
+    * `仅无感模式（*/api/v2/colletor）`: 打开目标页面, 没有出现任何验证, f12 中不停发送 `*/api/v2/colletor` 接口, 该模式必须传 `app_id`、`href`、`proxy`
     ![验证接口](/images/perimeterx/1.png)
-    * `首页无感＋按压模式（*/assets/js/bundle）`: 打开目标页面, 直接出现按压验证码, 该模式必须传 `app_id`、`href`、`proxy` 接口
+    * `首页无感＋按压模式（*/assets/js/bundle）`: 打开目标页面, 直接出现按压验证码, 该模式必须传 `tag`、`href`、`proxy` 接口
     ![验证接口](/images/perimeterx/1.png)
     * `xhr 按压验证模式（*/assets/js/bundle）`: 打开目标页面, 未直接出现按压验证码, 在点击登录、注册或者搜索等关键接口出现按压验证码, 该模式必须传 `app_id`、`href`、`captcha`、`proxy`
     ![验证接口](/images/perimeterx/3.png)
     ![按压验证码样例](/images/perimeterx/2.png)
 
-ps: 无感模式跟首页按压模式通常取决于你的代理质量, 如果你直接使用`无感模式`, 可能拿到的 `_px2`、`_px3` cookie 还是会继续触发 `首页按压验证模式`, 若继续出现 `首页按压模式`, 则说明你的代理不能直接使用 `无感模式`, 请转而使用 `首页按压模式`
+ps: 
+    * 无感模式跟首页按压模式通常取决于你的代理质量, 如果你直接使用`无感模式`, 可能拿到的 `_px2`、`_px3` cookie 还是会继续触发 `首页按压验证模式`, 若继续出现 `首页按压模式`, 则说明你的代理不能直接使用 `无感模式`, 请转而使用 `首页按压模式`
+    * 按压模式返回的 `_px2`、`_px3` 通常需要过个几秒才能正常使用, 马上用可能还是 403
 
 ### Request URL（POST）:
 
@@ -37,9 +39,9 @@ ps: 无感模式跟首页按压模式通常取决于你的代理质量, 如果�
 
 | 参数名          | 类型        | 说明                                                                                                                                                             | 必须  |
 |--------------|-----------|-----------------------------|-----|
-| `app_id`        | `String`  | `版本号, */api/v2/colletor 或者 */assets/js/bundle 中的 appId 参数(PX开头的)`    | `是` |
 | `href`    | `String`  | `触发 perimeterx 验证的页面地址`    | `是` |
-| `sense`    | `Boolean`  | `是否仅无感验证, 默认 false`    | `否` |
+| `tag`        | `String`  | `版本号, */api/v2/colletor 或者 */assets/js/bundle 中的 tag 参数（不传 tag 就必须传 app_id）`    | `否` |
+| `app_id`        | `String`  | `*/api/v2/colletor 或者 */assets/js/bundle 中的 appId 参数（PX开头的, 不传 app_id 就必须传 tag`    | `否` |
 | `captcha`    | `Object`  | `验证码参数, xhr 接口返回的按压验证码必传`    | `否` |
 | `proxy`    | `String`  | `无需保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
 | `did` | `String`  | `无感模式返回的指纹 id（存在 extra 属性中）, 后续 xhr 接口出现的按压验证码请传该参数`       | `否` |
@@ -57,7 +59,6 @@ ps: 无感模式跟首页按压模式通常取决于你的代理质量, 如果�
 {
     "app_id": "PXu6b0qd2S",
     "href": "https://www.walmart.com/",
-    "sense": true,
     "proxy": "user:pass@ip:port",
 }
 ```
@@ -65,7 +66,7 @@ ps: 无感模式跟首页按压模式通常取决于你的代理质量, 如果�
 ##### 无感＋按压模式（打开目标页面直接弹按压验证码）
 ```
 {
-    "app_id": "PXu6b0qd2S",
+    "tag": "v8.6.6",
     "href": "https://www.walmart.com/",
     "proxy": "user:pass@ip:port",
 }
