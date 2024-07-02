@@ -5,16 +5,17 @@
 ## Datadome
 
 ### 说明
-* 当看到 `cookies` 中有 `datadome`, 代表存在 `datadome` 验证, 有以下三种情况
-    * `无感模式`: 
-      * 如果进入目标页面, 没有直接出现 `datadome` 的滑块验证码或者设备验证模式, 打开 f12 查看是否有 `/js/` 结尾并且接口响应如下类似:
+* 当看到 `cookies` 中有 `datadome`, 代表存在 `datadome` 验证, 有以下三种情况, 举个例子:
+  * 当你要访问 `https://www.vinted.com/`, 挂代理请求 `https://www.vinted.com/`:
+    * 状态码不是 `403` (`无感模式`): 
+      * 打开 f12 查看是否有 `/js/` 结尾并且接口响应如下类似:
       ```
       {
         "status": 200,
         "cookie": "datadome=66wPBABk21P4x28BLuVse__8_z141EPJEjbgi1HBvNGBcHmX91OT1Z9Z63G4x_suPlRPQ_tgwljYmI5mWxpmkMJ3pKrcnAVKHZs2ymS_2O4nM5wEblvP~~nK3orSol0W; Max-Age=31536000; Domain=.soundcloud.com; Path=/; Secure; SameSite=Lax"
       }
       ```
-      则是 `无感` 验证类型, 必须要传 `js_url` (该 `/js/` 结尾的 url), 该种模式会在我们的接口响应的 `extra` 参数中返回一个 `did` 参数, 该参数对于该页面后续的 `datadome` 验证非常重要！！！
+      `无感` 验证类型, 必须要传 `js_url` (该 `/js` 结尾的 url), 该种模式会在我们的接口响应的 `extra` 参数中返回一个 `did` 参数, 该参数对于该页面后续的 `datadome` 验证非常重要！！！
       * 如果首页是 `无感模式`, 则后续的关键数据接口（如 `登录`、`查询`等）中携带有 `datadome` cookie, 并且会返回以下类似响应:
       ```
       {
@@ -26,13 +27,39 @@
       还有 `cookies: {"datadome": '无感模式返回的 datadome'}`
       也就是使用无感模式返回的 `datadome` cookie 访问你的目标数据接口又继续返回了滑块验证码或者设备验证码模式的话, 则需要携带 `href`、`captcha_url`、`did`、`cookies`
     ![无感验证码样例](/images/datadome/js.png)
-    * `设备验证模式`: 
+    * 状态码 `403` (`设备验证模式`): 
       * 如果进入目标页面直接跳转至下面这样验证的页面或者是过掉滑块验证之后又跳转到这个验证了, 则是 `interstitial` 设备验证模式, 请传参数 `interstitial: true`
     ![无感验证码样例](/images/datadome/interstitial.png)
-    * `滑块验证码`:
+    * 状态码 `403` (`滑块验证码`):
       * 如果进入目标页面直接跳转至下面这样验证的页面, 则是 `captcha` 滑块验证码模式
     ![滑块验证码样例](/images/datadome/captcha.png)
 
+  * 简单说就是先请求你目标页面地址, 状态码 `200` 就走无感模式, `403` 就走验证码模式, 类似以下伪代码流程:
+
+  ```
+  # 请求目标页面 href
+  resp = session.get(href, headers=headers)
+  
+  # 状态码 200 为无感验证模式, 
+  if resp.status_code == 200:
+      res = DatadomeCracker(
+          user_token=USER_TOKEN
+          href=href,
+          user_agent=user_agent,
+          js_url="https://dd.vinted.lt/js",
+          js_key=js_key,
+          proxy=proxy,
+      ).crack()
+  # 状态码 403, 指定 interstitial 为 true, 保证过掉遇到的所有 datadome 验证码模式, 获取最终有效 datadome
+  elif resp.status_code == 403:
+      res = DatadomeCracker(
+        user_token=USER_TOKEN,
+          href=href,
+          user_agent=user_agent,
+          interstitial=True,
+          proxy=proxy,
+      ).crack()
+  ```
 
 ### Request URL（POST）:
 
