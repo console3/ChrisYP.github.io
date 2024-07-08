@@ -37,6 +37,7 @@
 | `user_agent` | `String`  | `请求流程使用 ua, 某些网站需要全程保持 ua 一致, 请传 Chrome(Windows/MacIntel) 默认使用以上两种类型随机版本号的 ua`                | `否` |
 | `proxy`      | `String`  | `如需要请传 ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果有问题联系管理员)` | `否` |
 | `internal`   | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                        | `否` |
+| `invisible`   | `Boolean` | `触发验证码时是否能看见点击框（或 是否无感验证码）, 默认 false`                                                                                                                                        | `否` |
 
 #### json 示例
 

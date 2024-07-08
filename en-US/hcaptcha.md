@@ -34,6 +34,7 @@ Due to the strong verification time of `hcaptcha`, from triggering the verificat
 | `proxy`        | `String` | `Some sites require a consistent proxy throughout. Please pass ip:port or usr:pwd@ip:port or socks5://ip:port (if any problem, contact the admin)`           | No    |
 | `only_sense`   | `Boolean`| `Do you want only imperceptible verification? When this value is true, only imperceptible verification is conducted. If this fails, the process doesn't proceed to image verification. Default is no` | No     |
 | `internal`     | `Boolean`| `Is the verification process using a domestic proxy? Default is true`                                                                         | No     |
+| `invisible`     | `Boolean`| `Whether the click box can be seen when the verification code is triggered (or whether the verification code is not sensed) Default is false`                                                                         | No     |
 
 #### JSON Examples
 

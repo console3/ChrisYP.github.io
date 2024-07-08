@@ -55,6 +55,7 @@
 | `sitekey`       | `String`  | `turnstile 类型需要传入(价格为 300 点)`                                         | `否` |
 | `explicit`       | `Bool`  | `turnstile 类型需要传入, f12 查看 https://challenges.cloudflare.com/turnstile/v0/api.js?onload=cf__reactTurnstileOnLoad&render=explicit 的 js 连接中是否有 render=explicit 参数, 如有则填 true, 没有不填即可, 默认 false`                                         | `否` |
 | `action`       | `String`   | `turnstile 类型中传入, 具体解释看下`                                         | `否` |
+| `cdata`       | `String`  | `turnstile 类型中传入, turnstile.render 的参数中有 cdata 才传`                                         | `否` |
 | `user_agent` | `String` | `自定义请求头, 如果返回提示不支持自定义则不要传`                            | `否` |
 | `alpha` | `Boolean` | `是否为无感 cookies`                            | `否` |
 
