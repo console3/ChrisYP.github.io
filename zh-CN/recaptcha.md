@@ -54,8 +54,6 @@
 | `title`    | `String`  | `触发页面的 title (f12 打开控制台, 输入 document.title)`                                   | `是` |
 | `action`   | `String`  | `验证码触发页面搜索 grecaptcha.execute(client, {action: action}), 其中的 action 值, v3 才需要` | `否` |
 | `proxy`    | `String`  | `传入代理可打折, 格式请传 ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果有问题联系管理员)`      | `否` |
-| `hl`       | `String`  | `验证参数, 具体查看 anchor 接口的 hl 值, 默认 zh-CN`                                         | `否` |
-| `internal` | `Boolean` | `验证流程是否使用国内代理, 默认 true(建议优先尝试 false 使用国外代理, 体验更流畅)`                            | `否` |
 | `ubd`      | `Boolean` | `验证路由是否是特殊的 ubd 类型, 默认 false`                                                  | `否` |
 | `s`        | `String`  | `steam 的 s 值, 一般不需要填写, 目前仅有 steam 需要填写`                                        | `否` |
 | `sa`       | `String`  | `个别网站 anchor 接口路由的 sa 值, 一般不需要填写, 企业版可能会有`                                     | `否` |
@@ -106,7 +104,6 @@
   "size": "invisible",
   "title": "Login",
   "action": "login",
-  "internal": false
 }
 ```
 
@@ -160,7 +157,6 @@ cracker = ReCaptchaUniversalCracker(
     action="login_form",
     title="Login",
     debug=True,
-    internal=False,
 )
 ret = cracker.crack()
 print(ret)
@@ -171,7 +167,6 @@ cracker = ReCaptchaEnterpriseCracker(
     referer="https://login.coinbase.com/",
     size="invisible",
     debug=True,
-    internal=False,
 )
 
 ret = cracker.crack()
@@ -183,7 +178,6 @@ cracker = ReCaptchaSteamCracker(
     referer="https://help.steampowered.com/zh-cn/wizard/HelpWithLoginInfo?issueid=406",
     size="normal",
     title="Steam 客服 - 我忘了我的 Steam 帐户登录名称或密码",
-    internal=False,
     debug=True,
     s=s,  # 网站接口返回的
 )

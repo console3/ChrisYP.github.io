@@ -61,8 +61,6 @@
 |     `size`     | `String`  |             `Validation type (e.g. invisible/normal, usually there are only these two choices, specifically check the size value of the anchor interface, they must match).`             |  `Yes`   |
 |    `title`     | `String`  |                                                     `Trigger the page's title (open the console with F12, type in document.title).`                                                      |  `Yes`   |
 |    `action`    | `String`  |                      `For the verification code trigger page, search grecaptcha.execute(client, {action: action}), where the action value is only required for v3.`                      |   `No`   |
-|      `hl`      | `String`  |                                                     `Specifically, check the hl value of the anchor interface, the default is zh-CN`                                                     |   `No`   |
-|   `internal`   | `Boolean` | `Check whether the verification process uses a domestic (China) proxy.  The default is true. (It's recommended to first try false to use an  overseas proxy for a smoother experience).` |   `No`   |
 |     `ubd`      | `Boolean` |                                                 `Check whether the verification route is the special 'ubd' type. The default is false.`                                                  |   `No`   |
 |      `s`       | `String`  |                          `Steam project's 's' value. It's generally not required to be filled in.  Currently, only the Steam project needs it to be filled in.`                          |   `No`   |
 |      `sa`      | `String`  |              `some website anchor interface route has 'sa'. It's generally not required to be filled in. Currently. only some Enterprise Version needs it to be filled in.`              |   `No`   |
@@ -117,7 +115,6 @@
   "size": "invisible",
   "title": "Login",
   "action": "login",
-  "internal": false
 }
 ```
 
@@ -171,7 +168,6 @@ cracker = ReCaptchaUniversalCracker(
     action="login_form",
     title="Login",
     debug=True,
-    internal=False,
 )
 ret = cracker.crack()
 print(ret)
@@ -182,7 +178,6 @@ cracker = ReCaptchaEnterpriseCracker(
     referer="https://login.coinbase.com/",
     size="invisible",
     debug=True,
-    internal=False,
 )
 
 ret = cracker.crack()
@@ -194,7 +189,6 @@ cracker = ReCaptchaSteamCracker(
     referer="https://help.steampowered.com/zh-cn/wizard/HelpWithLoginInfo?issueid=406",
     size="normal",
     title="Steam 客服 - 我忘了我的 Steam 帐户登录名称或密码",
-    internal=False,
     debug=True,
     s=s,  # The 's' value returned by the Steam website API.
 )

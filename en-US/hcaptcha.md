@@ -1,6 +1,6 @@
 ------
 
-[`Back to homepage`](en.md)    [`中文文档`](../zh-CN/akamai.md)
+[`Back to homepage`](en.md)    [`中文文档`](../zh-CN/hcaptcha.md)
 
 ## Hcaptcha
 
@@ -31,10 +31,10 @@ Due to the strong verification time of `hcaptcha`, from triggering the verificat
 | `rqdata`       | `String` | `If the captcha configuration interface returns captcha_rqdata or captcha_rqtoken, please carry this value (e.g., for adding channels on discord)`                      | No     |
 | `domain`       | `String` | `hcaptcha's verification API domain (like getcaptcha/checkcaptcha etc.), some sites have different verification domains. The default is hcaptcha.com`                | No     |
 | `user_agent`   | `String` | `User agent used in the request process. Some websites require the user agent to remain consistent throughout the process. The default is a random version of Chrome (Windows/MacIntel)` | No     |
-| `proxy`        | `String` | `Some sites require a consistent proxy throughout. Please pass ip:port or usr:pwd@ip:port or socks5://ip:port (if any problem, contact the admin)`           | No    |
 | `only_sense`   | `Boolean`| `Do you want only imperceptible verification? When this value is true, only imperceptible verification is conducted. If this fails, the process doesn't proceed to image verification. Default is no` | No     |
 | `internal`     | `Boolean`| `Is the verification process using a domestic proxy? Default is true`                                                                         | No     |
 | `invisible`     | `Boolean`| `Whether the click box can be seen when the verification code is triggered (or whether the verification code is not sensed) Default is false`                                                                         | No     |
+| `need_ekey`   | `Boolean` | `Do you need to return `E0 ey...`. Defaults to false ` | No |
 
 #### JSON Examples
 
