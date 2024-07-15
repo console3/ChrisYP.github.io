@@ -23,7 +23,8 @@
 |        [kasada:ct](/zh-CN/kasada.md)         |                `Kasada 盾, 返回 x-kpsdk-ct`                |    ✅     |   `1000`   |     ❌     |  ✅   |      ✅       |
 |        [kasada:cd](/zh-CN/kasada.md)         |                `Kasada 盾, 返回 x-kpsdk-cd`                |    ✅     |    `50`     |     ❌     |  ✅   |      ✅       |
 |        [datadome:universal](/zh-CN/datadome.md)         |                `Datadome 盾, 返回 datadome cookie`                |    ✅     |    `1000`     |     ❌     |  ✅   |      ✅       |
-|        [shape:v2](/zh-CN/shape.md)         |                `Shape 盾, 返回请求头或表单加密参数`                |    ✅     |    `1000`     |     ❌     |  ✅   |      ✅       |
+|        [shape:v1](/zh-CN/shape.md)         |                `Shape 盾 v1 版本, 返回请求头或表单加密参数`                |    ✅     |    `1000`     |     ❌     |  ✅   |      ✅       |
+|        [shape:v2](/zh-CN/shape.md)         |                `Shape 盾 v2 版本, 返回请求头或表单加密参数`                |    ✅     |    `1000`     |     ❌     |  ✅   |      ✅       |
 
 ### 名词说明
 
