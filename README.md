@@ -16,7 +16,7 @@
 | [incapsula:rbzid](/zh-CN/incapsula_rbzid.md) |             `Incapsula 盾 rbzid 通用版, 返回验证参数`             |    ✅     |   `100`    |     ❌     |  ✅   |      ✅       |
 |        [akamai:v2](/zh-CN/akamai.md)         |                 `Akamai v2, 直接返回 _abck`                 |    ✅     |   `1000`   |     ❌     |  ✅   |      ❌       |
 |           [tls:v1](/zh-CN/tls.md)            |  `tls 转发接口, 针对校验 ja3、http2 等指纹（akamai/cloudflare）的接口`   |    ✅     |   `100`    |     ❌     |  ✅   |      ✅       |
-|      [discord:guild](/zh-CN/discord.md)      |                     `discord 加群接口`                      |    ✅     |   `500`    |     ❌     |  ✅   |      ❌       |
+|      [discord:guild](/zh-CN/discord.md)      |                     `discord 加群接口`                      |    ✅     |   `500`    |     ❌     |  ❌   |      ❌       |
 | [cloudflare:universal](/zh-CN/cloudflare.md) | `CloudFlare 盾通用版, 返回 cookies 或验证码提交参数(turnstile 300 点)` |    ✅     | `1000/300` |     ❌     |  ✅   |      ✅       |
 |        [aws:universal](/zh-CN/aws.md)        |        `Aws Waf 盾, 返回 aws-waf-token(仅无感 150 点)`         |    ✅     | `500/150`  | `250/150` |  ✅   |      ✅       |
 | [perimeterx:universal](/zh-CN/perimeterx.md) |             `Perimeterx 盾通用版, 返回 _px2、_px3`             |    ✅     |   `1000`   |     ❌     |  ✅   |      ✅       |
