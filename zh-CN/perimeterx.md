@@ -44,7 +44,10 @@ ps:
 | `tag`        | `String`  | `版本号, */api/v2/colletor 或者 */assets/js/bundle 中的 tag 参数（不传 tag 就必须传 app_id）`    | `否` |
 | `app_id`        | `String`  | `*/api/v2/colletor 或者 */assets/js/bundle 中的 appId 参数（PX开头的, 不传 app_id 就必须传 tag`    | `否` |
 | `captcha`    | `Object`  | `验证码参数, xhr 接口返回的按压验证码必传`    | `否` |
-| `proxy`    | `String`  | `无需保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
+| `captcha_html`    | `String`  | `验证码参数, 请求 href 返回的按压验证码的响应源码`    | `否` |
+| `uuid`    | `String`  | `window._pxUuid`    | `否` |
+| `vid`    | `String`  | `window._pxVid`    | `否` |
+| `proxy`    | `String`  | `无需保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `否` |
 | `did` | `String`  | `无感模式返回的指纹 id（存在 extra 属性中）, 后续 xhr 接口出现的按压验证码请传该参数`       | `否` |
 | `country`    | `String`  | `业务流程使用的代理所属地区国家 code, 如美国（us）、英国（uk）, 详情可咨询管理`    | `否` |
 | `ip`    | `String`  | `业务流程使用的代理流程的 ip 地址（例: 56.214.78.94）, 详情可咨询管理`    | `否` |
