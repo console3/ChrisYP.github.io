@@ -15,7 +15,7 @@
 | [incapsula:utmvc](incapsula_utmvc.md) |                     `Incapsula Shield __utmvc Universal, Direct server seamless verification or __utmvc cookie`                      |              ✅               |      `150`       |            ❌             |       ✅        |                  ✅                  |
 |        [akamai:v2](akamai.md)         |                                                 `Akamai v2, Direct return of _abck`                                                  |              ✅               |      `1000`      |            ❌             |       ✅        |                  ❌                  |
 |           [tls:v1](tls.md)            |           `tls forwarding interface, targeting ja3, http2 fingerprint verification interfaces (such as akamai/cloudflare)`           |              ✅               |      `100`       |            ❌             |       ✅        |                  ✅                  |
-|      [discord:guild](discord.md)      |                                                  `discord group joining interface`                                                   |              ✅               |      `500`       |            ❌             |       ✅        |                  ❌                  |
+
 
 ### Definitions
 
