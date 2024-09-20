@@ -29,7 +29,7 @@
 
 | 参数名          | 类型        | 说明                                                                                                                                                             | 必须  |
 |--------------|-----------|-----------------------------|-----|
-| `href`    | `String`  | `触发 perimeterx 验证的页面地址`    | `是` |
+| `href`    | `String`  | `触发 vercel 验证的页面地址`    | `是` |
 | `proxy`    | `String`  | `需保持代理一致, 传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `否` |
 | `user_agent` | `String`  | `自定义 user_agent`       | `否` |
 | `timeout` | `Integer`  | `验证超时时间`       | `否` |
