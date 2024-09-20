@@ -25,6 +25,7 @@
 |        [datadome:universal](/zh-CN/datadome.md)         |                `Datadome 盾, 返回 datadome cookie`                |    ✅     |    `1000`     |     ❌      |  ✅   |      ✅       |
 |        [shape:v1](/zh-CN/shape.md)         |                `Shape 盾 v1 版本, 返回请求头或表单加密参数`                |    ✅     |    `1000`     |     ❌      |  ✅   |      ✅       |
 |        [shape:v2](/zh-CN/shape.md)         |                `Shape 盾 v2 版本, 返回请求头或表单加密参数`                |    ✅     |    `1000`     |     ❌      |  ✅   |      ✅       |
+|        [vercel:universal](/zh-CN/vercel.md)         |                `Vercel 盾通用版本, 返回 _vcrcs cookie`                |    ✅     |    `1000`     |     ❌     |  ✅   |      ✅       |
 
 ### 名词说明
 
@@ -81,4 +82,3 @@ http://api.nocaptcha.io/api/get_user_balance?user_token={User-Token}&nickname={n
     }
 }
 ```
-
