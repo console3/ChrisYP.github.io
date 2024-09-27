@@ -14,7 +14,7 @@
 |   [incapsula:reese84](/zh-CN/incapsula.md)   |        `Incapsula 盾 reese84 通用版, 返回 solution 参数`        |    ✅     |   `210`    |     ❌      |  ✅   |      ❌       |
 | [incapsula:utmvc](/zh-CN/incapsula_utmvc.md) |  `Incapsula 盾 __utmvc 通用版, 服务器直接无感验证 或 __utmvc cookie`  |    ✅     |   `150`    |     ❌      |  ✅   |      ✅       |
 | [incapsula:rbzid](/zh-CN/incapsula_rbzid.md) |             `Incapsula 盾 rbzid 通用版, 返回验证参数`             |    ✅     |   `100`    |     ❌      |  ✅   |      ✅       |
-|        [akamai:v2](/zh-CN/akamai.md)         |                 `Akamai v2, 直接返回 _abck`                 |    ✅     |   `1000`   |     ❌      |  ✅   |      ❌       |
+|        [akamai:v2](/zh-CN/akamai.md)         |                 `Akamai v2/v3, 直接返回 _abck`                 |    ✅     |   `1000`   |     ❌      |  ✅   |      ❌       |
 |           [tls:v1](/zh-CN/tls.md)            |  `tls 转发接口, 针对校验 ja3、http2 等指纹（akamai/cloudflare）的接口`   |    ✅     |   `100`    |     ❌      |  ✅   |      ✅       |
 |      [discord:guild](/zh-CN/discord.md)      |                     `discord 加群接口`                      |    ✅     |   `❌停止维护❌`    |     ❌      |  ❌   |      ❌       |
 | [cloudflare:universal](/zh-CN/cloudflare.md) | `CloudFlare 盾通用版, 返回 cookies 或验证码提交参数(turnstile 300 点)` |    ✅     | `1000/300` | `1000/150` |  ✅   |      ✅       |

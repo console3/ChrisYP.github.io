@@ -3,6 +3,9 @@
 
 ## Akamai
 
+### 说明
+* v2/v3 通用
+
 ### Request URL（POST）:
 
 | 版本               | 接口地址                                                    |
