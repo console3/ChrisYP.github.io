@@ -9,9 +9,9 @@
 |  [recaptcha:universal](/zh-CN/recaptcha.md)  |           `ReCaptcha（v2/v3 通用版）, 直接返回 token`            |    ✅     |   `300`    |   `150`    |  ✅   |      ❌       |
 | [recaptcha:enterprise](/zh-CN/recaptcha.md)  |           `ReCaptcha（v2/v3 企业版）, 直接返回 token`            |    ✅     |   `500`    |   `250`    |  ✅   |      ❌       |
 |    [recaptcha:steam](/zh-CN/recaptcha.md)    |             `ReCaptcha（steam）, 直接返回 token`              |    ✅     |   `600`    |   `300`    |  ✅   |      ❌       |
-|   [recaptcha:app](/zh-CN/recaptcha_app.md)   |             `ReCaptcha（app 版本）, 直接返回 token`             |    ✅     |   `500`    |   `250`    |  ❌   |      ❌       |
+|   [recaptcha:app](/zh-CN/recaptcha_app.md)   |             `ReCaptcha（app 版本）, 直接返回 token`             |    ✅     |   `❌停止维护❌`    |   `250`    |  ❌   |      ❌       |
 |   [hcaptcha:universal](/zh-CN/hcaptcha.md)   |        `Hcaptcha 通用版, 直接返回 generated_pass_UUID`         |    ✅     |   `300`    |   `150`    |  ✅   |      ❌       |
-|   [incapsula:reese84](/zh-CN/incapsula.md)   |        `Incapsula 盾 reese84 通用版, 返回 solution 参数`        |    ✅     |   `210`    |     ❌      |  ✅   |      ❌       |
+|   [incapsula:reese84](/zh-CN/incapsula.md)   |        `Incapsula 盾 reese84 通用版, 返回 solution 参数`        |    ✅     |   `210`    |     ❌      |  ✅   |      ✅       |
 | [incapsula:utmvc](/zh-CN/incapsula_utmvc.md) |  `Incapsula 盾 __utmvc 通用版, 服务器直接无感验证 或 __utmvc cookie`  |    ✅     |   `150`    |     ❌      |  ✅   |      ✅       |
 | [incapsula:rbzid](/zh-CN/incapsula_rbzid.md) |             `Incapsula 盾 rbzid 通用版, 返回验证参数`             |    ✅     |   `100`    |     ❌      |  ✅   |      ✅       |
 |        [akamai:v2](/zh-CN/akamai.md)         |                 `Akamai v2/v3, 直接返回 _abck`                 |    ✅     |   `1000`   |     ❌      |  ✅   |      ❌       |
