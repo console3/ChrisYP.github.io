@@ -4,9 +4,8 @@
 
 ## Hcaptcha
 
-### Description:
-
-Due to the strong verification time of `hcaptcha`, from triggering the verification to submitting the verification, it must be over `8s` to pass. Therefore, there's an `8s` `sleep` in the cracking process, causing the verification time to be long. We appreciate your understanding.
+### Score description
+    🚨🚨🚨 If you get a value but the site validation does not pass please contact the administrator
 
 ### Request URL (POST):
 
