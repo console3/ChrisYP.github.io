@@ -34,7 +34,7 @@
 | `rqdata`     | `String`  | `验证码配置接口有返回 captcha_rqdata、captcha_rqtoken 的请携带该值(如 discord 加频道)`                                                                                         | `否` |
 | `domain`     | `String`  | `hcaptcha 的验证接口域名（即 getcaptcha/checkcaptcha 等接口的域名）, 某些网站验证域名不一致, 默认 hcaptcha.com`                | `否` |
 | `proxy`      | `String`  | `如需要请传 ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果有问题联系管理员)` | `否` |
-| `internal`   | `Boolean` | `验证流程是否使用国内代理, 默认 true`                                                                                                                                        | `否` |
+| `region`      | `String`  | `当传入 proxy 参数时, 请传入代理的地区, 如: hk, sg` | `否` |
 | `invisible`   | `Boolean` | `触发验证码时是否能看见点击框（或 是否无感验证码）, 默认 false`                                                                                                                                        | `否` |
 | `need_ekey`   | `Boolean` | `是否需要返回 `E0_ey...`, 默认 false`                                                                                                                                        | `否` |
 

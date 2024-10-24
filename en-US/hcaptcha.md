@@ -29,9 +29,8 @@
 | `referer`      | `String` | `🚨🚨🚨 Trigger page address. ✅Please copy the full address displayed on the browser✅. Do not alter it, and definitely don't search for it in developer tools❌.`            | Yes    |
 | `rqdata`       | `String` | `If the captcha configuration interface returns captcha_rqdata or captcha_rqtoken, please carry this value (e.g., for adding channels on discord)`                      | No     |
 | `domain`       | `String` | `hcaptcha's verification API domain (like getcaptcha/checkcaptcha etc.), some sites have different verification domains. The default is hcaptcha.com`                | No     |
-| `user_agent`   | `String` | `User agent used in the request process. Some websites require the user agent to remain consistent throughout the process. The default is a random version of Chrome (Windows/MacIntel)` | No     |
-| `only_sense`   | `Boolean`| `Do you want only imperceptible verification? When this value is true, only imperceptible verification is conducted. If this fails, the process doesn't proceed to image verification. Default is no` | No     |
-| `internal`     | `Boolean`| `Is the verification process using a domestic proxy? Default is true`                                                                         | No     |
+| `proxy`        | `String` | `If needed, pass ip:port or usr:pwd@ip:port or socks5://ip:port (contact the administrator if there are any issues)`                                  | No     |
+| `region`       | `String` | `When passing the proxy parameter, please pass the region of the proxy, e.g., hk, sg`                                                          | No     |
 | `invisible`     | `Boolean`| `Whether the click box can be seen when the verification code is triggered (or whether the verification code is not sensed) Default is false`                                                                         | No     |
 | `need_ekey`   | `Boolean` | `Do you need to return `E0 ey...`. Defaults to false ` | No |
 
