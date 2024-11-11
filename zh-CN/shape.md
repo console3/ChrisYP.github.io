@@ -58,25 +58,20 @@
 | 参数名          | 类型        | 说明                                                                                                                                                             | 必须  |
 |--------------|-----------|-----------------------------|-----|
 | `href`    | `String`  | `触发 shape 验证的页面地址`    | `是` |
-| `script_url`    | `String`  | `加载 shape vmp 脚本的 url`    | `是` |
-| `script_content`    | `String`  | `加载 shape vmp 脚本内容`    | `是` |
-| `vmp_url`    | `String`  | `shape vmp 脚本的 url`    | `是` |
+| `script_url`    | `String`  | `加载 shape vmp 脚本的 url 地址, 如星巴克的 https://www.starbucks.com/vendor/static/vendor2.js`    | `是` |
+| `script_content`    | `String`  | `请求 script_url 返回的脚本内容`    | `是` |
+| `vmp_url`    | `String`  | `shape vmp 脚本的 url, 可在 script_content 中匹配出来, 如 https://www.starbucks.com/vendor/static/vendor2.js?seed=AABWGBuTAQAA6Zew1TZ6gymxqAG9Psjx9XG4bdlus6mvja5FZEUuo1TX9R7z&X-DQ7Hy5L1--z=q`    | `是` |
 | `pkey`    | `String`  | `shape 加密参数名, x-xxxx-a 中的 xxxx, 如星巴克的 Dq7hy5l1-a 传  dq7hy5l1 即可`    | `是` |
-| `proxy`    | `String`  | `若不传 vmp_content, 请传代理, 保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
 | `request`    | `Object`  | `需要 shape 签名的接口内容`    | `是` |
 | `request.url`    | `String`  | `需要 shape 签名的接口地址`    | `是` |
-| `request.method`    | `String`  | `需要 shape 签名的接口请求类型, 支持 GET/POST, 默认 POST `    | `否` |
-| `request.headers`    | `Object`  | `需要 shape 签名的接口请求头`    | `否` |
-| `request.data`    | `Object`  | `需要 shape 签名的 post 接口请求表单`    | `否` |
-| `request.json`    | `Object`  | `需要 shape 签名的 post 接口请求 json 体`    | `否` |
-| `vmp_content`    | `String`  | `shape vmp 脚本内容`    | `否` |
+| `vmp_content`    | `String`  | `请求 vmp_url 返回的脚本内容`    | `否` |
+| `title`    | `String`  | `需要 shape 请求头参数的接口在的页面的 document.title, 打开 f12 执行 document.title 上传即可, 如 'Starbucks Gift Cards: Starbucks Coffee Company'`    | `否` |
+| `proxy`    | `String`  | `若不传 vmp_content, 请传代理, 保持代理一致, 若传代理请使用海外代理, 格式请传 ip:port 或 usr:pwd@ip:port (如果有问题联系管理员)` | `是` |
 | `country`    | `String`  | `业务流程使用的代理所属地区国家 code, 如美国（us）、英国（uk）, 详情可咨询管理`    | `否` |
 | `ip`    | `String`  | `业务流程使用的代理流程的 ip 地址（例: 56.214.78.94）, 详情可咨询管理`    | `否` |
+| `timezone`    | `String`  | `业务流程使用的代理流程的 ip 所属时区（例: America/New_York）, 详情可咨询管理`    | `否` |
 | `cookies` | `Object`  | `请求 shape 脚本 vmp_url 会返回一个类似 A04OirWQAQAANesrkEhwOdwESUmWxhQzua76waOt-AY_zSZ4Q1_OPyKoH8YwATJyOxqucgzkwH8AAEB3AAAAAA|1|0|62c86f9725a57529763eb86405e270eea098bfae 的 cookie, 请携带上传`       | `否` |
-| `user_agent` | `String`  | `自定义 user_agent, 必须保持 user-agent 一致, 请传最新版 windows ua`       | `否` |
-| `fast` | `Boolean`  | `是否加速计算, 默认 false （网站风控低可使用该模式）`       | `否` |
-| `submit` | `Boolean`  | `是否直接提交 request 返回响应, 默认 false`       | `否` |
-| `return_header` | `Boolean`  | `submit 为 true 时返回的响应是否返回响应头 headers, 默认 false`       | `否` |
+| `user_agent` | `String`  | `自定义 user_agent, 必须保持 user-agent 一致`       | `否` |
 | `timeout` | `Integer`  | `验证超时时间`       | `否` |
 
 #### json 示例
