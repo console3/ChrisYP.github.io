@@ -17,6 +17,9 @@
     ![无感验证样例](/images/aws/img2.png)
     * 3. 不是直接请求首页后触发, 而且点击按钮后出现验证码, 且参数中有 api_key, 此时需要传入 challenge_url(地址中有 .token 的链接), api_key
     ![验证码样例2](/images/aws/img3.png)
+    * 4. 如 www.amazon.com 触发验证码但不需要 aws-waf-token, 需要 captcha-voucher, 此时 challenge_url 传入包含 captcha.js 的地址, 并传入 captcha_type( problem 接口 problem 参数)
+    ![验证码样例3](/images/aws/img4.png)
+    ![验证码样例4](/images/aws/img5.png)
 
 ### Request URL（POST）:
 
@@ -42,12 +45,19 @@
 | `challenge_url` | `String`  | `无感验证时传入(重定向后地址中有 .token 的链接), 享折扣`       | `否` |
 | `only_sense` | `Boolean`  | `无感验证时传入, 享折扣`       | `否` |
 | `api_key` | `String`  | `见上述情况3时, 需要传入`       | `否` |
+| `captcha_type` | `String`  | `见上述情况4时, 需要传入`       | `否` |
 
 #### json 示例
 
 ```
 {
     "href": "https://nft.porsche.com/onboarding@6",
+}
+
+{
+    "href": "https://www.amazon.com/ap/cvf/request?arb=769b3899-80eb-4224-b47b-8af60b009d37&language=zh",
+    "challenge_url": "https://ait.2608283a.us-east-1.captcha.awswaf.com/ait/ait/ait/captcha.js",
+    "captcha_type": "toycarcity",
 }
 ```
 
@@ -62,6 +72,7 @@
 | `msg`          | `String`  | `调用结果中文说明`                    |
 | `id`           | `String`  | `该次请求 id（唯一, 可用作后续记录查询）`      |
 | `data.aws-waf-token`   | `String`  | `验证通过返回的可用的 aws-waf-token cookie, 可用于后续验证接口`    |
+| `data.captcha-voucher` | `String`  | `验证码验证时返回的验证码凭证, 可用于后续验证接口`    |
 | `cost`         | `String`  | `验证耗时（毫秒）`                    |
 
 ```
@@ -72,6 +83,16 @@
   "cost": "2635.12ms",
   "data": {
     "aws-waf-token": "xxxx"
+  }
+}
+
+{
+  "status": 1,
+  "msg": "验证成功",
+  "id": "639e056b-49bd-4895-94ab-68d59e00873e",
+  "cost": "2635.12ms",
+  "data": {
+    "captcha-voucher": "xxxx"
   }
 }
 ```
