@@ -27,6 +27,13 @@
 |        [shape:v2](/zh-CN/shape.md)         |                `Shape 盾 v2 版本, 返回请求头或表单加密参数`                |    ✅     |    `1000`     |     ❌      |  ✅   |      ✅       |
 |        [vercel:universal](/zh-CN/vercel.md)         |                `Vercel 盾通用版本, 返回 _vcrcs cookie`                |    ✅     |    `1000`     |     ❌     |  ✅   |      ✅       |
 
+### 传入代理说明
+* 使用账密认证或者无需白名单认证的代理, 格式请传 ip:port 或 usr:pwd@ip:port
+* 使用粘性/会话代理(即 n 分钟内 ip 保持不变的类型)
+* 注意代理使用次数, 不要固定一个代理
+
+![proxy](/images/proxy.png)
+
 ### 名词说明
 
 * `点数`: 服务消耗的点数, `1美金 = 66,000 点` (`$1 = 66,000 points`)
