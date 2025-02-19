@@ -59,9 +59,9 @@
 | `user_agent` | `String` | `自定义请求头, 如果返回提示不支持自定义则不要传`                            | `否` |
 | `alpha` | `Boolean` | `是否为无感 cookies`                            | `否` |
 
-#### action 查找(可联系管理员)
+#### action / cdata 查找(非必须, 如有疑问可联系管理员)
 
-当验证类型为 `turnstile`, 并在目标网站的 `*turnstile/v0/api.js` 链接中发现有 `render=explicit` 参数, 那么传入 `explicit=true`, `action` 查找步骤如下:
+当验证类型为 `turnstile`, 并在目标网站的 `*turnstile/v0/api.js` 链接中发现有 `render=explicit` 参数, 那么传入 `explicit=true`, `action`, `cdata` 查找步骤如下:
 
 * 打开 f12 搜索 `window.turnstile.render`
 ![render](/images/cloudflare/render.png)
