@@ -25,7 +25,7 @@
 |        [datadome:universal](/zh-CN/datadome.md)         |                `Datadome 盾, 返回 datadome cookie`                |    ✅     |    `1000`     |     ❌      |  ✅   |      ✅       |
 |        [shape:v1](/zh-CN/shape.md)         |                `Shape 盾 v1 版本, 返回请求头或表单加密参数`                |    ✅     |    `1000`     |     ❌      |  ✅   |      ✅       |
 |        [shape:v2](/zh-CN/shape.md)         |                `Shape 盾 v2 版本, 返回请求头或表单加密参数`                |    ✅     |    `1000`     |     ❌      |  ✅   |      ✅       |
-|        [vercel:universal](/zh-CN/vercel.md)         |                `Vercel 盾通用版本, 返回 _vcrcs cookie`                |    ✅     |    `1000`     |     ❌     |  ✅   |      ✅       |
+|        [vercel:universal](/zh-CN/vercel.md)         |                `Vercel 盾通用版本, 返回 _vcrcs cookie`                |    ✅     |    `150`     |     ❌     |  ✅   |      ❌       |
 
 ### 传入代理说明
 * 使用账密认证或者无需白名单认证的代理, 格式请传 ip:port 或 usr:pwd@ip:port
