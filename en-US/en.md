@@ -40,6 +40,7 @@
   rebate (no rebate for the inviter in this case).
 * Developer rebate has priority over invitation rebate (i.e., if `A` invites `B`, and `B` enters `C's` developer ID, `C`
   gets `20%` rebate, and `A` gets nothing).
+* When calling, if the developer ID is set to oneself, no rebate can be obtained.
 
 ### Rebate Use
 
