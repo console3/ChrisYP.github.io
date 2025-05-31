@@ -1,143 +1,151 @@
-------
+---
+# 🚀 免费注册获取API密钥
+**[立即注册 NoCaptcha.io →](https://www.nocaptcha.io/register?c=hqLmMS)**  
+*专业验证码解决方案 | 高成功率 | 快速响应 | 24/7技术支持*
+
+---
+
 [`返回首页`](../README.md)    [`上一页`](hcaptcha.md)       [`下一页`](incapsula_utmvc.md)   [`English Version`](../en-US/incapsula.md)
 
-## Incapsula ( reese84 )
+# Incapsula (Reese84) 验证码破解服务
 
-### 有问必答
+## 🔥 产品优势
 
-* 接口中提交的 href 在哪里?(有多个 src 的情况下, 选择有 async 关键字的那个链接)
-    * ![incapsula](/images/incapsula/incapsula.png)
-* href 返回样例(响应中会包含类似 ob 混淆一样的代码)
-    * ![incapsula](/images/incapsula/incapsula2.png)
+### 为什么选择我们的Incapsula解决方案
 
-### 为什么选择我们
+* **🌐 通用兼容性**: 目前已知网站均能通过验证，支持所有Incapsula Reese84类型验证
+* **⚡ 极致速度**: 采用`纯算法`计算参数，`协议提交`，`同步返回`结果
+* **🔄 稳定可靠**: 更新及时（不超过2小时），为您的业务提供稳定支撑
+* **🎯 高成功率**: 专业算法优化，确保高通过率
 
-* 通用性: 目前已知网站均能通过验证。
-* 极致的速度: 接口使用`纯算法`计算参数，`协议提交`，`同步返回`。
-* 稳定性: 更新及时（不会超过两小时），更好地支撑您的业务。
+## 📋 常见问题解答
 
-### Request URL（POST）:
+### 如何获取href参数？
 
-| 版本               | 接口地址                                                    |
-|-------------------|---------------------------------------------------------|
-| `reese84（universal）` | `http://api.nocaptcha.io/api/wanda/incapsula/reese84` |
+**重要提示**：当页面有多个src链接时，请选择包含 `async` 关键字的链接
 
-### Request Headers:
+![incapsula参数获取](/images/incapsula/incapsula.png)
 
-| 参数名            | 说明                 | 必须  |
-|----------------|--------------------|-----|
-| `User-Token`   | `用户密钥, 主页获取`       | `是` |
-| `Content-Type` | `application/json` | `是` |
-| `Developer-Id` | `开发者 ID, 开发者用户使用, 用户主页邀请链接的字符串(如 xxx/register?c=abcdef, 则 abcdef 为开发者 ID)`           | `否` |
+### href返回内容示例
 
-### POST Data（JSON）:
+响应中会包含类似混淆代码，这是正常现象：
 
-| 参数名          | 类型        | 说明                                                                                                                                                             | 必须  |
-|--------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
-| `href`       | `String`  | `触发 incapsula 验证的获取 incapsula js 的地址`                                                                                                                           | `是` |
-| `user_agent` | `String`  | `请求流程使用 ua, 后续请求校验 ua 是否一致, 所以请传你后续请求将使用的 ua`                                                                                                      | `是` |
-| `cookies` | `Object`  | `提示需要包含 rbzid、rbzsessionid 的 cookies 时使用`                                                                                                      | `否` |
+![incapsula响应示例](/images/incapsula/incapsula2.png)
 
-#### json 示例
+## 🔗 API接口信息
 
-```
+### 请求地址（POST）
+
+| 版本类型 | 接口地址 |
+|---------|---------|
+| **Reese84（Universal）** | `http://api.nocaptcha.io/api/wanda/incapsula/reese84` |
+
+### 请求头参数
+
+| 参数名 | 说明 | 必填 |
+|--------|------|------|
+| `User-Token` | 用户密钥，从主页获取 | ✅ |
+| `Content-Type` | `application/json` | ✅ |
+| `Developer-Id` | 开发者ID，开发者用户使用，用户主页邀请链接的字符串(如 xxx/register?c=abcdef, 则 abcdef 为开发者ID) | ❌ |
+
+### POST请求参数（JSON格式）
+
+| 参数名 | 类型 | 说明 | 必填 |
+|--------|------|------|------|
+| `href` | `String` | 🚨**触发Incapsula验证的获取JS地址**，选择带async关键字的链接 | ✅ |
+| `user_agent` | `String` | 请求流程使用的UA，后续请求会校验UA一致性 | ✅ |
+| `cookies` | `Object` | 当提示需要包含rbzid、rbzsessionid的cookies时使用 | ❌ |
+
+### 📝 请求示例
+
+```json
 {
   "href": "https://www.priceline.com.au/Cawdor-asse-my-Nightning-we-from-Dealell-Come-Ty",
-  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
 }
 ```
 
-### Response Data（JSON）:
+## 📤 响应数据格式
 
-| 参数名            | 类型        | 说明                            |
-|----------------|-----------|-------------------------------|
-| `status`       | `Integer` | `调用是否成功, 1 成功, 0 失败, 请使用该值判断` |
-| `msg`          | `String`  | `调用结果中文说明`                    |
-| `id`           | `String`  | `该次请求 id（唯一, 可用作后续记录查询）`      |
-| `data.solution` | `String`  | `验证通过返回的 solution, 可用于后续请求获取resee84接口`    |
-| `cost`         | `String`  | `验证耗时（毫秒）`                    |
+| 参数名 | 类型 | 说明 |
+|--------|------|------|
+| `status` | `Integer` | 调用状态：1=成功，0=失败 |
+| `msg` | `String` | 调用结果说明 |
+| `id` | `String` | 请求唯一ID（可用于记录查询） |
+| `data.solution` | `String` | 验证成功返回的solution，用于后续请求获取reese84接口 |
+| `cost` | `String` | 验证耗时（毫秒） |
 
-```
+### 响应示例
+
+```json
 {
-  'status': 1,
-  'msg': '验证成功',
-  'id': '4a8019cc-321b-467f-9273-2698fb14288b',
-  'cost': '2575.75ms',
-  'data': {
-    'solution': {
-      'interrogation': {
-        'p': 'A long string',
-        'st': 1691455449,
-        'sr': 1259062184,
-        'cr': 352269128,
-        'og': 1
-      },
-      'version': 'beta'
-    },
-    'old_token': None,
-    'error': None,
-    'performance': {
-      'interrogation': 643
-    }
-  },
-  'extra': {}
-}
-```
-
-<!--#### 不提交验证, 仅计算（submit=false）
-
-| 参数名      | 类型        | 说明                            |
-|----------|-----------|-------------------------------|
-| `status` | `Integer` | `调用是否成功, 1 成功, 0 失败, 请使用该值判断` |
-| `msg`    | `String`  | `调用结果中文说明`                    |
-| `id`     | `String`  | `该次请求 id（唯一, 可用作后续记录查询）`      |
-| `data`   | `Object`  | `直接用作验证接口 post json 参数提交即可`   |
-| `cost`   | `String`  | `验证耗时（毫秒）`                    |
-
-```
-{
-  "cost": "279.66ms",
+  "status": 1,
+  "msg": "验证成功",
+  "id": "4a8019cc-321b-467f-9273-2698fb14288b",
+  "cost": "2575.75ms",
   "data": {
-    "error": null,
-    "old_token": null,
-    "performance": {
-      "interrogation": 319
-    },
     "solution": {
       "interrogation": {
-        "cr": 661732465,
-        "og": 1,
         "p": "A long string",
-        "sr": 981077036,
-        "st": 1679134739
+        "st": 1691455449,
+        "sr": 1259062184,
+        "cr": 352269128,
+        "og": 1
       },
       "version": "beta"
+    },
+    "old_token": null,
+    "error": null,
+    "performance": {
+      "interrogation": 643
     }
   },
-  "id": "b41526e4-60b9-4005-8967-0124d328f386",
-  "msg": "验证成功",
-  "status": 1
+  "extra": {}
 }
-```-->
+```
 
+## 💻 代码示例
 
-### 调用示例
+### CURL命令
 
-#### python
+```bash
+curl -L 'http://api.nocaptcha.io/api/wanda/incapsula/reese84' \
+ -H 'User-Token: xxx' \
+ -H 'Developer-Id: hqLmMS' \
+ -H 'Content-Type: application/json' \
+ --data-raw '{"href": "https://www.priceline.com.au/Cawdor-asse-my-Nightning-we-from-Dealell-Come-Ty", "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"}'
+```
 
-```shell
+### Python调用示例
+
+**安装依赖**
+```bash
 pip install -U pynocaptcha -i https://pypi.python.org/simple
 ```
 
+**代码示例**
 ```python
 from pynocaptcha import IncapsulaReee84Cracker
 
+# Incapsula Reese84验证码破解
 cracker = IncapsulaReee84Cracker(
-    user_token="xxx",
+    user_token="your_user_token_here",
+    developer_id="hqLmMS",  # 开发者ID
     href="https://www.priceline.com.au/Cawdor-asse-my-Nightning-we-from-Dealell-Come-Ty",
     user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
     debug=True
 )
-ret = cracker.crack()
-print(ret)
+result = cracker.crack()
+print(f"破解结果: {result}")
 ```
+
+---
+
+## 🎯 相关服务
+
+- [Incapsula UTMVC验证码破解](incapsula_utmvc.md)
+- [Incapsula RBZID验证码破解](incapsula_rbzid.md)
+- [ReCaptcha验证码破解](recaptcha.md)
+- [更多验证码解决方案](../README.md)
+
+**需要技术支持？[立即联系我们](https://www.nocaptcha.io/register?c=hqLmMS)**

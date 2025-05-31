@@ -1,123 +1,158 @@
+---
+# 🚀 免费注册获取API密钥
+**[立即注册 NoCaptcha.io →](https://www.nocaptcha.io/register?c=hqLmMS)**  
+*专业验证码解决方案 | 高成功率 | 快速响应 | 24/7技术支持*
+
+---
+
 [`返回首页`](../README.md)    [`下一页`](hcaptcha.md)   [`English Version`](../en-US/recaptcha.md)
 
-## ReCaptcha
+# ReCaptcha 验证码破解服务
 
-### 有问必答
+## 🔥 产品优势
 
-* 如何区分 `v2`、`v3` ？
-    * 与其他平台不同的是，我们只分普通版和企业版。`v2`、`v3` 的区别:
-        * `v3` 到 `reload` 接口就结束了，`size` 参数一般为 `invisible`（具体请查看网页接口），且需要传 `action`
-          参数，请打开 `f12` 搜索 `grecaptcha.execute`，找到该函数的入参对象的 `action` 值，填入 `action` 参数即可。
-        * `v2` 通过 `reload` 接口之后还需要请求 `userverify` 接口，`size` 一般为 `normal`
-          （具体请查看网页接口），不需要传 `action` 参数。
-        * 普通版、企业版接口参数完全相同，唯一不同在于请求路由的不同。
+### 为什么选择我们的ReCaptcha解决方案
 
-* 如何区分 `普通版`、`企业版` ？
-    * 普通版：`anchor` 接口路由： `/recaptcha/api2/anchor`
-    * 企业版: `anchor` 接口路由： `/recaptcha/enterprise/anchor`
+* **🌐 通用兼容性**: 支持所有已知网站的ReCaptcha验证（包括其他平台无法处理的带 `s` 值的企业版，如 `steam`），统一支持 `v2`、`v3` 版本
+* **⚡ 极致速度**: 采用`纯算法`计算参数，`协议提交`，`同步返回`结果
+  - `v3 invisible`、`v2 nocaptcha` 类型平均 `1秒` 返回
+  - `v2` 图片点击类型最快 `2秒`，最慢不超过 `10秒`
+* **🎯 高成功率**: `v3` 分值高，适用于各种高风控强度站点（包括企业版），成功通过验证获取目标数据
+* **🔄 稳定可靠**: 更新及时（不超过2小时），为您的业务提供稳定支撑
 
-* 带 `s` 值的企业版（如 `steam`），接口拿到的 token 值，为什么还是不能用？
-    * 与你使用的代理质量有关系，请先尝试直接使用你本机 `ip` 或更换代理，如果还是不能用，请联系客服。
+## 📋 常见问题解答
 
-### 为什么选择我们
+### 如何区分 ReCaptcha v2 和 v3？
 
-* 通用性: 目前已知网站均能通过验证（包括其他平台过不去的带 `s` 值的企业版，如 `steam`），且接口统一 `v2`、`v3` 。
-* 极致的速度: 市面上其他接口都是异步的，需要先创建任务，然后获取任务 id 不停的去轮询获取验证结果，有时耗时会达到 1
-  分钟之久，这是难以接受的。而我们的接口使用`纯算法`计算参数，`协议提交`，`同步返回`，`v3 invisible `、`v2 nocaptcha`
-  类型平均 `1s` 返回，`v2` 其他图片点击类型最快 `2s`，最慢不会超过 `10s` （这也取决于代理的速度）。
-* 高可用: `v3` 分值高，大部分风控强度高的站点（如各种企业版），我们接口生产的 `token` 值，都能通过风控成功获取到目标数据。
-* 稳定性: 更新及时（不会超过两小时），更好地支撑您的业务。
+与其他平台不同，我们只区分普通版和企业版：
 
-### Request URL（POST）:
+**v3 特征**：
+- 到 `reload` 接口就结束
+- `size` 参数通常为 `invisible`
+- 需要传入 `action` 参数
+- 查找方法：打开 `F12` 搜索 `grecaptcha.execute`，找到函数入参对象的 `action` 值
 
-| 版本                | 接口地址                                                     |
-|-------------------|----------------------------------------------------------|
-| `通用版（universal）`  | `http://api.nocaptcha.io/api/wanda/recaptcha/universal`  |
-| `企业版（enterprise）` | `http://api.nocaptcha.io/api/wanda/recaptcha/enterprise` |
-| `steam`           | `http://api.nocaptcha.io/api/wanda/recaptcha/steam`      |
+**v2 特征**：
+- 通过 `reload` 接口后还需请求 `userverify` 接口
+- `size` 通常为 `normal`
+- 不需要 `action` 参数
 
-### Request Headers:
+### 如何区分普通版和企业版？
 
-| 参数名            | 说明                                                                         | 必须  |
-|----------------|----------------------------------------------------------------------------|-----|
-| `User-Token`   | `用户密钥, 主页获取`                                                               | `是` |
-| `Content-Type` | `application/json`                                                         | `是` |
-| `Developer-Id` | `开发者 ID, 开发者用户使用, 用户主页邀请链接的字符串(如 xxx/register?c=abcdef, 则 abcdef 为开发者 ID)` | `否` |
+- **普通版**：`anchor` 接口路由为 `/recaptcha/api2/anchor`
+- **企业版**：`anchor` 接口路由为 `/recaptcha/enterprise/anchor`
 
-### POST Data（JSON）:
+### 企业版带 s 值（如 steam）的token为什么无法使用？
 
-| 参数名        | 类型        | 说明                                                                             | 必须  |
-|------------|-----------|--------------------------------------------------------------------------------|-----|
-| `sitekey`  | `String`  | `谷歌验证码对接 key(anchor/reload 接口的 k 值)`                                           | `是` |
-| `referer`  | `String`  | `🚨🚨🚨触发页面地址，✅请复制浏览器上显示的完整地址✅，不要改动，更不要去开发者工具❌里去找。`                            | `是` |
-| `size`     | `String`  | `验证类型(invisible/normal, 只有这两个选择, 具体查看 anchor 接口的 size 值, 必须对应)`                | `是` |
-| `title`    | `String`  | `触发页面的 title (f12 打开控制台, 输入 document.title)`                                   | `是` |
-| `action`   | `String`  | `验证码触发页面搜索 grecaptcha.execute(client, {action: action}), 其中的 action 值, v3 才需要` | `否` |
-| `proxy`    | `String`  | `传入代理可打折, 格式请传 ip:port 或 usr:pwd@ip:port 或 socks5://ip:port (如果有问题联系管理员)`      | `否` |
-| `ubd`      | `Boolean` | `验证路由是否是特殊的 ubd 类型, 默认 false`                                                  | `否` |
-| `s`        | `String`  | `steam 的 s 值, 一般不需要填写, 目前仅有 steam 需要填写`                                        | `否` |
-| `sa`       | `String`  | `个别网站 anchor 接口路由的 sa 值, 一般不需要填写, 企业版可能会有`                                     | `否` |
+这与代理质量相关，建议：
+1. 先尝试使用本机IP
+2. 更换高质量代理
+3. 如仍无法使用，请联系客服
 
-#### 参数查找步骤
+## 🔗 API接口信息
 
-1. ### 方式1 [`【🔥强烈推荐🔥】使用插件获取全部参数`](plugin.md)
+### 请求地址（POST）
 
-2. ### 方式2，在开发者工具内获取参数。
+| 版本类型 | 接口地址 |
+|---------|---------|
+| **通用版（Universal）** | `http://api.nocaptcha.io/api/wanda/recaptcha/universal` |
+| **企业版（Enterprise）** | `http://api.nocaptcha.io/api/wanda/recaptcha/enterprise` |
+| **Steam版** | `http://api.nocaptcha.io/api/wanda/recaptcha/steam` |
 
-* 搜索 `anchor` 接口，获取 `k`、`size`、`hl` 参数, `k` 值为 `sitekey`，填入对应字段即可，`hl` 若是 `zh-CN` 则可以不填，如下图所示：
-    * ![步骤1](/images/recaptcha/arg1.png)
+### 请求头参数
 
-* `referer` 参数，✅请直接复制浏览器上显示的完整地址即可✅
+| 参数名 | 说明 | 必填 |
+|--------|------|------|
+| `User-Token` | 用户密钥，从主页获取 | ✅ |
+| `Content-Type` | `application/json` | ✅ |
+| `Developer-Id` | 开发者ID，开发者用户使用，用户主页邀请链接的字符串(如 xxx/register?c=abcdef, 则 abcdef 为开发者ID) | ❌ |
 
-* 切换至 `console` 控制台，输入 `document.title`，将输出值填入 `title` 字段
-    * ![步骤3](/images/recaptcha/arg3.png)
+### POST请求参数（JSON格式）
 
-* 验证域名 `domain` 参数可传可不传，但是如果是国外站点，且使用 `www.recaptcha.net` 成功率较低，可以尝试 `internal_proxy`
-  传 `false`，域名 `domain` 会自动使用 `www.google.com`，网站具体使用的验证域名查找如下所示：
-    * ![步骤4](/images/recaptcha/arg4.png)
+| 参数名 | 类型 | 说明 | 必填 |
+|--------|------|------|------|
+| `sitekey` | `String` | 谷歌验证码对接key（anchor/reload接口的k值） | ✅ |
+| `referer` | `String` | 🚨**触发页面地址**，请复制浏览器完整地址，不要修改 | ✅ |
+| `size` | `String` | 验证类型（invisible/normal），必须与anchor接口的size值对应 | ✅ |
+| `title` | `String` | 触发页面的title（F12控制台输入 document.title） | ✅ |
+| `action` | `String` | v3版本需要的action值，搜索 grecaptcha.execute 获取 | ❌ |
+| `proxy` | `String` | 代理地址，格式：ip:port 或 usr:pwd@ip:port 或 socks5://ip:port | ❌ |
+| `ubd` | `Boolean` | 是否为特殊ubd类型路由，默认false | ❌ |
+| `s` | `String` | Steam的s值，一般不需要填写，仅Steam需要 | ❌ |
+| `sa` | `String` | 个别网站anchor接口路由的sa值，企业版可能需要 | ❌ |
 
-* 如果按照上述 `v2`、`v3` 区分方式，判断该验证为 `v3`，则还需要查找并填入 `action` 参数，查找方式如下：
+## 🔍 参数获取方法
 
-    * 方式 1：打开 `f12` ，通用版搜索 `.execute(`，企业版搜索 `.enterprise.execute`，查找代码中的 `action`
-      参数，如下图所示，如果没有搜索到，请使用方式 2。
-        * ![步骤5](/images/recaptcha/arg5.png)
+### 方法1：[🔥强烈推荐🔥 使用插件获取全部参数](plugin.md)
 
-    * 方式 2：打开 `f12` ，通用版输入 `debug(grecaptcha.execute)`，企业版输入 `debug(grecaptcha.enterprise.execute)`
-      ，点击登录等完成验证，等下断点触发，在 `Scope` 中复制 `action` 的值，如下图所示：
-        * ![步骤6](/images/recaptcha/arg6.png)
-        * ![步骤7](/images/recaptcha/arg7.png)
+### 方法2：开发者工具手动获取
 
-* 验证路由是否是 `ubd`（目前仅在一个网站的企业版见过这种类型），如果是 `ubd` ，则 `ubd` 参数请填 `true`，否则填 `false` 或不填：
+**步骤1：获取基础参数**
+- 搜索 `anchor` 接口，获取 `k`、`size`、`hl` 参数
+- `k` 值即为 `sitekey`
+- 如果 `hl` 为 `zh-CN` 可不填
 
-    * ![步骤8](/images/recaptcha/arg8.png)
+![参数获取步骤1](/images/recaptcha/arg1.png)
 
-#### anchor 示例
+**步骤2：获取页面信息**
+- `referer`：直接复制浏览器地址栏完整URL
+- `title`：F12控制台输入 `document.title` 获取
 
-![anchor 示例](/images/recaptcha/anchor.jpg)
+![参数获取步骤3](/images/recaptcha/arg3.png)
 
-#### json 示例
+**步骤3：获取action参数（仅v3需要）**
 
-```
+*方法1*：搜索代码
+- 通用版搜索 `.execute(`
+- 企业版搜索 `.enterprise.execute`
+- 查找代码中的 `action` 参数
+
+![参数获取步骤5](/images/recaptcha/arg5.png)
+
+*方法2*：断点调试
+- 通用版输入 `debug(grecaptcha.execute)`
+- 企业版输入 `debug(grecaptcha.enterprise.execute)`
+- 触发验证后在Scope中复制action值
+
+![参数获取步骤6](/images/recaptcha/arg6.png)
+![参数获取步骤7](/images/recaptcha/arg7.png)
+
+**步骤4：检查UBD类型**
+- 检查验证路由是否为 `ubd` 类型
+- 如果是，设置 `ubd` 参数为 `true`
+
+![参数获取步骤8](/images/recaptcha/arg8.png)
+
+## 📝 请求示例
+
+### Anchor接口示例
+![anchor示例](/images/recaptcha/anchor.jpg)
+
+### JSON请求示例
+
+```json
 {
   "referer": "https://www.trustpilot.com/",
   "sitekey": "6Lcxp2UaAAAAABkIC5izuDmTEeXYfgfaoQ9v69Q4",
   "size": "invisible",
   "title": "Login",
-  "action": "login",
+  "action": "login"
 }
 ```
 
-### Response Data（JSON）
+## 📤 响应数据格式
 
-| 参数名          | 类型        | 说明                            |
-|--------------|-----------|-------------------------------|
-| `status`     | `Integer` | `调用是否成功, 1 成功, 0 失败, 请使用该值判断` |
-| `msg`        | `String`  | `调用结果中文说明`                    |
-| `id`         | `String`  | `该次请求 id（唯一, 可用作后续记录查询）`      |
-| `data.token` | `String`  | `验证通过返回的 token`               |
-| `cost`       | `String`  | `验证耗时（毫秒）`                    |
+| 参数名 | 类型 | 说明 |
+|--------|------|------|
+| `status` | `Integer` | 调用状态：1=成功，0=失败 |
+| `msg` | `String` | 调用结果说明 |
+| `id` | `String` | 请求唯一ID（可用于记录查询） |
+| `data.token` | `String` | 验证成功返回的token |
+| `cost` | `String` | 验证耗时（毫秒） |
 
-```
+### 响应示例
+
+```json
 {
   "cost": "1380.01ms",
   "data": {
@@ -129,28 +164,33 @@
 }
 ```
 
-### CURL command
+## 💻 代码示例
 
-```
+### CURL命令
+
+```bash
 curl -L 'http://api.nocaptcha.io/api/wanda/recaptcha/universal' \
  -H 'User-Token: xxx' \
+ -H 'Developer-Id: hqLmMS' \
  -H 'Content-Type: application/json' \
- --data-raw '{"sitekey": "6Lcxp2UaAAAAABkIC5izuDmTEeXYfgfaoQ9v69Q4", "referer": "https://www.trustpilot.com/", "size": "invisible", "title": "Login", "action": "login", "internal": false}' 
+ --data-raw '{"sitekey": "6Lcxp2UaAAAAABkIC5izuDmTEeXYfgfaoQ9v69Q4", "referer": "https://www.trustpilot.com/", "size": "invisible", "title": "Login", "action": "login"}'
 ```
 
-### 调用示例
+### Python调用示例
 
-#### python
-
-```shell
+**安装依赖**
+```bash
 pip install -U pynocaptcha -i https://pypi.python.org/simple
 ```
 
+**通用版示例**
 ```python
-from pynocaptcha import ReCaptchaUniversalCracker, ReCaptchaEnterpriseCracker, ReCaptchaSteamCracker
+from pynocaptcha import ReCaptchaUniversalCracker
 
+# 通用版ReCaptcha破解
 cracker = ReCaptchaUniversalCracker(
-    user_token="xxx",
+    user_token="your_user_token_here",
+    developer_id="hqLmMS",  # 开发者ID
     sitekey="6Le6xNgUAAAAAHDXXUgcrCYACaq_K-iUTa-BIm4h",
     referer="https://visa-fr.tlscontact.com/gb/lon/login.php",
     size="invisible",
@@ -158,30 +198,53 @@ cracker = ReCaptchaUniversalCracker(
     title="Login",
     debug=True,
 )
-ret = cracker.crack()
-print(ret)
+result = cracker.crack()
+print(f"破解结果: {result}")
+```
 
+**企业版示例**
+```python
+from pynocaptcha import ReCaptchaEnterpriseCracker
+
+# 企业版ReCaptcha破解
 cracker = ReCaptchaEnterpriseCracker(
-    user_token="xxx",
+    user_token="your_user_token_here",
+    developer_id="hqLmMS",  # 开发者ID
     sitekey="6LcTV7IcAAAAAI1CwwRBm58wKn1n6vwyV1QFaoxr",
     referer="https://login.coinbase.com/",
     size="invisible",
     debug=True,
 )
+result = cracker.crack()
+print(f"破解结果: {result}")
+```
 
-ret = cracker.crack()
-print(ret)
+**Steam版示例**
+```python
+from pynocaptcha import ReCaptchaSteamCracker
 
+# Steam版ReCaptcha破解
 cracker = ReCaptchaSteamCracker(
-    user_token="xxx",
+    user_token="your_user_token_here",
+    developer_id="hqLmMS",  # 开发者ID
     sitekey="6LfNGb0ZAAAAAI_j6L2y1eXXWAoSbtjvccEcEq2P",
     referer="https://help.steampowered.com/zh-cn/wizard/HelpWithLoginInfo?issueid=406",
     size="normal",
     title="Steam 客服 - 我忘了我的 Steam 帐户登录名称或密码",
     debug=True,
-    s=s,  # 网站接口返回的
+    s="steam_s_value",  # 网站接口返回的s值
 )
-
-ret = cracker.crack()
-print(ret)
+result = cracker.crack()
+print(f"破解结果: {result}")
 ```
+
+---
+
+## 🎯 相关服务
+
+- [HCaptcha验证码破解](hcaptcha.md)
+- [Cloudflare验证码破解](cloudflare.md)
+- [Incapsula验证码破解](incapsula.md)
+- [更多验证码解决方案](../README.md)
+
+**需要技术支持？[立即联系我们](https://www.nocaptcha.io/register?c=hqLmMS)**

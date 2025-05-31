@@ -1,40 +1,83 @@
+---
+# 🚀 Free Registration for API Key
+**[Register Now at NoCaptcha.io →](https://www.nocaptcha.io/register?c=hqLmMS)**  
+*Professional CAPTCHA Solutions | High Success Rate | Fast Response | 24/7 Technical Support*
+
+---
+
 [`Return to Home`](en.md)  [`中文文档`](../zh-CN/plugin.md)
 
-## ReCaptcha & hCaptcha
+# Browser Plugin for ReCaptcha & hCaptcha
 
-- First, install the extension. The extension download link is:
+## 🔥 Product Advantages
 
-  `https://chrome.google.com/webstore/detail/nocaptcha-solver/kkphlbgphimpedeckcepigahenlmpggc?utm_source=ext_sidebar&hl=zh-CN`
+### Why Choose Our Browser Plugin
 
-  ##### Or [`Click here to download`](https://chrome.google.com/webstore/detail/nocaptcha-solver/kkphlbgphimpedeckcepigahenlmpggc?utm_source=ext_sidebar&hl=zh-CN)
+* **🌐 Universal Support**: Automatically handles ReCaptcha and hCaptcha on any website
+* **⚡ One-Click Solution**: Automatic parameter extraction and solving
+* **🔄 Real-time Processing**: Instant captcha solving with live parameter capture
+* **🎯 Developer Friendly**: Easy parameter extraction for API integration
 
-![Figure 1](/images/fill-params/1.png)
+## 📋 Plugin Features
 
-- After installing the extension, pin the `NoCaptcha Solver` extension to the extensions bar (for convenience) and then log in to your platform account. `token` is the `token` consumed, `user name` is the platform `login account`, i.e., `email address`.
+### 🔍 Key Capabilities
 
-  ![Figure](/images/fill-params/3.png)
+* **Automatic Detection**: Recognizes ReCaptcha and hCaptcha automatically
+* **Parameter Extraction**: Captures all necessary parameters for API calls
+* **Live Monitoring**: Real-time network monitoring for parameter collection
+* **Easy Integration**: Seamless workflow for developers
 
-  ![Figure](/images/fill-params/2.png)
+## 🚀 Installation & Setup
 
-- Click `Manage extensions` or enter `chrome://extensions/` into the extension page and click `Service Worker`.
+### Step 1: Install the Extension
 
-  ![Figure](/images/fill-params/4.png)
+Download and install the NoCaptcha Solver extension from Chrome Web Store:
 
-- Clicking will open the developer tools, at this point, switch to the `network` panel.
+**[📥 Download NoCaptcha Solver Extension](https://chrome.google.com/webstore/detail/nocaptcha-solver/kkphlbgphimpedeckcepigahenlmpggc?utm_source=ext_sidebar&hl=zh-CN)**
 
-  ![Figure](/images/fill-params/5.png)
+![Extension Installation](/images/fill-params/1.png)
 
-- Open the website that needs to be cracked, such as `https://democaptcha.com/demo-form-eng/recaptcha-2.html`, and the extension will automatically start to crack `reCaptcha` or `hCaptcha`.
+### Step 2: Configure Your Account
 
-  ![Figure](/images/fill-params/6.png)
+After installation, pin the `NoCaptcha Solver` extension to your extensions bar and log in with your platform credentials:
 
-  ![Figure](/images/fill-params/7.png)
+- **Token**: Your API token from the platform
+- **Username**: Your platform login email address
 
-- At this point, in the `network` column, you can get all the parameters needed for the captcha. Pay **no attention** to the `extra` object and **do not submit this parameter**.
+![Extension Configuration](/images/fill-params/3.png)
 
-  ![Figure](/images/fill-params/8.png)
+![Login Interface](/images/fill-params/2.png)
 
-```json	
+### Step 3: Access Developer Tools
+
+1. Click `Manage extensions` or navigate to `chrome://extensions/`
+2. Find the NoCaptcha Solver extension and click `Service Worker`
+
+![Extension Management](/images/fill-params/4.png)
+
+3. This opens the developer tools - switch to the `Network` panel
+
+![Developer Tools](/images/fill-params/5.png)
+
+## 💻 Usage Instructions
+
+### Step 4: Capture Parameters
+
+1. **Visit Target Website**: Open any website with ReCaptcha or hCaptcha (e.g., `https://democaptcha.com/demo-form-eng/recaptcha-2.html`)
+
+2. **Automatic Processing**: The extension will automatically detect and start solving the captcha
+
+![Captcha Detection](/images/fill-params/6.png)
+
+![Solving Process](/images/fill-params/7.png)
+
+3. **Parameter Extraction**: In the Network panel, you'll see all the parameters needed for API integration
+
+![Parameter Capture](/images/fill-params/8.png)
+
+### 📝 Extracted Parameters Example
+
+```json
 {
     "sitekey": "6LfGqN0UAAAAAFdGo4OSj5Awi8hM_9kmR7VfXUP2",
     "referer": "https://democaptcha.com/demo-form-eng/recaptcha-2.html",
@@ -49,5 +92,62 @@
 }
 ```
 
-With this, all the parameters needed for cracking are obtained at once. The operation of hCaptcha is exactly the same as reCaptcha, so it is not repeated here.
+### ⚠️ Important Notes
 
+- **Ignore the `extra` object** - do not submit this parameter in your API calls
+- **Use extracted parameters** for your API integration with Developer-Id: `hqLmMS`
+- **hCaptcha works identically** to ReCaptcha with the same process
+
+## 🔗 API Integration
+
+### Using Extracted Parameters
+
+Once you have the parameters, you can use them with our API:
+
+```bash
+curl -L 'http://api.nocaptcha.io/api/wanda/recaptcha/universal' \
+ -H 'User-Token: your_token_here' \
+ -H 'Developer-Id: hqLmMS' \
+ -H 'Content-Type: application/json' \
+ --data-raw '{
+   "sitekey": "6LfGqN0UAAAAAFdGo4OSj5Awi8hM_9kmR7VfXUP2",
+   "referer": "https://democaptcha.com/demo-form-eng/recaptcha-2.html",
+   "size": "normal"
+ }'
+```
+
+### Python Integration Example
+
+```python
+from pynocaptcha import RecaptchaV2Cracker
+
+# Use extracted parameters from plugin
+cracker = RecaptchaV2Cracker(
+    user_token="your_user_token_here",
+    developer_id="hqLmMS",  # Developer ID
+    sitekey="6LfGqN0UAAAAAFdGo4OSj5Awi8hM_9kmR7VfXUP2",
+    referer="https://democaptcha.com/demo-form-eng/recaptcha-2.html",
+    size="normal"
+)
+
+result = cracker.crack()
+print(f"Captcha solution: {result}")
+```
+
+## 🎯 Supported Captcha Types
+
+- **✅ ReCaptcha v2**: All variants including invisible
+- **✅ ReCaptcha v3**: Action-based verification
+- **✅ hCaptcha**: All difficulty levels
+- **✅ Enterprise**: Both ReCaptcha and hCaptcha enterprise versions
+
+---
+
+## 🎯 Related Services
+
+- [ReCaptcha API Solving](recaptcha.md)
+- [hCaptcha API Solving](hcaptcha.md)
+- [TLS Client Service](tls.md)
+- [More CAPTCHA Solutions](en.md)
+
+**Need Technical Support? [Contact Us Now](https://www.nocaptcha.io/register?c=hqLmMS)** 

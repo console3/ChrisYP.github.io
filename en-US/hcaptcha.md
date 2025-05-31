@@ -1,80 +1,161 @@
-------
+---
+# 🚀 Get Free API Key Registration
+**[Register NoCaptcha.io Now →](https://www.nocaptcha.io/register?c=hqLmMS)**  
+*Professional CAPTCHA Solutions | High Success Rate | Fast Response | 24/7 Technical Support*
 
-[`Back to homepage`](en.md)    [`中文文档`](../zh-CN/hcaptcha.md)
+---
 
-## Hcaptcha
+[`Back to homepage`](en.md) [`中文文档`](../zh-CN/hcaptcha.md)
 
-### Score description
-    🚨🚨🚨 If you get a value but the site validation does not pass please contact the administrator
+# HCaptcha CAPTCHA Solving Service
 
-### Request URL (POST):
+## 🔥 Product Features
 
-| Version            | API Endpoint                                                       |
-|-------------------|--------------------------------------------------------------------|
-| `Universal`       | `http://api.nocaptcha.io/api/wanda/hcaptcha/universal`           |
+### Why Choose Our HCaptcha Solution
 
-### Request Headers:
+* **🎯 High Precision Recognition**: Professional HCaptcha recognition algorithms ensuring high success rates
+* **⚡ Fast Response**: Short average response time, improving user experience
+* **🔧 Flexible Configuration**: Supports various parameter configurations to adapt to different website requirements
+* **🛡️ Stable & Reliable**: 24/7 stable service supporting high-concurrency requests
 
-| Parameter Name   | Description                                                             | Required |
-|-----------------|-----------------------------------------------------------------------|--------|
-| `User-Token`    | `User secret key, obtained from the homepage`                           | Yes    |
-| `Content-Type`  | `application/json`                                                      | Yes    |
-| `Developer-Id`  | `Developer ID, used by developer users. It's the string from the user's homepage invite link (e.g., if it's xxx/register?c=abcdef, then abcdef is the developer ID)` | No |
+## ⚠️ Important Notes
 
-### POST Data (JSON):
+### Score Information
+🚨 **If you get a value but the website verification fails, please contact the administrator**
 
-| Parameter Name  | Type      | Description                                                                                                                                    | Required |
-|----------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|--------|
-| `sitekey`      | `String` | `hcaptcha integration key`                                                                                                                   | Yes    |
-| `referer`      | `String` | `🚨🚨🚨 Trigger page address. ✅Please copy the full address displayed on the browser✅. Do not alter it, and definitely don't search for it in developer tools❌.`            | Yes    |
-| `rqdata`       | `String` | `If the captcha configuration interface returns captcha_rqdata or captcha_rqtoken, please carry this value (e.g., for adding channels on discord)`                      | No     |
-| `domain`       | `String` | `hcaptcha's verification API domain (like getcaptcha/checkcaptcha etc.), some sites have different verification domains. The default is hcaptcha.com`                | No     |
-| `proxy`        | `String` | `If needed, pass ip:port or usr:pwd@ip:port or socks5://ip:port (contact the administrator if there are any issues)`                                  | No     |
-| `region`       | `String` | `When passing the proxy parameter, please pass the region of the proxy, e.g., hk, sg`                                                          | No     |
-| `invisible`     | `Boolean`| `Whether the click box can be seen when the verification code is triggered (or whether the verification code is not sensed) Default is false`                                                                         | No     |
-| `need_ekey`   | `Boolean` | `Do you need to return `E0 ey...`. Defaults to false ` | No |
+### Referer Parameter Instructions
+🚨 **Trigger page address**:
+- ✅ Please copy the complete address displayed in the browser address bar
+- ❌ Do not modify, and definitely don't search in developer tools
+- Or find the package shown below, use the host parameter value, fill referer as `http://{host}`
 
-#### JSON Examples
+![HCaptcha Parameter Acquisition](/images/hcaptcha/img.png)
 
-... *(Provided JSON samples are translated as per the above table)* ...
+## 🔗 API Interface Information
 
-### Response Data (JSON):
+### Request URL (POST)
 
-#### Submitting Verification (submit=true)
+| Version Type | Interface URL |
+|-------------|---------------|
+| **Universal Version** | `http://api.nocaptcha.io/api/wanda/hcaptcha/universal` |
 
-| Parameter Name              | Type      | Description                                                                      |
-|---------------------------|---------|---------------------------------------------------------------------------------|
-| `status`                   | `Integer` | `Whether the call was successful, 1 for success, 0 for failure. Use this value to judge` |
-| `msg`                      | `String`  | `Chinese description of the result`                                              |
-| `id`                       | `String`  | `The unique request ID for this particular request (can be used for subsequent record queries)` |
-| `data.generated_pass_UUID` | `String`  | `UUID (like P1_xxx/F1_xxx) certificate returned after verification success, can be used in subsequent verification interface` |
-| `data.ekey`                | `String`  | `Key (like E0_xxx) returned after verification success, can be used in subsequent verification interface` |
-| `cost`                     | `String`  | `Verification time taken (in milliseconds)`                                       |
+### Request Headers
 
-... *(Provided JSON response sample is translated as per the above table)* ...
+| Parameter Name | Description | Required |
+|----------------|-------------|----------|
+| `User-Token` | User key, obtained from homepage | ✅ |
+| `Content-Type` | `application/json` | ✅ |
+| `Developer-Id` | Developer ID, used by developer users. The string in the user homepage invitation link (e.g., xxx/register?c=abcdef, then abcdef is the developer ID) | ❌ |
 
-### CURL command:
+### POST Request Parameters (JSON Format)
 
-... *(The CURL command is mostly technical and doesn't require translation except for some comments)* ...
+| Parameter Name | Type | Description | Required |
+|----------------|------|-------------|----------|
+| `sitekey` | `String` | HCaptcha docking key | ✅ |
+| `referer` | `String` | Trigger page address (see parameter instructions above) | ✅ |
+| `rqdata` | `String` | captcha_rqdata, captcha_rqtoken values returned by verification configuration interface (e.g., Discord join channel) | ❌ |
+| `domain` | `String` | HCaptcha verification interface domain (getcaptcha/checkcaptcha interface domain), default hcaptcha.com | ❌ |
+| `proxy` | `String` | Proxy address, format: ip:port or usr:pwd@ip:port or socks5://ip:port | ❌ |
+| `region` | `String` | Proxy region (used when passing proxy), e.g.: hk, sg | ❌ |
+| `invisible` | `Boolean` | Whether it's invisible verification (whether click box is visible when triggered), default false | ❌ |
+| `need_ekey` | `Boolean` | Whether to return E0_ey... format key, default false | ❌ |
 
-### Implementation Example
+## 📝 Request Examples
 
-#### Python
+### Discord Example
+```json
+{
+  "sitekey": "a9b5fb07-92ff-493f-86fe-352a2803b3df",
+  "referer": "https://discord.com/channels/253581140072464384/357581480110850049",
+  "rqdata": "RRZ5RNoOL4uNPvEp0yB+bMPkBe2lUiM7p4u5lMAVUC9UBmzxJqdDDpGMrcDNApg/DDAQNIIlwEn2dLr7dZMg32I2bi523ZRfkAKpKxxg1sqnVW0xR9Y9ZCcwv54EiHeEqQ+iipixAVozAb6LjtwzNm2H9L15iSN8QfVrcp0Z"
+}
+```
 
-```shell
+### Stripe Example
+```json
+{
+  "sitekey": "c7faac4c-1cd7-4b1b-b2d4-42ba98d09c7a",
+  "referer": "https://b.stripecdn.com/stripethirdparty-srv/assets/v13.1/HCaptcha.html?id=ab2764cd-d392-4fd0-81b4-9de6c4144c31&origin=https%3A%2F%2Fjs.stripe.com",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+  "proxy": "ip:port"
+}
+```
+
+## 📤 Response Data Format
+
+### Verification Submission Response (submit=true)
+
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| `status` | `Integer` | Call status: 1=success, 0=failure |
+| `msg` | `String` | Call result description |
+| `id` | `String` | Unique request ID (can be used for record queries) |
+| `data.generated_pass_UUID` | `String` | UUID credential returned upon successful verification (P1_xxx/F1_xxx format), used for subsequent verification interfaces |
+| `data.ekey` | `String` | Key returned upon successful verification (E0_xxx format), used for subsequent verification interfaces |
+| `cost` | `String` | Verification duration (milliseconds) |
+
+### Response Example
+
+```json
+{
+  "cost": "9187.84ms",
+  "data": {
+    "generated_pass_UUID": "P1_eyxxx",
+    "user_agent": "..."
+  },
+  "id": "c5b976bd-4c01-4378-bb44-324c76e9fe0f",
+  "msg": "验证成功",
+  "status": 1
+}
+```
+
+## 💻 Code Examples
+
+### CURL Command
+
+```bash
+curl \
+ -H "Host: api.nocaptcha.io" \
+ -H "User-Agent: python-requests/2.28.2" \
+ -H "Accept: */*" \
+ -H "User-Token: xxx" \
+ -H "Developer-Id: hqLmMS" \
+ -H "Content-Type: application/json" \
+ --data-binary '{"sitekey": "f5561ba9-8f1e-40ca-9b5b-a0b3f719ef34", "referer": "https://discord.com/login"}' \
+ --compressed "http://api.nocaptcha.io/api/wanda/hcaptcha/universal"
+```
+
+### Python Call Examples
+
+**Install Dependencies**
+```bash
 pip install -U pynocaptcha -i https://pypi.python.org/simple
 ```
 
+**Basic Call Example**
 ```python
 from pynocaptcha import HcaptchaCracker
 
+# HCaptcha CAPTCHA Solving
 cracker = HcaptchaCracker(
-    user_token="xxx",
+    user_token="your_user_token_here",
+    developer_id="hqLmMS",  # Developer ID
     sitekey='a9b5fb07-92ff-493f-86fe-352a2803b3df',
     referer="https://discord.com/channels/253581140072464384/357581480110850049",
-    rqdata="RRZ5RNo...",
+    rqdata="RRZ5RNoOL4uNPvEp0yB+bMPkBe2lUiM7p4u5lMAVUC9UBmzxJqdDDpGMrcDNApg/DDAQNIIlwEn2dLr7dZMg32I2bi523ZRfkAKpKxxg1sqnVW0xR9Y9ZCcwv54EiHeEqQ+iipixAVozAb6LjtwzNm2H9L15iSN8QfVrcp0Z",
     debug=True,
 )
-ret = cracker.crack()
-print(ret)
+result = cracker.crack()
+print(f"Solving result: {result}")
 ```
+
+---
+
+## 🎯 Related Services
+
+- [ReCaptcha CAPTCHA Solving](recaptcha.md)
+- [Cloudflare CAPTCHA Solving](../zh-CN/cloudflare.md)
+- [Incapsula CAPTCHA Solving](incapsula.md)
+- [More CAPTCHA Solutions](en.md)
+
+**Need Technical Support? [Contact Us Now](https://www.nocaptcha.io/register?c=hqLmMS)**
