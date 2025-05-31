@@ -1,4 +1,3 @@
----
 # 🚀 免费注册获取API密钥
 **[立即注册 NoCaptcha.io →](https://www.nocaptcha.io/register?c=hqLmMS)**  
 *专业验证码解决方案 | 高成功率 | 快速响应 | 24/7技术支持*
