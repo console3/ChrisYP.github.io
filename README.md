@@ -1,4 +1,3 @@
----
 # 🚀 免费注册获取API密钥
 **[立即注册 NoCaptcha.io →](https://www.nocaptcha.io/register?c=hqLmMS)**  
 *专业验证码解决方案 | 高成功率 | 快速响应 | 24/7技术支持*
@@ -95,7 +94,7 @@ http://api.nocaptcha.io/api/get_user_balance?user_token={User-Token}&nickname={n
 
 ### Response Data（JSON）:
 
-```
+```json
 {
     "code": 200,
     "msg": "success",
@@ -110,3 +109,14 @@ http://api.nocaptcha.io/api/get_user_balance?user_token={User-Token}&nickname={n
     }
 }
 ```
+
+---
+
+## 🎯 相关服务
+
+- [ReCaptcha验证码破解](/zh-CN/recaptcha.md)
+- [hCaptcha验证码破解](/zh-CN/hcaptcha.md)
+- [Cloudflare验证码破解](/zh-CN/cloudflare.md)
+- [浏览器插件使用指南](/zh-CN/plugin.md)
+
+**需要技术支持？[立即联系我们](https://www.nocaptcha.io/register?c=hqLmMS)**
